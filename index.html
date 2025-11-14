@@ -693,11 +693,11 @@
         function viewCV() {
             // Try multiple paths to find the PDF
             const paths = [
-                'Resume.pdf.pdf',
+                'Resume.pdf',
                 'resume.pdf',
-                './Resume.pdf.pdf',
+                './Resume.pdf',
                 './resume.pdf',
-                '../Resume.pdf.pdf',
+                '../Resume.pdf',
                 '../resume.pdf'
             ];
             
@@ -718,8 +718,8 @@
 
         function downloadCV() {
             const link = document.createElement('a');
-            link.href = 'Resume.pdf.pdf';
-            link.download = 'Emmanuel_Wakhongola_Resume.pdf';
+            link.href = 'Resume.pdf';
+            link.download = 'Resume.pdf';
             link.click();
         }
 
@@ -740,7 +740,7 @@
         function downloadCV() {
             const link = document.createElement('a');
             link.href = './cv/resume.pdf';
-            link.download = 'Emmanuel_Wakhongola_Resume.pdf';
+            link.download = 'Resume.pdf';
             link.click();
             closeCVModal();
         }
