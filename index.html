@@ -47,6 +47,8 @@
         .project-card p { color: #b0b0b0; margin: 8px 0; }
         .github-btn { display: inline-block; margin-top: 15px; padding: 10px 20px; background: rgba(43, 249, 160, 0.2); border: 2px solid #2BF9A0; color: #2BF9A0; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 0.9em; transition: all 0.3s ease; }
         .github-btn:hover { background: #2BF9A0; color: #0a0e27; }
+        .resume-container { background: rgba(43, 249, 160, 0.1); padding: 30px; border-radius: 15px; border: 2px solid rgba(43, 249, 160, 0.3); text-align: center; }
+        .resume-container p { color: #b0b0b0; margin-bottom: 20px; }
         footer { text-align: center; padding: 50px 40px; color: #b0b0b0; margin-top: 80px; border-top: 2px solid rgba(43, 249, 160, 0.3); }
         @media (max-width: 768px) { .hero-name { font-size: 2em; } .landing-page h1 { font-size: 2em; } .section { padding: 30px 20px; } }
     </style>
@@ -119,10 +121,11 @@
 
             <section id="cv" class="section">
                 <h2 class="section-title">📄 My Resume</h2>
-                <p class="section-intro">Download my comprehensive resume to see my complete qualifications, experience, and projects.</p>
-                <div class="contact-buttons" style="justify-content: flex-start;">
-                    <a onclick="scrollToSection('cv')" class="contact-btn" style="background: rgba(43, 249, 160, 0.2); border: 2px solid #2BF9A0; color: #2BF9A0; cursor: pointer;">👁️ View Resume</a>
-                    <a href="./Resume.pdf" download="Emmanuel_Wakhongola_Resume.pdf" class="contact-btn" style="background: rgba(43, 249, 160, 0.2); border: 2px solid #2BF9A0; color: #2BF9A0;">📥 Download Resume</a>
+                <div class="resume-container">
+                    <p class="section-intro">Download my comprehensive resume to see my complete qualifications, experience, and projects.</p>
+                    <div class="contact-buttons">
+                        <a href="./Resume.pdf" download="Emmanuel_Wakhongola_Resume.pdf" class="contact-btn">📥 Download Resume</a>
+                    </div>
                 </div>
             </section>
 
