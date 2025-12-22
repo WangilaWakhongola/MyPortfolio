@@ -1,57 +1,57 @@
-<! DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wakhongola | Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <title>Wangila | Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='bgGradient' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%231a2744;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%230f1a2e;stop-opacity:1' /%3E%3C/linearGradient%3E%3ClinearGradient id='centerOrb' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2365b7f5;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%232b5fa8;stop-opacity:1' /%3E%3C/linearGradient%3E%3ClinearGradient id='nodeGradient' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%230066ff;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23004db8;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' fill='url(%23bgGradient)'/%3E%3Ccircle cx='32' cy='32' r='9' fill='url(%23centerOrb)'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%236b7a8f' stroke-width='1.5' opacity='0.4' stroke-dasharray='3,3'/%3E%3Ccircle cx='50' cy='32' r='4' fill='url(%23nodeGradient)' opacity='0.95'/%3E%3Ccircle cx='32' cy='14' r='4' fill='url(%23nodeGradient)' opacity='0.85'/%3E%3Ccircle cx='14' cy='32' r='4' fill='url(%23nodeGradient)' opacity='0.9'/%3E%3Ccircle cx='32' cy='50' r='4' fill='url(%23nodeGradient)' opacity='0.75'/%3E%3Cline x1='32' y1='32' x2='50' y2='32' stroke='%230066ff' stroke-width='1.2' opacity='0.6'/%3E%3Cline x1='32' y1='32' x2='32' y2='14' stroke='%230066ff' stroke-width='1.2' opacity='0.6'/%3E%3Cline x1='32' y1='32' x2='14' y2='32' stroke='%230066ff' stroke-width='1.2' opacity='0.6'/%3E%3Cline x1='32' y1='32' x2='32' y2='50' stroke='%230066ff' stroke-width='1.2' opacity='0.6'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0d1b2a 100%); color: #ffffff; min-height: 100vh; }
-        .typewriter { border-right: 3px solid #2BF9A0; animation: blink 0.7s step-end infinite; display: inline-block; padding-right: 5px; }
-        @keyframes blink { from, to { border-color: transparent; } 50% { border-color: #2BF9A0; } }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a2744 0%, #0f1a2e 50%, #0a1528 100%); color: #ffffff; min-height: 100vh; }
+        .typewriter { border-right: 3px solid #0066ff; animation: blink 0.7s step-end infinite; display: inline-block; padding-right: 5px; }
+        @keyframes blink { from, to { border-color: transparent; } 50% { border-color: #0066ff; } }
         .landing-page { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px 20px; }
-        .landing-page h1 { font-size: 4em; font-weight: 800; margin-bottom: 20px; background: linear-gradient(135deg, #ffffff 0%, #2BF9A0 100%); -webkit-background-clip:  text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .landing-page p { font-size: 1.4em; color: #2BF9A0; margin-bottom: 60px; }
+        .landing-page h1 { font-size: 4em; font-weight: 800; margin-bottom: 20px; background: linear-gradient(135deg, #ffffff 0%, #0066ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .landing-page p { font-size: 1.4em; color: #0066ff; margin-bottom: 60px; }
         .cards-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1200px; width: 100%; }
-        .viewer-card { background: rgba(43, 249, 160, 0.05); backdrop-filter: blur(10px); border-radius: 20px; padding: 50px 30px; text-align: center; cursor: pointer; transition: all 0.4s ease; border: 2px solid rgba(43, 249, 160, 0.3); }
-        .viewer-card:hover { transform: translateY(-10px) scale(1.05); border-color: #2BF9A0; box-shadow: 0 20px 60px rgba(43, 249, 160, 0.3); }
-        .viewer-card . icon { font-size: 4em; margin-bottom: 20px; display: block; }
+        .viewer-card { background: rgba(0, 102, 255, 0.05); backdrop-filter: blur(10px); border-radius: 20px; padding: 50px 30px; text-align: center; cursor: pointer; transition: all 0.4s ease; border: 2px solid rgba(0, 102, 255, 0.3); }
+        .viewer-card:hover { transform: translateY(-10px) scale(1.05); border-color: #0066ff; box-shadow: 0 20px 60px rgba(0, 102, 255, 0.3); }
+        .viewer-card .icon { font-size: 4em; margin-bottom: 20px; display: block; }
         .viewer-card h2 { font-size: 1.5em; font-weight: 700; }
         .portfolio-content { display: none; }
         .portfolio-content.active { display: block; }
-        nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(10, 14, 39, 0.95); backdrop-filter: blur(10px); padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; border-bottom: 2px solid rgba(43, 249, 160, 0.3); }
-        .logo { font-size: 1.3em; font-weight: 700; color: #2BF9A0; cursor: pointer; }
+        nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(10, 14, 39, 0.95); backdrop-filter: blur(10px); padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; border-bottom: 2px solid rgba(0, 102, 255, 0.3); }
+        .logo { font-size: 1.3em; font-weight: 700; color: #0066ff; cursor: pointer; }
         .nav-links { display: flex; gap: 30px; list-style: none; }
-        .nav-links a { color: #ffffff; text-decoration:  none; font-weight: 500; cursor: pointer; transition: color 0.3s ease; }
-        .nav-links a:hover { color: #2BF9A0; }
+        .nav-links a { color: #ffffff; text-decoration: none; font-weight: 500; cursor: pointer; transition: color 0.3s ease; }
+        .nav-links a:hover { color: #0066ff; }
         .hero-section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 120px 40px 60px; text-align: center; margin-top: 60px; }
-        .hero-tagline { font-size: 1.3em; color: #2BF9A0; margin-bottom: 30px; min-height: 50px; }
-        .hero-name { font-size: 3. 5em; font-weight: 800; margin-bottom: 20px; color: #ffffff; }
-        .hero-subtitle { font-size: 1.1em; color: #2BF9A0; margin-bottom: 40px; }
+        .hero-tagline { font-size: 1.3em; color: #0066ff; margin-bottom: 30px; min-height: 50px; }
+        .hero-name { font-size: 3.5em; font-weight: 800; margin-bottom: 20px; color: #ffffff; }
+        .hero-subtitle { font-size: 1.1em; color: #0066ff; margin-bottom: 40px; }
         .contact-buttons { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
-        .contact-btn { background: rgba(43, 249, 160, 0.1); border: 2px solid #2BF9A0; color: #ffffff; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
-        .contact-btn:hover { background: #2BF9A0; color: #0a0e27; transform: translateY(-2px); }
-        .container { max-width: 1200px; margin: 0 auto; padding:  40px 20px; }
-        .section { background: #0f1729; color: #e0e0e0; padding:  60px 45px; border-radius: 20px; margin:  60px 0; box-shadow: 0 10px 40px rgba(43, 249, 160, 0.1); border: 1px solid rgba(43, 249, 160, 0.2); }
-        .section-title { color: #2BF9A0; font-size: 2.2em; margin-bottom: 40px; font-weight: 700; }
+        .contact-btn { background: rgba(0, 102, 255, 0.1); border: 2px solid #0066ff; color: #ffffff; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+        .contact-btn:hover { background: #0066ff; color: #0a1528; transform: translateY(-2px); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        .section { background: #0f1729; color: #e0e0e0; padding: 60px 45px; border-radius: 20px; margin: 60px 0; box-shadow: 0 10px 40px rgba(0, 102, 255, 0.1); border: 1px solid rgba(0, 102, 255, 0.2); }
+        .section-title { color: #0066ff; font-size: 2.2em; margin-bottom: 40px; font-weight: 700; }
         .section-intro { font-size: 1em; color: #b0b0b0; margin-bottom: 30px; line-height: 1.8; }
-        .exp-card { background: rgba(43, 249, 160, 0.1); padding: 30px; border-radius: 15px; margin: 20px 0; border-left: 5px solid #2BF9A0; }
-        .exp-card h3 { color: #2BF9A0; font-size: 1.4em; margin-bottom: 8px; }
-        .exp-card p { color: #2BF9A0; font-weight: 600; margin-bottom: 12px; }
-        .exp-card ul { margin:  15px 0; padding-left: 20px; }
-        .exp-card li { margin:  8px 0; color: #b0b0b0; }
-        .skill-card { background: linear-gradient(135deg, rgba(43, 249, 160, 0.2), rgba(43, 249, 160, 0.05)); color: #ffffff; padding: 30px; border-radius: 15px; margin: 15px 0; border:  1px solid rgba(43, 249, 160, 0.3); }
-        .skill-card h4 { font-size: 1.3em; margin-bottom: 12px; color: #2BF9A0; }
-        .project-card { background: rgba(43, 249, 160, 0.1); color: #e0e0e0; padding:  30px; border-radius:  15px; margin: 15px 0; border-left: 5px solid #2BF9A0; text-decoration: none; display: block; transition: all 0.3s ease; cursor: pointer; }
-        .project-card:hover { background: rgba(43, 249, 160, 0.2); transform: translateX(5px); }
-        .project-card h3 { color: #2BF9A0; margin-bottom: 12px; }
-        .project-card p { color: #b0b0b0; margin:  8px 0; }
-        .github-btn { display: inline-block; margin-top: 15px; padding: 10px 20px; background: rgba(43, 249, 160, 0.2); border: 2px solid #2BF9A0; color: #2BF9A0; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 0.9em; transition: all 0.3s ease; }
-        .github-btn:hover { background: #2BF9A0; color: #0a0e27; }
-        . resume-container { background: rgba(43, 249, 160, 0.1); padding: 30px; border-radius: 15px; border:  2px solid rgba(43, 249, 160, 0.3); text-align: center; }
-        footer { text-align: center; padding: 50px 40px; color: #b0b0b0; margin-top: 80px; border-top: 2px solid rgba(43, 249, 160, 0.3); }
+        .exp-card { background: rgba(0, 102, 255, 0.1); padding: 30px; border-radius: 15px; margin: 20px 0; border-left: 5px solid #0066ff; }
+        .exp-card h3 { color: #0066ff; font-size: 1.4em; margin-bottom: 8px; }
+        .exp-card p { color: #0066ff; font-weight: 600; margin-bottom: 12px; }
+        .exp-card ul { margin: 15px 0; padding-left: 20px; }
+        .exp-card li { margin: 8px 0; color: #b0b0b0; }
+        .skill-card { background: linear-gradient(135deg, rgba(0, 102, 255, 0.2), rgba(0, 102, 255, 0.05)); color: #ffffff; padding: 30px; border-radius: 15px; margin: 15px 0; border: 1px solid rgba(0, 102, 255, 0.3); }
+        .skill-card h4 { font-size: 1.3em; margin-bottom: 12px; color: #0066ff; }
+        .project-card { background: rgba(0, 102, 255, 0.1); color: #e0e0e0; padding: 30px; border-radius: 15px; margin: 15px 0; border-left: 5px solid #0066ff; text-decoration: none; display: block; transition: all 0.3s ease; cursor: pointer; }
+        .project-card:hover { background: rgba(0, 102, 255, 0.2); transform: translateX(5px); }
+        .project-card h3 { color: #0066ff; margin-bottom: 12px; }
+        .project-card p { color: #b0b0b0; margin: 8px 0; }
+        .github-btn { display: inline-block; margin-top: 15px; padding: 10px 20px; background: rgba(0, 102, 255, 0.2); border: 2px solid #0066ff; color: #0066ff; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 0.9em; transition: all 0.3s ease; }
+        .github-btn:hover { background: #0066ff; color: #0a1528; }
+        .resume-container { background: rgba(0, 102, 255, 0.1); padding: 30px; border-radius: 15px; border: 2px solid rgba(0, 102, 255, 0.3); text-align: center; }
+        footer { text-align: center; padding: 50px 40px; color: #b0b0b0; margin-top: 80px; border-top: 2px solid rgba(0, 102, 255, 0.3); }
     </style>
 </head>
 <body>
@@ -61,8 +61,8 @@
         <div class="cards-container">
             <div class="viewer-card" onclick="showPortfolio('recruiter')"><span class="icon">💼</span><h2>Recruiter</h2></div>
             <div class="viewer-card" onclick="showPortfolio('developer')"><span class="icon">💻</span><h2>Developer</h2></div>
-            <div class="viewer-card" onclick="showPortfolio('client')"><span class="icon">🔎</span><h2>Client</h2></div>
-            <div class="viewer-card" onclick="showPortfolio('explorer')"><span class="icon">🔍</span><h2>Explorer</h2></div>
+            <div class="viewer-card" onclick="showPortfolio('client')"><span class="icon">🚀</span><h2>Client</h2></div>
+            <div class="viewer-card" onclick="showPortfolio('explorer')"><span class="icon">🔬</span><h2>Explorer</h2></div>
         </div>
     </div>
 
@@ -72,18 +72,15 @@
             <ul class="nav-links">
                 <li><a onclick="scrollToSection('home')">Home</a></li>
                 <li><a onclick="scrollToSection('about')">About</a></li>
-                <li><a onclick="scrollToSection('education')">Education</a></li>
-                <li><a onclick="scrollToSection('experience')">Experience</a></li>
                 <li><a onclick="scrollToSection('skills')">Skills</a></li>
                 <li><a onclick="scrollToSection('projects')">Projects</a></li>
-                <li><a onclick="scrollToSection('cv')">CV</a></li>
                 <li><a onclick="scrollToSection('contact')">Contact</a></li>
             </ul>
         </nav>
 
         <section id="home" class="hero-section">
             <div class="hero-tagline"><span class="typewriter" id="heroTypewriter"></span></div>
-            <h1 class="hero-name">EMMANUEL W.  WAKHONGOLA</h1>
+            <h1 class="hero-name">EMMANUEL W. WAKHONGOLA</h1>
             <p class="hero-subtitle">AI/ML | Networking | SQL | UX/UI | Cybersecurity | Power BI | Python</p>
             <div class="contact-buttons">
                 <a href="https://wa.me/254791952584" class="contact-btn" target="_blank">WhatsApp</a>
@@ -98,18 +95,6 @@
                 <div id="aboutContent"></div>
             </section>
 
-            <section id="education" class="section">
-                <h2 class="section-title">Education</h2>
-                <div class="exp-card"><h3>Bachelor of Science - Mathematics and Computer Science</h3><p>Jomo Kenyatta University of Agriculture and Technology (JKUAT)</p><p style="color: #b0b0b0;">Expected Graduation: 2026</p></div>
-                <div class="exp-card"><h3>Kenya Certificate of Secondary Education (KCSE)</h3><p>St Marys Kibabii Boys National School</p><p style="color: #b0b0b0;">2018 - 2021</p></div>
-            </section>
-
-            <section id="experience" class="section">
-                <h2 class="section-title">Professional Experience</h2>
-                <div class="exp-card"><h3>IT Attachee - Total Energies</h3><p>June 2025 - September 2025</p><ul><li>Managed IT systems for 25+ users</li><li>Diagnosed and resolved hardware and software issues</li><li>Maintained network infrastructure and security protocols</li><li>Performed system updates and cybersecurity configurations</li></ul></div>
-                <div class="exp-card"><h3>IT Support Volunteer - Community Youth Center</h3><p>2024 (Ongoing)</p><ul><li>Empowered 30+ young people with IT skills</li><li>Designed and configured network infrastructure</li><li>Implemented cybersecurity best practices</li><li>Conducted training on safe internet practices</li></ul></div>
-            </section>
-
             <section id="skills" class="section">
                 <h2 class="section-title">Technical Skills</h2>
                 <div id="skillsContent"></div>
@@ -120,19 +105,9 @@
                 <div id="projectsContent"></div>
             </section>
 
-            <section id="cv" class="section">
-                <h2 class="section-title">My Resume</h2>
-                <div class="resume-container">
-                    <p class="section-intro">Download my comprehensive resume</p>
-                    <div class="contact-buttons">
-                        <a href="./Resume. pdf" download class="contact-btn">Download Resume</a>
-                    </div>
-                </div>
-            </section>
-
             <section id="contact" class="section">
                 <h2 class="section-title">Get In Touch</h2>
-                <p class="section-intro">I'm always open to discussing projects and opportunities! </p>
+                <p class="section-intro">I'm always open to discussing projects and opportunities!</p>
                 <div class="contact-buttons">
                     <a href="https://wa.me/254791952584" class="contact-btn" target="_blank">WhatsApp</a>
                     <a href="mailto:wangilaemmanuel06@gmail.com" class="contact-btn">Email</a>
@@ -150,8 +125,8 @@
                 this.element = element;
                 this.statements = statements;
                 this.index = 0;
-                this. charIndex = 0;
-                this. isDeleting = false;
+                this.charIndex = 0;
+                this.isDeleting = false;
                 this.typeTimeout = null;
             }
             
@@ -164,7 +139,7 @@
             type() {
                 const text = this.statements[this.index];
                 if (this.isDeleting) {
-                    this.element.textContent = text. substring(0, this.charIndex--);
+                    this.element.textContent = text.substring(0, this.charIndex--);
                     if (this.charIndex < 0) {
                         this.isDeleting = false;
                         this.index = (this.index + 1) % this.statements.length;
@@ -173,7 +148,7 @@
                         return;
                     }
                 } else {
-                    this. element.textContent = text. substring(0, this.charIndex++);
+                    this.element.textContent = text.substring(0, this.charIndex++);
                     if (this.charIndex > text.length) {
                         this.isDeleting = true;
                         this.typeTimeout = setTimeout(() => this.type(), 2000);
@@ -189,27 +164,27 @@
         const portfolioData = {
             recruiter: {
                 hero: ["Build a stronger team", "Create winning strategies", "Accelerate growth"],
-                about: '<p class="section-intro">Mathematics and Computer Science student with expertise in AI/ML, Networking, SQL, UX/UI, and Cybersecurity. Ready to make immediate impact. </p>',
+                about: '<p class="section-intro">Mathematics and Computer Science student with expertise in AI/ML, Networking, SQL, UX/UI, and Cybersecurity. Ready to make immediate impact.</p>',
                 skills: '<div class="skill-card"><h4>AI/ML</h4><p>Machine Learning, NLP, Predictive Modeling, Data Analysis</p></div><div class="skill-card"><h4>Network Administration</h4><p>Enterprise Configuration, Cybersecurity, System Administration</p></div><div class="skill-card"><h4>Programming</h4><p>Python, C++, HTML, CSS, SQL, R, MATLAB</p></div><div class="skill-card"><h4>Business Tools</h4><p>Power BI, Excel, Database Design, CRUD Operations</p></div>',
-                projects: '<a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-card"><h3>Network Monitoring Dashboard</h3><p>Enterprise real-time network monitoring system tracking performance and statistics. </p><p><strong>Tech: </strong> Python, Networking</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-card"><h3>AI Resume Analyzer</h3><p>Intelligent talent screening using Machine Learning and NLP. </p><p><strong>Tech: </strong> Python, AI/ML</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-card"><h3>Inventory Management System</h3><p>Efficient inventory tracking with adding, updating, and deleting items.</p><p><strong>Tech:</strong> HTML, SQL</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat-detection" target="_blank" class="project-card"><h3>Cybersecurity Threat Detection</h3><p>ML-based system for detecting network threats and anomalies.</p><p><strong>Tech:</strong> Python, AI/ML</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/ML-Powered-Personal-Finance-Assistant" target="_blank" class="project-card"><h3>ML Finance Assistant</h3><p>Helps users understand spending and predict future expenses. </p><p><strong>Tech: </strong> JavaScript, AI/ML</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/Tailwind-Beginners-Toolkit" target="_blank" class="project-card"><h3>Tailwind Beginners Toolkit</h3><p>Learning project for TailwindCSS with AI-assisted development.</p><p><strong>Tech:</strong> HTML, TailwindCSS</p><div class="github-btn">View on GitHub</div></a>'
+                projects: '<a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-card"><h3>Network Monitoring Dashboard</h3><p>Enterprise real-time network monitoring system.</p><p><strong>Tech:</strong> Python, Networking</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-card"><h3>AI Resume Analyzer</h3><p>Intelligent talent screening using ML and NLP.</p><p><strong>Tech:</strong> Python, AI/ML</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-card"><h3>Inventory Management System</h3><p>Efficient inventory tracking system.</p><p><strong>Tech:</strong> HTML, SQL</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat-detection" target="_blank" class="project-card"><h3>Cybersecurity Threat Detection</h3><p>ML-based threat detection system.</p><p><strong>Tech:</strong> Python, AI/ML</p><div class="github-btn">View on GitHub</div></a>'
             },
             developer: {
                 hero: ["Create elegant solutions", "Write beautiful code", "Build the future"],
                 about: '<p class="section-intro">Passionate developer focused on clean architecture, best practices, performance optimization, and maintainable code.</p>',
                 skills: '<div class="skill-card"><h4>Python</h4><p>Flask, Django, NumPy, Pandas, APIs, Web Development</p></div><div class="skill-card"><h4>Network and Systems</h4><p>Configuration, System Administration, API Integration, TCP/IP</p></div><div class="skill-card"><h4>Database</h4><p>SQL Optimization, Database Design, CRUD Operations</p></div><div class="skill-card"><h4>AI/ML Stack</h4><p>ML Algorithms, NLP, Neural Networks, Data Science</p></div>',
-                projects: '<a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-card"><h3>Network Monitoring Dashboard</h3><p>Real-time system with Python backend and data visualization.</p><p><strong>Tech:</strong> Python, Networking</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-card"><h3>AI Resume Analyzer</h3><p>NLP-powered tool with intelligent algorithms.</p><p><strong>Tech:</strong> Python, AI/ML, NLP</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-card"><h3>Inventory Management System</h3><p>Full-stack solution with optimized database queries.</p><p><strong>Tech:</strong> HTML, SQL</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat-detection" target="_blank" class="project-card"><h3>Cybersecurity Threat Detection</h3><p>AI-powered detection with real-time analysis.</p><p><strong>Tech:</strong> Python, AI/ML</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/ML-Powered-Personal-Finance-Assistant" target="_blank" class="project-card"><h3>ML Finance Assistant</h3><p>Intelligent financial analysis with predictive modeling.</p><p><strong>Tech:</strong> JavaScript, AI/ML</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/Tailwind-Beginners-Toolkit" target="_blank" class="project-card"><h3>Tailwind Beginners Toolkit</h3><p>Modern CSS framework with AI-assisted patterns.</p><p><strong>Tech:</strong> HTML, TailwindCSS</p><div class="github-btn">View on GitHub</div></a>'
+                projects: '<a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-card"><h3>Network Monitoring Dashboard</h3><p>Real-time system with Python backend.</p><p><strong>Tech:</strong> Python, Networking</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-card"><h3>AI Resume Analyzer</h3><p>NLP-powered intelligent algorithms.</p><p><strong>Tech:</strong> Python, AI/ML, NLP</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-card"><h3>Inventory Management System</h3><p>Full-stack solution with optimized queries.</p><p><strong>Tech:</strong> HTML, SQL</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat-detection" target="_blank" class="project-card"><h3>Cybersecurity Threat Detection</h3><p>AI-powered detection with real-time analysis.</p><p><strong>Tech:</strong> Python, AI/ML</p><div class="github-btn">View on GitHub</div></a>'
             },
             client: {
                 hero: ["Transform your business", "Drive results", "Create impact"],
-                about: '<p class="section-intro">I transform visions into robust, scalable solutions.  AI automation for efficiency, custom software for growth, systems that deliver ROI.</p>',
+                about: '<p class="section-intro">I transform visions into robust, scalable solutions. AI automation for efficiency, custom software for growth.</p>',
                 skills: '<div class="skill-card"><h4>AI Solutions</h4><p>Automation, Predictive Analytics, Custom ML Models</p></div><div class="skill-card"><h4>Full-Stack Development</h4><p>Python, Flask, Django, Frontend, Custom Apps</p></div><div class="skill-card"><h4>Enterprise Database</h4><p>SQL Optimization, Secure Data, Performance Tuning</p></div><div class="skill-card"><h4>Network & Infrastructure</h4><p>Security, Scalability, Cloud Integration</p></div>',
-                projects: '<a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-card"><h3>Network Monitoring Dashboard</h3><p>Enterprise monitoring ensuring 99% uptime.</p><p><strong>Impact:</strong> System Reliability</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-card"><h3>AI Resume Analyzer</h3><p>Automates recruitment saving 70% screening time.</p><p><strong>Impact:</strong> Cost Savings</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-card"><h3>Inventory Management System</h3><p>Reduces manual errors by 95%.</p><p><strong>Impact:</strong> Efficiency</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat-detection" target="_blank" class="project-card"><h3>Cybersecurity Threat Detection</h3><p>AI-powered protection for enterprise data.</p><p><strong>Impact:</strong> Security</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/ML-Powered-Personal-Finance-Assistant" target="_blank" class="project-card"><h3>ML Finance Assistant</h3><p>Helps customers save through budgeting insights.</p><p><strong>Impact:</strong> Customer Value</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/Tailwind-Beginners-Toolkit" target="_blank" class="project-card"><h3>Tailwind Beginners Toolkit</h3><p>Educational resource for modern development.</p><p><strong>Impact:</strong> Knowledge Sharing</p><div class="github-btn">View on GitHub</div></a>'
+                projects: '<a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-card"><h3>Network Monitoring Dashboard</h3><p>Enterprise monitoring ensuring 99% uptime.</p><p><strong>Impact:</strong> System Reliability</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-card"><h3>AI Resume Analyzer</h3><p>Automates recruitment saving 70% screening time.</p><p><strong>Impact:</strong> Cost Savings</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-card"><h3>Inventory Management System</h3><p>Reduces manual errors by 95%.</p><p><strong>Impact:</strong> Efficiency</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat-detection" target="_blank" class="project-card"><h3>Cybersecurity Threat Detection</h3><p>AI-powered protection for enterprise data.</p><p><strong>Impact:</strong> Security</p><div class="github-btn">View on GitHub</div></a>'
             },
             explorer: {
                 hero: ["Discover amazing tech", "Explore possibilities", "Push boundaries"],
-                about: '<p class="section-intro">Exploring technology and building solutions.  Every project is a chance to learn something new and experiment with emerging tech.</p>',
+                about: '<p class="section-intro">Exploring technology and building solutions. Every project is a chance to learn and experiment with emerging tech.</p>',
                 skills: '<div class="skill-card"><h4>AI/ML Exploration</h4><p>Machine Learning, NLP, Neural Networks, Data Analysis</p></div><div class="skill-card"><h4>Network Administration</h4><p>Configuration, TCP/IP, Security, Monitoring</p></div><div class="skill-card"><h4>Programming Adventure</h4><p>Python, C++, HTML, CSS, SQL, R, MATLAB</p></div><div class="skill-card"><h4>Data and Tools</h4><p>Power BI, Excel, Database Design, Visualization</p></div>',
-                projects: '<a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-card"><h3>Network Monitoring Dashboard</h3><p>Learning networking through real-time monitoring.</p><p><strong>Path:</strong> Networking + Python</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-card"><h3>AI Resume Analyzer</h3><p>Exploring AI/ML and NLP capabilities.</p><p><strong>Path:</strong> AI/ML + NLP</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-card"><h3>Inventory Management System</h3><p>Learning backend and database architecture.</p><p><strong>Path:</strong> Backend + Databases</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat-detection" target="_blank" class="project-card"><h3>Cybersecurity Threat Detection</h3><p>Exploring cybersecurity with machine learning.</p><p><strong>Path:</strong> Cybersecurity + AI/ML</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/ML-Powered-Personal-Finance-Assistant" target="_blank" class="project-card"><h3>ML Finance Assistant</h3><p>Learning ML in real-world problem solving.</p><p><strong>Path:</strong> AI/ML + Data Analysis</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/Tailwind-Beginners-Toolkit" target="_blank" class="project-card"><h3>Tailwind Beginners Toolkit</h3><p>Exploring modern CSS and AI tools.</p><p><strong>Path:</strong> Frontend + AI Tools</p><div class="github-btn">View on GitHub</div></a>'
+                projects: '<a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-card"><h3>Network Monitoring Dashboard</h3><p>Learning networking through real-time monitoring.</p><p><strong>Path:</strong> Networking + Python</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-card"><h3>AI Resume Analyzer</h3><p>Exploring AI/ML and NLP capabilities.</p><p><strong>Path:</strong> AI/ML + NLP</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-card"><h3>Inventory Management System</h3><p>Learning backend and database architecture.</p><p><strong>Path:</strong> Backend + Databases</p><div class="github-btn">View on GitHub</div></a><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat-detection" target="_blank" class="project-card"><h3>Cybersecurity Threat Detection</h3><p>Exploring cybersecurity with ML.</p><p><strong>Path:</strong> Cybersecurity + AI/ML</p><div class="github-btn">View on GitHub</div></a>'
             }
         };
 
