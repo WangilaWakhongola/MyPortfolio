@@ -114,9 +114,22 @@
             <section id="cv" class="section">
                 <h2 class="section-title">Download CV</h2>
                 <div style="text-align: center; padding: 40px 0;">
-                  <button onclick="downloadCV()" class="contact-btn">
-    📄 Download CV
-</button>
+                  function downloadCV() {
+    // Create a temporary link element
+    const link = document. createElement('a');
+    
+    // Set the href to your CV file path
+    // Make sure your CV file is in your repository
+    link.href = 'cv/Resume.pdf'; // Update this path to match your CV file location
+    
+    // Set the download filename
+    link.download = 'Resume.pdf';
+    
+    // Append to body, click, and remove
+    document.body. appendChild(link);
+    link.click();
+    document.body. removeChild(link);
+}
                     </a>
                 </div>
             </section>
