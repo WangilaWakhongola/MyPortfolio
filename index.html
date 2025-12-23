@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wangila | Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='bgGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%230a1528;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%231a2744;stop-opacity:1' /%3E%3C/linearGradient%3E%3ClinearGradient id='orbGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%235b9fd9;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%230066ff;stop-opacity:1' /%3E%3C/linearGradient%3E%3ClinearGradient id='nodeGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%231e90ff;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%230055ff;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='200' height='200' fill='url(%23bgGrad)'/%3E%3Ccircle cx='100' cy='100' r='60' fill='url(%23orbGrad)' opacity='0.9'/%3E%3Ccircle cx='100' cy='100' r='75' fill='none' stroke='%234a7a9e' stroke-width='3' opacity='0.3' stroke-dasharray='8,8'/%3E%3Ccircle cx='100' cy='35' r='18' fill='url(%23nodeGrad)' opacity='0.95'/%3E%3Ccircle cx='165' cy='100' r='18' fill='url(%23nodeGrad)' opacity='0.95'/%3E%3Ccircle cx='35' cy='100' r='18' fill='url(%23nodeGrad)' opacity='0.95'/%3E%3Ccircle cx='100' cy='165' r='18' fill='url(%23nodeGrad)' opacity='0.95'/%3E%3Cline x1='100' y1='100' x2='100' y2='35' stroke='%230066ff' stroke-width='2.5' opacity='0.7'/%3E%3Cline x1='100' y1='100' x2='165' y2='100' stroke='%230066ff' stroke-width='2.5' opacity='0.7'/%3E%3Cline x1='100' y1='100' x2='35' y2='100' stroke='%230066ff' stroke-width='2.5' opacity='0.7'/%3E%3Cline x1='100' y1='100' x2='100' y2='165' stroke='%230066ff' stroke-width='2.5' opacity='0.7'/%3E%3C/svg%3E">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a2744 0%, #0f1a2e 50%, #0a1528 100%); color: #ffffff; min-height: 100vh; }
@@ -21,7 +22,7 @@
         .portfolio-content.active { display: block; }
         nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(10, 14, 39, 0.95); backdrop-filter: blur(10px); padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; border-bottom: 2px solid rgba(91, 159, 217, 0.3); }
         .logo { font-size: 1.3em; font-weight: 700; color: #5b9fd9; cursor: pointer; }
-        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links { display: flex; gap: 30px; list-style: none; flex-wrap: wrap; }
         .nav-links a { color: #ffffff; text-decoration: none; font-weight: 500; cursor: pointer; transition: color 0.3s ease; }
         .nav-links a:hover { color: #0066ff; }
         .hero-section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 120px 40px 60px; text-align: center; margin-top: 60px; }
@@ -46,11 +47,9 @@
         .project-card:hover { background: rgba(0, 102, 255, 0.2); transform: translateX(5px); }
         .project-card h3 { color: #0066ff; margin-bottom: 12px; }
         .project-card p { color: #b0b0b0; margin: 8px 0; }
-        .github-btn { display: inline-block; margin-top: 15px; padding: 10px 20px; background: rgba(0, 102, 255, 0.2); border: 2px solid #0066ff; color: #0066ff; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 0.9em; transition: all 0.3s ease; }
+        .project-card:hover .github-btn { background: #0066ff; color: #0a1528; }
+        .github-btn { display: inline-block; margin-top: 15px; padding: 10px 20px; background: rgba(0, 102, 255, 0.2); border: 2px solid #0066ff; color: #0066ff; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 0.9em; transition: all 0.3s ease; cursor: pointer; }
         .github-btn:hover { background: #0066ff; color: #0a1528; }
-        .cv-download-section { text-align: center; padding: 40px 0; }
-        .download-cv-btn { background: rgba(0, 102, 255, 0.2); border: 2px solid #0066ff; color: #0066ff; padding: 15px 40px; border-radius: 50px; font-weight: 600; font-size: 1em; transition: all 0.3s ease; display: inline-block; cursor: pointer; }
-        .download-cv-btn:hover { background: #0066ff; color: #0a1528; transform: translateY(-2px); }
         footer { text-align: center; padding: 50px 40px; color: #b0b0b0; margin-top: 80px; border-top: 2px solid rgba(0, 102, 255, 0.3); }
     </style>
 </head>
@@ -114,8 +113,10 @@
 
             <section id="cv" class="section">
                 <h2 class="section-title">Download CV</h2>
-                <div class="cv-download-section">
-                    <button class="download-cv-btn" onclick="downloadCV()">Download</button>
+                <div style="text-align: center; padding: 40px 0;">
+                    <button onclick="downloadCV()" class="contact-btn" style="font-size: 1.1em; padding: 15px 40px; border: none; cursor: pointer;">
+                        📄 Download CV
+                    </button>
                 </div>
             </section>
 
@@ -130,7 +131,7 @@
             </section>
         </div>
 
-        <footer><p>Copyright 2025 @Emmanuel Wakhongola</p></footer>
+        <footer><p>Copyright 2025 Emmanuel Wakhongola</p></footer>
     </div>
 
     <script>
@@ -143,13 +144,8 @@
                 this.isDeleting = false;
                 this.typeTimeout = null;
             }
-            
             start() { this.type(); }
-            
-            stop() {
-                if (this.typeTimeout) clearTimeout(this.typeTimeout);
-            }
-            
+            stop() { if (this.typeTimeout) clearTimeout(this.typeTimeout); }
             type() {
                 const text = this.statements[this.index];
                 if (this.isDeleting) {
@@ -179,49 +175,45 @@
             recruiter: {
                 hero: ["Find top talent that matters", "Build teams that win", "Invest in the right people"],
                 aboutTitle: "My Professional Profile",
-                about: '<p class="section-intro">Mathematics and Computer Science student with proven expertise in AI/ML, Networking, SQL, UX/UI, and Cybersecurity.</p>',
+                about: '<p class="section-intro">Mathematics and Computer Science student with expertise in AI/ML, Networking, SQL, UX/UI, and Cybersecurity. I deliver enterprise-grade solutions with immediate measurable value.</p>',
                 experienceTitle: "Professional Background",
-                experience: '<div class="exp-card"><h3>IT Attachee - Total Energies</h3><p style="color: #0066ff;">23rd June - 5th Sept 2025</p><ul><li>Managed IT systems for 25+ users</li><li>Network infrastructure maintenance</li><li>Cybersecurity configurations</li></ul></div>',
+                experience: '<div class="exp-card"><h3>IT Attachee - Total Energies</h3><p>23rd June 2025 - 5th September 2025</p><ul><li>Managed IT systems for 25+ users</li><li>Diagnosed and resolved hardware/software issues</li><li>Maintained network infrastructure and security</li></ul></div><div class="exp-card"><h3>IT Support Volunteer - Community Youth Center</h3><p>2024 (Ongoing)</p><ul><li>Trained 30+ young people in IT skills</li><li>Designed network infrastructure</li><li>Implemented cybersecurity best practices</li></ul></div>',
                 skillsTitle: "Core Competencies",
-                skills: '<div class="skill-card"><h4>💡 AI/ML & Analytics</h4><p>Machine Learning, NLP, Data Analysis</p></div><div class="skill-card"><h4>🔐 Infrastructure & Security</h4><p>Network Admin, Cybersecurity</p></div>',
-                projects: '<a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-card"><h3>Network Monitoring Dashboard</h3><p>Real-time network monitoring</p></a>'
+                skills: '<div class="skill-card"><h4>💡 AI/ML & Analytics</h4><p>Machine Learning, NLP, Predictive Modeling, Data Analysis</p></div><div class="skill-card"><h4>🔐 Infrastructure & Security</h4><p>Network Admin, Cybersecurity, System Administration</p></div><div class="skill-card"><h4>💻 Programming</h4><p>Python, C++, HTML, CSS, SQL, R, MATLAB, JavaScript</p></div><div class="skill-card"><h4>📈 Business Intelligence</h4><p>Power BI, Excel, Database Design, CRUD Operations</p></div>',
+                projects: '<div class="project-card"><h3>Network Monitoring Dashboard</h3><p>Enterprise real-time monitoring system</p><p><strong>Tech:</strong> Python, Networking</p><a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="github-btn">View on GitHub</a></div><div class="project-card"><h3>AI Resume Analyzer</h3><p>Intelligent talent screening using ML and NLP</p><p><strong>Tech:</strong> Python, AI/ML</p><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="github-btn">View on GitHub</a></div><div class="project-card"><h3>Inventory Management System</h3><p>Efficient inventory tracking system</p><p><strong>Tech:</strong> HTML, SQL</p><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="github-btn">View on GitHub</a></div><div class="project-card"><h3>Cybersecurity Threat Detection</h3><p>ML-based threat detection system</p><p><strong>Tech:</strong> Python, AI/ML</p><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat-detection" target="_blank" class="github-btn">View on GitHub</a></div><div class="project-card"><h3>ML-Powered Finance Assistant</h3><p>Intelligent budgeting with predictive analysis</p><p><strong>Tech:</strong> JavaScript, AI/ML</p><a href="https://github.com/WangilaWakhongola/ML-Powered-Personal-Finance-Assistant" target="_blank" class="github-btn">View on GitHub</a></div><div class="project-card"><h3>Tailwind Beginners Toolkit</h3><p>Educational TailwindCSS resource</p><p><strong>Tech:</strong> HTML, Tailwind CSS</p><a href="https://github.com/WangilaWakhongola/Tailwind-Beginners-Toolkit" target="_blank" class="github-btn">View on GitHub</a></div>'
             },
             developer: {
                 hero: ["Solve complex problems elegantly", "Architecture that scales", "Build systems that last"],
-                aboutTitle: "About My Development",
-                about: '<p class="section-intro">Passionate developer focused on clean architecture and performance optimization.</p>',
+                aboutTitle: "About My Development Philosophy",
+                about: '<p class="section-intro">Passionate developer obsessed with clean architecture and performance. I write maintainable, scalable code that\'s a pleasure to work with.</p>',
                 experienceTitle: "Development Experience",
-                experience: '<div class="exp-card"><h3>IT Attachee - Total Energies</h3><p style="color: #0066ff;">23rd June - 5th Sept 2025</p><ul><li>System administration</li><li>Network management</li></ul></div>',
-                skillsTitle: "Technical Stack",
-                skills: '<div class="skill-card"><h4>🐍 Python</h4><p>Flask, Django, Data Processing</p></div><div class="skill-card"><h4>🤖 AI/ML</h4><p>Neural Networks, TensorFlow</p></div>',
-                projects: '<a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-card"><h3>AI Resume Analyzer</h3><p>NLP-powered screening</p></a>'
+                experience: '<div class="exp-card"><h3>IT Attachee - Total Energies</h3><p>23rd June 2025 - 5th September 2025</p><ul><li>Managed IT systems for 25+ users</li><li>Diagnosed and resolved hardware/software issues</li><li>Maintained network infrastructure and security</li></ul></div><div class="exp-card"><h3>IT Support Volunteer - Community Youth Center</h3><p>2024 (Ongoing)</p><ul><li>Trained 30+ young people in IT skills</li><li>Designed network infrastructure</li><li>Implemented cybersecurity best practices</li></ul></div>',
+                skills: '<div class="skill-card"><h4>🐍 Python Ecosystem</h4><p>Flask, Django, NumPy, Pandas, APIs, Web Development</p></div><div class="skill-card"><h4>🌐 Network & Systems</h4><p>Configuration, System Admin, API Integration, TCP/IP</p></div><div class="skill-card"><h4>🗄️ Database Architecture</h4><p>SQL Optimization, Database Design, CRUD Operations</p></div><div class="skill-card"><h4>🤖 AI/ML Stack</h4><p>ML Algorithms, NLP, Neural Networks, Data Science</p></div>',
+                projects: '<div class="project-card"><h3>Network Monitoring Dashboard</h3><p>Real-time system with Python backend</p><p><strong>Tech:</strong> Python, Networking</p><a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="github-btn">View on GitHub</a></div><div class="project-card"><h3>AI Resume Analyzer</h3><p>NLP-powered intelligent algorithms</p><p><strong>Tech:</strong> Python, AI/ML, NLP</p><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="github-btn">View on GitHub</a></div><div class="project-card"><h3>Inventory Management System</h3><p>Full-stack solution with optimized queries</p><p><strong>Tech:</strong> HTML, SQL</p><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="github-btn">View on GitHub</a></div><div class="project-card"><h3>Cybersecurity Threat Detection</h3><p>AI-powered detection with real-time analysis</p><p><strong>Tech:</strong> Python, AI/ML</p><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat-detection" target="_blank" class="github-btn">View on GitHub</a></div><div class="project-card"><h3>ML-Powered Finance Assistant</h3><p>JavaScript ML model integration with analytics</p><p><strong>Tech:</strong> JavaScript, AI/ML, Frontend</p><a href="https://github.com/WangilaWakhongola/ML-Powered-Personal-Finance-Assistant" target="_blank" class="github-btn">View on GitHub</a></div><div class="project-card"><h3>Tailwind Beginners Toolkit</h3><p>Responsive design patterns and components</p><p><strong>Tech:</strong> HTML, Tailwind CSS</p><a href="https://github.com/WangilaWakhongola/Tailwind-Beginners-Toolkit" target="_blank" class="github-btn">View on GitHub</a></div>'
             },
             client: {
                 hero: ["Your success is my mission", "From concept to reality", "Elevate your business"],
-                aboutTitle: "How I Help Businesses",
-                about: '<p class="section-intro">Transform business challenges into competitive advantages through AI automation and custom solutions.</p>',
-                experienceTitle: "Project Experience",
-                experience: '<div class="exp-card"><h3>IT Attachee - Total Energies</h3><p style="color: #0066ff;">23rd June - 5th Sept 2025</p><ul><li>Enterprise IT management</li><li>System reliability</li></ul></div>',
-                skillsTitle: "Solution Areas",
-                skills: '<div class="skill-card"><h4>🤖 AI Automation</h4><p>Process Automation, ML Models</p></div><div class="skill-card"><h4>🔨 Custom Development</h4><p>Full-Stack Solutions</p></div>',
-                projects: '<a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-card"><h3>Inventory System</h3><p>Efficiency improvement</p></a>'
+                aboutTitle: "How I Help Businesses Succeed",
+                about: '<p class="section-intro">I transform business challenges into competitive advantages. Specializing in AI automation, custom software solutions, and intelligent systems for measurable results.</p>',
+                experienceTitle: "Project & Business Experience",
+                experience: '<div class="exp-card"><h3>IT Attachee - Total Energies</h3><p>23rd June 2025 - 5th September 2025</p><ul><li>Managed IT systems for 25+ users</li><li>Diagnosed and resolved hardware/software issues</li><li>Maintained network infrastructure and security</li></ul></div><div class="exp-card"><h3>IT Support Volunteer - Community Youth Center</h3><p>2024 (Ongoing)</p><ul><li>Trained 30+ young people in IT skills</li><li>Designed network infrastructure</li><li>Implemented cybersecurity best practices</li></ul></div>',
+                skills: '<div class="skill-card"><h4>🤖 AI Automation Solutions</h4><p>Process Automation, Predictive Analytics, Custom ML Models</p></div><div class="skill-card"><h4>🔨 Custom Software Development</h4><p>Full-Stack Solutions, Python Web Apps, Flask/Django</p></div><div class="skill-card"><h4>💾 Enterprise Database Solutions</h4><p>SQL Optimization, Data Management, Performance Tuning</p></div><div class="skill-card"><h4>🛡️ Infrastructure & Security</h4><p>Network Security, Scalability, Cloud Integration</p></div>',
+                projects: '<div class="project-card"><h3>Network Monitoring Dashboard</h3><p>Enterprise monitoring ensuring 99% uptime</p><p><strong>Impact:</strong> System Reliability</p><a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="github-btn">View on GitHub</a></div><div class="project-card"><h3>AI Resume Analyzer</h3><p>Automates recruitment saving 70% screening time</p><p><strong>Impact:</strong> Cost Savings</p><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="github-btn">View on GitHub</a></div><div class="project-card"><h3>Inventory Management System</h3><p>Reduces manual errors by 95%</p><p><strong>Impact:</strong> Efficiency</p><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="github-btn">View on GitHub</a></div><div class="project-card"><h3>Cybersecurity Threat Detection</h3><p>AI-powered protection for enterprise data</p><p><strong>Impact:</strong> Security</p><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat-detection" target="_blank" class="github-btn">View on GitHub</a></div><div class="project-card"><h3>ML-Powered Finance Assistant</h3><p>Improves financial decision-making</p><p><strong>Impact:</strong> Financial Optimization</p><a href="https://github.com/WangilaWakhongola/ML-Powered-Personal-Finance-Assistant" target="_blank" class="github-btn">View on GitHub</a></div><div class="project-card"><h3>Tailwind Beginners Toolkit</h3><p>Increases team productivity in CSS development</p><p><strong>Impact:</strong> Training & Development</p><a href="https://github.com/WangilaWakhongola/Tailwind-Beginners-Toolkit" target="_blank" class="github-btn">View on GitHub</a></div>'
             },
             explorer: {
                 hero: ["The future starts here", "Curiosity drives innovation", "Break barriers, build wonders"],
                 aboutTitle: "My Learning Journey",
-                about: '<p class="section-intro">Driven by curiosity and passion for innovation in emerging technologies.</p>',
-                experienceTitle: "Learning & Exploration",
-                experience: '<div class="exp-card"><h3>IT Attachee - Total Energies</h3><p style="color: #0066ff;">23rd June - 5th Sept 2025</p><ul><li>Hands-on experience</li><li>New tech exploration</li></ul></div>',
-                skillsTitle: "Exploration Areas",
-                skills: '<div class="skill-card"><h4>🧠 AI/ML</h4><p>Cutting-edge applications</p></div><div class="skill-card"><h4>🌐 Networking</h4><p>Advanced architectures</p></div>',
-                projects: '<a href="https://github.com/WangilaWakhongola/Cybersecurity-threat-detection" target="_blank" class="project-card"><h3>Threat Detection</h3><p>AI-powered security</p></a>'
+                about: '<p class="section-intro">Driven by curiosity and passion for innovation. Every project explores emerging technologies and pushes boundaries at the intersection of AI and infrastructure.</p>',
+                experienceTitle: "Exploration & Learning",
+                experience: '<div class="exp-card"><h3>IT Attachee - Total Energies</h3><p>23rd June 2025 - 5th September 2025</p><ul><li>Managed IT systems for 25+ users</li><li>Diagnosed and resolved hardware/software issues</li><li>Maintained network infrastructure and security</li></ul></div><div class="exp-card"><h3>IT Support Volunteer - Community Youth Center</h3><p>2024 (Ongoing)</p><ul><li>Trained 30+ young people in IT skills</li><li>Designed network infrastructure</li><li>Implemented cybersecurity best practices</li></ul></div>',
+                skills: '<div class="skill-card"><h4>🧠 AI/ML Exploration</h4><p>Machine Learning, NLP, Neural Networks, Data Analysis</p></div><div class="skill-card"><h4>🌐 Network Administration</h4><p>Network Configuration, TCP/IP, Security Protocols, Monitoring</p></div><div class="skill-card"><h4>🎨 Programming Adventure</h4><p>Python, C++, HTML, CSS, SQL, R, MATLAB, JavaScript</p></div><div class="skill-card"><h4>📊 Data Visualization & Tools</h4><p>Power BI, Excel, Database Design, Business Intelligence</p></div>',
+                projects: '<div class="project-card"><h3>Network Monitoring Dashboard</h3><p>Learning networking through real-time monitoring</p><p><strong>Path:</strong> Networking + Python</p><a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="github-btn">View on GitHub</a></div><div class="project-card"><h3>AI Resume Analyzer</h3><p>Exploring AI/ML and NLP capabilities</p><p><strong>Path:</strong> AI/ML + NLP</p><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="github-btn">View on GitHub</a></div><div class="project-card"><h3>Inventory Management System</h3><p>Learning backend and database architecture</p><p><strong>Path:</strong> Backend + Databases</p><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="github-btn">View on GitHub</a></div><div class="project-card"><h3>Cybersecurity Threat Detection</h3><p>Exploring cybersecurity with ML</p><p><strong>Path:</strong> Cybersecurity + AI/ML</p><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat-detection" target="_blank" class="github-btn">View on GitHub</a></div><div class="project-card"><h3>ML-Powered Finance Assistant</h3><p>Experimenting with JavaScript and ML integration</p><p><strong>Path:</strong> JavaScript + AI/ML</p><a href="https://github.com/WangilaWakhongola/ML-Powered-Personal-Finance-Assistant" target="_blank" class="github-btn">View on GitHub</a></div><div class="project-card"><h3>Tailwind Beginners Toolkit</h3><p>Learning modern CSS frameworks</p><p><strong>Path:</strong> Frontend + CSS</p><a href="https://github.com/WangilaWakhongola/Tailwind-Beginners-Toolkit" target="_blank" class="github-btn">View on GitHub</a></div>'
             }
         };
 
         function showPortfolio(type) {
             const data = portfolioData[type];
             if (currentTypewriter) currentTypewriter.stop();
-            
             document.getElementById('landingPage').style.display = 'none';
             document.getElementById('portfolioContent').classList.add('active');
             document.getElementById('aboutTitle').textContent = data.aboutTitle;
@@ -231,7 +223,6 @@
             document.getElementById('skillsTitle').textContent = data.skillsTitle;
             document.getElementById('skillsContent').innerHTML = data.skills;
             document.getElementById('projectsContent').innerHTML = data.projects;
-            
             currentTypewriter = new Typewriter(document.getElementById('heroTypewriter'), data.hero);
             currentTypewriter.start();
             window.scrollTo(0, 0);
@@ -250,12 +241,40 @@
         }
 
         function downloadCV() {
-            const link = document.createElement('a');
-            link.href = 'resume.pdf';
-            link.download = 'resume.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            // IMPORTANT: Replace this URL with your actual CV file path
+            // Examples:
+            // - Same folder: 'Emmanuel_Wakhongola_CV.pdf'
+            // - In subfolder: 'files/cv.pdf'
+            // - Online URL: 'https://example.com/cv.pdf'
+            
+            const cvPath = 'https://drive.google.com/uc?export=download&id=YOUR_FILE_ID';
+            
+            // Alternative: Use GitHub raw content
+            // const cvPath = 'https://raw.githubusercontent.com/WangilaWakhongola/your-repo/main/cv.pdf';
+            
+            // If using a local file:
+            // const cvPath = 'Emmanuel_Wakhongola_CV.pdf';
+            
+            try {
+                if (cvPath.includes('YOUR_FILE_ID') || cvPath === 'cv.pdf') {
+                    alert('📝 CV Download Setup\n\nTo enable CV downloads:\n\n1. OPTION A - Google Drive:\n   - Upload your CV to Google Drive\n   - Right-click → Share → Get link\n   - Copy file ID from URL\n   - Replace YOUR_FILE_ID in the code\n\n2. OPTION B - GitHub:\n   - Upload CV to your GitHub repo\n   - Get raw content URL\n   - Update cvPath variable\n\n3. OPTION C - Local Server:\n   - Upload CV to your hosting\n   - Set cvPath to filename');
+                    return;
+                }
+                
+                const link = document.createElement('a');
+                link.href = cvPath;
+                link.download = 'Emmanuel_Wakhongola_CV.pdf';
+                link.style.display = 'none';
+                document.body.appendChild(link);
+                link.click();
+                
+                setTimeout(() => {
+                    document.body.removeChild(link);
+                }, 100);
+            } catch (error) {
+                console.error('Download error:', error);
+                alert('Error downloading CV. Please try again or contact support.');
+            }
         }
     </script>
 </body>
