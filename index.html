@@ -241,11 +241,11 @@
         }
 
         function downloadCV() {
-            // GitHub raw content URL for Resume.pdf
-            const cvPath = 'https://raw.githubusercontent.com/WangilaWakhongola/portfolio/main/Resume.pdf';
+            // Direct download from GitHub repository
+            const cvUrl = 'https://github.com/WangilaWakhongola/MyPortfolio/raw/main/Resume.pdf';
             
             const link = document.createElement('a');
-            link.href = cvPath;
+            link.href = cvUrl;
             link.download = 'Resume.pdf';
             document.body.appendChild(link);
             link.click();
