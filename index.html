@@ -7,316 +7,1084 @@
 <meta property="og:title" content="Emmanuel W. Wakhongola | AI/ML & Tech Portfolio">
 <meta property="og:description" content="Mathematics & CS student building intelligent, secure, and user-friendly systems.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://wakhongola.netlify.app/">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="description" content="Emmanuel W. Wakhongola – AI/ML, Networking, Cybersecurity, Python developer based in Kenya.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%230066ff'/><stop offset='100%25' stop-color='%2300c6ff'/></linearGradient></defs><rect width='100' height='100' rx='22' fill='url(%23g)'/><text x='50' y='68' font-family='Arial Black,sans-serif' font-size='52' font-weight='900' fill='white' text-anchor='middle'>EW</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz@9..144&family=Crimson+Text:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ── VARIABLES ── */
-:root{
-  --bg:#060d1a;--bg2:#0c1525;--bg3:#101d30;
-  --accent:#00c6ff;--accent2:#0066ff;--accent3:#7b2fff;
-  --text:#e8f0fe;--muted:#7a8fb5;
-  --card:rgba(255,255,255,0.04);--border:rgba(0,198,255,0.15);
-  --glow:0 0 40px rgba(0,198,255,0.15);
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;}
-body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:linear-gradient(rgba(0,198,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,198,255,0.03) 1px,transparent 1px);
-  background-size:60px 60px;}
-body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
-  background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(0,102,255,0.12) 0%,transparent 70%);}
-body.light{--bg:#f0f4ff;--bg2:#e4ebff;--bg3:#dce5ff;--text:#0c1525;--muted:#4a5a80;--card:rgba(0,0,0,0.04);--border:rgba(0,102,255,0.2);}
-body.light::before{background-image:linear-gradient(rgba(0,102,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,102,255,0.05) 1px,transparent 1px);}
-body.light::after{background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(0,102,255,0.08) 0%,transparent 70%);}
+/* ═══════════════════════════════════════════════════════════════════ */
+/*  WARM BRUTALIST PORTFOLIO — Organic, Intentional, Human              */
+/* ═══════════════════════════════════════════════════════════════════ */
 
-/* ── ANIMATIONS ── */
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
-@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
-@keyframes blink{from,to{border-color:transparent}50%{border-color:var(--accent)}}
-@keyframes twBlink{0%,100%{opacity:1}50%{opacity:0}}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
-@keyframes wave{0%,100%{transform:rotate(0deg)}20%{transform:rotate(20deg)}40%{transform:rotate(-10deg)}60%{transform:rotate(16deg)}80%{transform:rotate(-8deg)}}
+:root {
+  /* Warm earth palette */
+  --bg-primary: #faf8f3;
+  --bg-secondary: #f3ede6;
+  --text-primary: #2c2520;
+  --text-muted: #6b6259;
+  --accent-warm: #c97d60;
+  --accent-dark: #8b5a3c;
+  --accent-sage: #7a8b6f;
+  --border-soft: rgba(43,37,32,0.08);
+  --shadow-soft: 0 4px 12px rgba(43,37,32,0.06);
+  --shadow-md: 0 12px 32px rgba(43,37,32,0.12);
+}
+
+body.light {
+  --bg-primary: #2c2520;
+  --bg-secondary: #3d3530;
+  --text-primary: #f5f1ec;
+  --text-muted: #c9bfb3;
+  --border-soft: rgba(245,241,236,0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background 0.3s ease;
+}
+
+/* Typography hierarchy */
+h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 700; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2em, 8vw, 4em); line-height: 1.1; }
+h2 { font-size: clamp(1.6em, 5vw, 2.6em); }
+h3 { font-size: 1.3em; }
+h4 { font-size: 1em; }
+
+.serif { font-family: 'Crimson Text', serif; }
+
+/* ── UTILITIES ── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
+.section { padding: 100px 0; position: relative; }
+.fade-in { opacity: 0; transform: translateY(20px); }
+.fade-in.visible { opacity: 1; transform: translateY(0); transition: all 0.7s ease-out; }
 
 /* ── THEME TOGGLE ── */
-.theme-toggle{position:fixed;top:22px;right:20px;z-index:9999;background:var(--card);border:1px solid var(--border);border-radius:50px;padding:7px 14px;cursor:pointer;font-size:0.8em;color:var(--muted);transition:all 0.3s;backdrop-filter:blur(10px);}
-.theme-toggle:hover{color:var(--accent);border-color:var(--accent);}
+.theme-toggle {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 9999;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-soft);
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85em;
+  color: var(--text-muted);
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  transition: all 0.3s;
+}
 
-/* ── LANDING ── */
-.landing-page{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:40px 20px;position:relative;z-index:1;}
+.theme-toggle:hover {
+  color: var(--accent-warm);
+  border-color: var(--accent-warm);
+}
 
-/* eyebrow typewriter — "Mimi Ndio Wakhongola" */
-.landing-eyebrow{font-family:'Syne',sans-serif;font-size:0.82em;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;min-height:1.4em;opacity:0;animation:fadeUp 0.6s ease forwards 0.2s;display:flex;align-items:center;gap:3px;}
-.landing-eyebrow .tw-cur{display:inline-block;width:2px;height:0.9em;background:var(--accent);margin-left:2px;vertical-align:middle;animation:twBlink 0.7s step-end infinite;}
+/* ═══════════════════════════════════════════════════════════════════ */
+/*  LANDING PAGE                                                        */
+/* ═══════════════════════════════════════════════════════════════════ */
+.landing-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 28px;
+  text-align: center;
+  position: relative;
+}
 
-/* welcome typewriter — "Hello there — glad you stopped by!" */
-.landing-welcome{margin-bottom:20px;opacity:0;animation:fadeUp 0.6s ease forwards 0.35s;display:flex;align-items:center;gap:8px;}
-.welcome-wave{font-size:1.4em;display:inline-block;animation:wave 1.8s ease-in-out 1s 3;}
-.welcome-tw{font-family:'Syne',sans-serif;font-size:1.1em;font-weight:600;color:var(--text);display:flex;align-items:center;}
-.welcome-tw .tw-cur{display:inline-block;width:2px;height:1em;background:var(--text);margin-left:3px;vertical-align:middle;animation:twBlink 0.7s step-end infinite;}
+.landing-page::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,125,96,0.08), transparent);
+  pointer-events: none;
+}
 
-.landing-page h1{font-family:'Syne',sans-serif;font-size:clamp(2.4em,6vw,4.5em);font-weight:800;text-align:center;line-height:1.1;background:linear-gradient(135deg,#ffffff 0%,var(--accent) 60%,var(--accent2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:0;animation:fadeUp 0.7s ease forwards 0.5s;}
-.landing-sub{font-size:1.05em;color:var(--muted);margin:14px 0 52px;opacity:0;animation:fadeUp 0.7s ease forwards 0.7s;}
-.cards-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:960px;width:100%;opacity:0;animation:fadeUp 0.8s ease forwards 0.9s;}
-.viewer-card{backdrop-filter:blur(12px);border-radius:24px;padding:44px 28px;text-align:center;cursor:pointer;transition:all 0.35s cubic-bezier(0.34,1.56,0.64,1);position:relative;overflow:hidden;border:1px solid transparent;}
-.viewer-card::after{content:'';position:absolute;inset:0;border-radius:24px;opacity:0;transition:opacity 0.3s;}
-.viewer-card:hover{transform:translateY(-10px) scale(1.03);}
-.viewer-card:hover::after{opacity:1;}
-.viewer-card .icon{font-size:3em;margin-bottom:16px;display:block;transition:transform 0.3s;}
-.viewer-card:hover .icon{transform:scale(1.15) rotate(-5deg);}
-.viewer-card h2{font-family:'Syne',sans-serif;font-size:1.25em;font-weight:700;}
-.viewer-card p{font-size:0.8em;margin-top:6px;opacity:0.8;}
-.viewer-card .card-tag{display:inline-block;font-size:0.65em;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:3px 10px;border-radius:50px;margin-bottom:14px;}
+.landing-eyebrow {
+  font-family: 'Fraunces', serif;
+  font-size: 0.8em;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  margin-bottom: 16px;
+  font-weight: 600;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 0.1s;
+}
 
-/* Recruiter — blue */
-.card-recruiter{background:linear-gradient(145deg,rgba(0,102,255,0.12),rgba(0,198,255,0.05));border-color:rgba(0,102,255,0.3);}
-.card-recruiter::after{background:radial-gradient(circle at 50% 0%,rgba(0,102,255,0.18),transparent 70%);}
-.card-recruiter:hover{border-color:rgba(0,102,255,0.7);box-shadow:0 20px 50px rgba(0,102,255,0.25);}
-.card-recruiter h2{color:#60a5fa;}
-.card-recruiter p{color:#93c5fd;}
-.card-recruiter .card-tag{background:rgba(0,102,255,0.15);color:#60a5fa;border:1px solid rgba(0,102,255,0.3);}
+.landing-welcome {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.3em;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 32px;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 0.2s;
+}
 
-/* Developer — cyan */
-.card-developer{background:linear-gradient(145deg,rgba(0,198,255,0.12),rgba(0,198,255,0.04));border-color:rgba(0,198,255,0.25);}
-.card-developer::after{background:radial-gradient(circle at 50% 0%,rgba(0,198,255,0.2),transparent 70%);}
-.card-developer:hover{border-color:rgba(0,198,255,0.7);box-shadow:0 20px 50px rgba(0,198,255,0.2);}
-.card-developer h2{color:#00c6ff;}
-.card-developer p{color:#7dd3fc;}
-.card-developer .card-tag{background:rgba(0,198,255,0.1);color:#00c6ff;border:1px solid rgba(0,198,255,0.25);}
+.landing-page h1 {
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-warm) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards 0.35s;
+}
 
-/* Client — green */
-.card-client{background:linear-gradient(145deg,rgba(0,208,84,0.1),rgba(0,208,84,0.03));border-color:rgba(0,208,84,0.25);}
-.card-client::after{background:radial-gradient(circle at 50% 0%,rgba(0,208,84,0.18),transparent 70%);}
-.card-client:hover{border-color:rgba(0,208,84,0.6);box-shadow:0 20px 50px rgba(0,208,84,0.2);}
-.card-client h2{color:#4ade80;}
-.card-client p{color:#86efac;}
-.card-client .card-tag{background:rgba(0,208,84,0.1);color:#4ade80;border:1px solid rgba(0,208,84,0.25);}
+.landing-sub {
+  font-size: 1.05em;
+  color: var(--text-muted);
+  margin-bottom: 50px;
+  max-width: 480px;
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards 0.45s;
+}
 
-/* Explorer — purple */
-.card-explorer{background:linear-gradient(145deg,rgba(123,47,255,0.14),rgba(123,47,255,0.04));border-color:rgba(123,47,255,0.3);}
-.card-explorer::after{background:radial-gradient(circle at 50% 0%,rgba(123,47,255,0.22),transparent 70%);}
-.card-explorer:hover{border-color:rgba(123,47,255,0.7);box-shadow:0 20px 50px rgba(123,47,255,0.25);}
-.card-explorer h2{color:#c084fc;}
-.card-explorer p{color:#d8b4fe;}
-.card-explorer .card-tag{background:rgba(123,47,255,0.12);color:#c084fc;border:1px solid rgba(123,47,255,0.3);}
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  width: 100%;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.55s;
+}
 
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;background:rgba(6,13,26,0.85);backdrop-filter:blur(16px);padding:16px 40px;display:flex;justify-content:space-between;align-items:center;z-index:1000;border-bottom:1px solid var(--border);}
-body.light nav{background:rgba(240,244,255,0.88);}
-.logo{font-family:'Syne',sans-serif;font-size:1.1em;font-weight:700;color:var(--accent);cursor:pointer;letter-spacing:0.05em;}
-.nav-links{display:flex;gap:28px;list-style:none;}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:0.9em;font-weight:500;cursor:pointer;transition:color 0.2s;padding-bottom:3px;border-bottom:2px solid transparent;}
-.nav-links a:hover,.nav-links a.active{color:var(--accent);border-bottom-color:var(--accent);}
-.nav-burger{display:none;background:none;border:none;cursor:pointer;color:var(--text);font-size:1.4em;}
+.viewer-card {
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-soft);
+  border-radius: 2px;
+  padding: 40px 28px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
 
-/* ── PORTFOLIO ── */
-.portfolio-content{display:none;position:relative;z-index:1;}
-.portfolio-content.active{display:block;}
+.viewer-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-warm);
+  box-shadow: var(--shadow-md);
+}
 
-/* ── HERO ── */
-.hero-section{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:140px 40px 80px;text-align:center;}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,198,255,0.08);border:1px solid rgba(0,198,255,0.3);border-radius:50px;padding:6px 18px;font-size:0.8em;color:var(--accent);margin-bottom:28px;letter-spacing:0.1em;}
-.hero-badge::before{content:'●';font-size:0.7em;animation:pulse 2s infinite;}
-.hero-tagline{font-family:'Syne',sans-serif;font-size:1.15em;color:var(--accent);margin-bottom:24px;min-height:40px;}
-.typewriter{border-right:2px solid var(--accent);animation:blink 0.7s step-end infinite;padding-right:4px;}
-.hero-name{font-family:'Syne',sans-serif;font-size:clamp(2.2em,6vw,4.5em);font-weight:800;line-height:1.05;margin-bottom:16px;color:var(--text);}
-.hero-name span{color:var(--accent);}
-.hero-subtitle{font-size:0.95em;color:var(--muted);margin-bottom:44px;max-width:620px;line-height:1.7;}
-.skill-pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:44px;}
-.pill{background:var(--card);border:1px solid var(--border);border-radius:50px;padding:6px 16px;font-size:0.8em;color:var(--muted);transition:all 0.2s;}
-.pill:hover{color:var(--accent);border-color:var(--accent);}
-.contact-buttons{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
-.btn-primary{background:linear-gradient(135deg,var(--accent2),var(--accent));color:#060d1a;padding:13px 30px;border-radius:50px;text-decoration:none;font-weight:700;font-size:0.9em;transition:all 0.3s;display:inline-flex;align-items:center;gap:8px;box-shadow:0 4px 20px rgba(0,102,255,0.35);}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,102,255,0.5);}
-.btn-outline{background:transparent;border:1px solid var(--border);color:var(--text);padding:13px 26px;border-radius:50px;text-decoration:none;font-weight:500;font-size:0.9em;transition:all 0.3s;display:inline-flex;align-items:center;gap:8px;}
-.btn-outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
-.scroll-hint{margin-top:60px;color:var(--muted);font-size:0.8em;display:flex;flex-direction:column;align-items:center;gap:8px;animation:bounce 2s ease-in-out infinite;}
-.scroll-hint span{font-size:1.4em;}
+.viewer-card .icon {
+  font-size: 3.2em;
+  margin-bottom: 16px;
+  display: block;
+}
 
-/* ── SECTIONS ── */
-.container{max-width:1100px;margin:0 auto;padding:0 24px 100px;}
-.section{margin:80px 0;}
-.section-header{display:flex;align-items:baseline;gap:16px;margin-bottom:48px;}
-.section-num{font-family:'Syne',sans-serif;font-size:0.75em;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;white-space:nowrap;}
-.section-title{font-family:'Syne',sans-serif;font-size:2em;font-weight:800;color:var(--text);}
-.section-line{flex:1;height:1px;background:var(--border);margin-left:16px;}
+.viewer-card h2 {
+  font-size: 1.15em;
+  margin-bottom: 8px;
+  color: var(--accent-warm);
+}
 
-/* ── ABOUT ── */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
-.about-text{color:var(--muted);line-height:1.9;font-size:0.97em;}
-.about-text p{margin-bottom:16px;}
-.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-.stat-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;text-align:center;transition:all 0.3s;}
-.stat-box:hover{border-color:var(--accent);box-shadow:var(--glow);}
-.stat-num{font-family:'Syne',sans-serif;font-size:2.2em;font-weight:800;color:var(--accent);}
-.stat-label{font-size:0.78em;color:var(--muted);margin-top:4px;}
+.viewer-card p {
+  font-size: 0.9em;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.viewer-card .card-tag {
+  display: inline-block;
+  font-size: 0.7em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border: 1px solid var(--border-soft);
+  border-radius: 2px;
+  margin-bottom: 14px;
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════ */
+/*  NAVIGATION                                                          */
+/* ═══════════════════════════════════════════════════════════════════ */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(250,248,243,0.95);
+  backdrop-filter: blur(10px);
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+body.light nav {
+  background: rgba(44,37,32,0.95);
+}
+
+.logo {
+  font-family: 'Fraunces', serif;
+  font-size: 1.2em;
+  font-weight: 700;
+  color: var(--accent-warm);
+  cursor: pointer;
+  letter-spacing: -0.02em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 4px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent-warm);
+  border-bottom-color: var(--accent-warm);
+}
+
+.nav-burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-primary);
+  font-size: 1.4em;
+}
+
+/* ═══════════════════════════════════════════════════════════════════ */
+/*  PORTFOLIO CONTENT                                                   */
+/* ═══════════════════════════════════════════════════════════════════ */
+.portfolio-content {
+  display: none;
+}
+
+.portfolio-content.active {
+  display: block;
+}
+
+/* ── HERO SECTION ── */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 160px 40px 100px;
+  text-align: center;
+  position: relative;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(201,125,96,0.1);
+  border: 1px solid var(--border-soft);
+  border-radius: 4px;
+  padding: 8px 18px;
+  font-size: 0.8em;
+  color: var(--accent-warm);
+  margin-bottom: 32px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.hero-tagline {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.4em;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  min-height: 50px;
+}
+
+.hero-name {
+  margin-bottom: 24px;
+  color: var(--text-primary);
+}
+
+.hero-name span {
+  color: var(--accent-warm);
+}
+
+.hero-subtitle {
+  font-size: 1.05em;
+  color: var(--text-muted);
+  margin-bottom: 48px;
+  max-width: 640px;
+  line-height: 1.8;
+}
+
+.skill-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.pill {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-soft);
+  border-radius: 4px;
+  padding: 8px 18px;
+  font-size: 0.85em;
+  color: var(--text-muted);
+  transition: all 0.2s;
+}
+
+.pill:hover {
+  color: var(--accent-warm);
+  border-color: var(--accent-warm);
+  background: rgba(201,125,96,0.05);
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 64px;
+}
+
+.btn-primary {
+  background: var(--accent-warm);
+  color: white;
+  padding: 12px 32px;
+  border-radius: 2px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9em;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--border-soft);
+  color: var(--text-primary);
+  padding: 10px 28px;
+  border-radius: 2px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9em;
+  transition: all 0.3s;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+}
+
+.btn-outline:hover {
+  border-color: var(--accent-warm);
+  color: var(--accent-warm);
+  transform: translateY(-2px);
+}
+
+.scroll-hint {
+  margin-top: 60px;
+  color: var(--text-muted);
+  font-size: 0.85em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* ── SECTION HEADERS ── */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.section-num {
+  font-family: 'Fraunces', serif;
+  font-size: 0.9em;
+  color: var(--accent-warm);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.section-title {
+  white-space: nowrap;
+}
+
+.section-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border-soft);
+}
+
+/* ── ABOUT SECTION ── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.about-text {
+  color: var(--text-muted);
+  line-height: 1.9;
+  font-size: 1.05em;
+}
+
+.about-text p {
+  margin-bottom: 18px;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.stat-box {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-soft);
+  border-radius: 2px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.stat-box:hover {
+  border-color: var(--accent-warm);
+  box-shadow: var(--shadow-soft);
+}
+
+.stat-num {
+  font-family: 'Fraunces', serif;
+  font-size: 2.4em;
+  font-weight: 700;
+  color: var(--accent-warm);
+}
+
+.stat-label {
+  font-size: 0.8em;
+  color: var(--text-muted);
+  margin-top: 6px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
 
 /* ── EXPERIENCE ── */
-.timeline{position:relative;padding-left:28px;}
-.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,var(--accent2),transparent);}
-.exp-card{position:relative;margin-bottom:36px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;transition:all 0.3s;}
-.exp-card::before{content:'';position:absolute;left:-34px;top:28px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--bg),0 0 12px var(--accent);}
-.exp-card:hover{border-color:var(--accent);transform:translateX(4px);}
-.exp-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:8px;}
-.exp-title{font-family:'Syne',sans-serif;font-size:1.1em;font-weight:700;color:var(--text);}
-.exp-date{font-size:0.78em;color:var(--accent);background:rgba(0,198,255,0.08);border:1px solid rgba(0,198,255,0.2);padding:4px 12px;border-radius:50px;white-space:nowrap;}
-.exp-company{font-size:0.88em;color:var(--muted);margin-bottom:14px;}
-.exp-list{list-style:none;}
-.exp-list li{font-size:0.88em;color:var(--muted);padding:5px 0 5px 18px;position:relative;line-height:1.6;}
-.exp-list li::before{content:'→';position:absolute;left:0;color:var(--accent);}
+.timeline {
+  position: relative;
+  padding-left: 0;
+}
+
+.exp-card {
+  position: relative;
+  margin-bottom: 48px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-soft);
+  border-radius: 2px;
+  padding: 32px;
+  transition: all 0.3s;
+  border-left: 4px solid var(--accent-warm);
+}
+
+.exp-card:hover {
+  box-shadow: var(--shadow-soft);
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.exp-title {
+  font-size: 1.15em;
+  font-weight: 700;
+  color: var(--accent-warm);
+}
+
+.exp-date {
+  font-size: 0.75em;
+  color: var(--text-muted);
+  background: rgba(201,125,96,0.05);
+  border: 1px solid var(--border-soft);
+  padding: 4px 12px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.exp-company {
+  font-size: 0.9em;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.exp-list {
+  list-style: none;
+}
+
+.exp-list li {
+  font-size: 0.9em;
+  color: var(--text-muted);
+  padding: 6px 0 6px 20px;
+  position: relative;
+  line-height: 1.7;
+}
+
+.exp-list li::before {
+  content: '▪';
+  position: absolute;
+  left: 0;
+  color: var(--accent-warm);
+  font-size: 0.6em;
+}
 
 /* ── SKILLS ── */
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
-.skill-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;transition:all 0.3s;position:relative;overflow:hidden;}
-.skill-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--accent));transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
-.skill-card:hover{border-color:var(--accent);box-shadow:var(--glow);}
-.skill-card:hover::before{transform:scaleX(1);}
-.skill-icon{font-size:2em;margin-bottom:12px;}
-.skill-card h4{font-family:'Syne',sans-serif;font-size:1em;font-weight:700;margin-bottom:10px;color:var(--text);}
-.skill-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
-.skill-tag{background:rgba(0,198,255,0.06);border:1px solid rgba(0,198,255,0.15);border-radius:6px;padding:3px 10px;font-size:0.74em;color:var(--muted);}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.skill-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-soft);
+  border-radius: 2px;
+  padding: 32px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.skill-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent-warm);
+  border-radius: 2px 2px 0 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+
+.skill-card:hover {
+  box-shadow: var(--shadow-soft);
+  border-color: var(--accent-warm);
+}
+
+.skill-card:hover::after {
+  transform: scaleX(1);
+}
+
+.skill-icon {
+  font-size: 2.2em;
+  margin-bottom: 14px;
+}
+
+.skill-card h4 {
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.skill-tag {
+  background: rgba(201,125,96,0.05);
+  border: 1px solid var(--border-soft);
+  border-radius: 2px;
+  padding: 4px 12px;
+  font-size: 0.75em;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
 
 /* ── PROJECTS ── */
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;}
-.project-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px;transition:all 0.35s;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden;}
-.project-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to top,rgba(0,198,255,0.05),transparent);opacity:0;transition:opacity 0.3s;}
-.project-card:hover{border-color:var(--accent);transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,198,255,0.12);}
-.project-card:hover::after{opacity:1;}
-.project-header{display:flex;justify-content:space-between;align-items:flex-start;}
-.project-icon{font-size:2em;}
-.project-links{display:flex;gap:8px;}
-.project-link{background:rgba(0,198,255,0.08);border:1px solid var(--border);color:var(--muted);padding:6px 14px;border-radius:8px;font-size:0.78em;text-decoration:none;font-weight:600;transition:all 0.2s;display:flex;align-items:center;gap:4px;cursor:pointer;}
-.project-link:hover{background:var(--accent2);color:white;border-color:var(--accent2);}
-.project-card h3{font-family:'Syne',sans-serif;font-size:1.1em;font-weight:700;color:var(--text);}
-.project-desc{font-size:0.87em;color:var(--muted);line-height:1.7;}
-.project-footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-top:auto;}
-.project-tech{display:flex;flex-wrap:wrap;gap:6px;}
-.tech-tag{background:rgba(123,47,255,0.1);border:1px solid rgba(123,47,255,0.25);color:#b388ff;border-radius:6px;padding:3px 10px;font-size:0.74em;}
-.project-impact{font-size:0.78em;color:var(--accent);font-weight:600;}
-.project-link.demo-btn{background:linear-gradient(135deg,rgba(0,102,255,0.25),rgba(0,198,255,0.15));border-color:var(--accent);color:var(--accent);}
-.project-link.demo-btn:hover{background:linear-gradient(135deg,var(--accent2),var(--accent));color:#060d1a;}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 28px;
+}
 
-/* ── CV ── */
-.cv-section{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:60px;text-align:center;}
-.cv-section h3{font-family:'Syne',sans-serif;font-size:1.6em;font-weight:800;margin-bottom:12px;}
-.cv-section p{color:var(--muted);margin-bottom:32px;}
-.cv-counter{display:inline-block;font-size:0.8em;color:var(--muted);margin-top:16px;}
+.project-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-soft);
+  border-radius: 2px;
+  padding: 36px;
+  transition: all 0.35s;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+.project-card:hover {
+  border-color: var(--accent-warm);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.project-icon {
+  font-size: 2.2em;
+}
+
+.project-links {
+  display: flex;
+  gap: 10px;
+}
+
+.project-link {
+  background: rgba(201,125,96,0.05);
+  border: 1px solid var(--border-soft);
+  color: var(--text-muted);
+  padding: 6px 14px;
+  border-radius: 2px;
+  font-size: 0.75em;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.project-link:hover {
+  background: var(--accent-warm);
+  color: white;
+  border-color: var(--accent-warm);
+}
+
+.project-card h3 {
+  margin: 8px 0;
+  font-size: 1.2em;
+  color: var(--accent-warm);
+}
+
+.project-desc {
+  font-size: 0.9em;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.project-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-tag {
+  background: rgba(122,139,111,0.08);
+  border: 1px solid var(--border-soft);
+  color: var(--accent-sage);
+  border-radius: 2px;
+  padding: 3px 10px;
+  font-size: 0.7em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.project-impact {
+  font-size: 0.75em;
+  color: var(--accent-warm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── CV SECTION ── */
+.cv-section {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-soft);
+  border-radius: 2px;
+  padding: 60px;
+  text-align: center;
+}
+
+.cv-section h3 {
+  margin-bottom: 14px;
+  color: var(--accent-warm);
+}
+
+.cv-section p {
+  color: var(--text-muted);
+  margin-bottom: 32px;
+  font-size: 1.05em;
+}
 
 /* ── CONTACT ── */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
-.contact-info h3{font-family:'Syne',sans-serif;font-size:1.5em;font-weight:800;margin-bottom:12px;}
-.contact-info p{color:var(--muted);line-height:1.8;font-size:0.95em;margin-bottom:28px;}
-.contact-links{display:flex;flex-direction:row;gap:14px;}
-.contact-item{display:inline-flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--border);border-radius:16px;width:68px;height:68px;flex-shrink:0;text-decoration:none;transition:all 0.3s;}
-.contact-item:hover{border-color:var(--accent);transform:translateY(-5px);box-shadow:var(--glow);}
-.contact-item .ci-icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;transition:transform 0.2s;}
-.contact-item:hover .ci-icon{transform:scale(1.1);}
-.contact-item .ci-icon svg{width:26px;height:26px;display:block;}
-.ci-icon.whatsapp{background:#25d366;box-shadow:0 4px 16px rgba(37,211,102,0.4);}
-.ci-icon.gmail{background:#ffffff;box-shadow:0 4px 16px rgba(234,67,53,0.3);}
-.ci-icon.github{background:#24292e;box-shadow:0 4px 16px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.08);}
-.availability{background:linear-gradient(135deg,rgba(0,198,255,0.1),rgba(0,102,255,0.05));border:1px solid var(--border);border-radius:20px;padding:32px;display:flex;flex-direction:column;justify-content:center;gap:16px;}
-.avail-badge{display:inline-flex;align-items:center;gap:8px;font-size:0.85em;color:#00d084;}
-.avail-badge::before{content:'●';animation:pulse 2s infinite;}
-.avail-title{font-family:'Syne',sans-serif;font-size:1.3em;font-weight:700;}
-.avail-desc{color:var(--muted);font-size:0.88em;line-height:1.7;}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.contact-info h3 {
+  margin-bottom: 14px;
+  color: var(--text-primary);
+}
+
+.contact-info p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: 1.05em;
+  margin-bottom: 32px;
+}
+
+.contact-links {
+  display: flex;
+  gap: 16px;
+}
+
+.contact-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-soft);
+  border-radius: 2px;
+  width: 68px;
+  height: 68px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.contact-item:hover {
+  border-color: var(--accent-warm);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-item svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--text-primary);
+}
+
+.availability {
+  background: rgba(201,125,96,0.08);
+  border: 1px solid var(--border-soft);
+  border-radius: 2px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.avail-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8em;
+  color: var(--accent-warm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.avail-title {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.avail-desc {
+  color: var(--text-muted);
+  font-size: 0.95em;
+  line-height: 1.8;
+}
 
 /* ── FOOTER ── */
-footer{text-align:center;padding:40px;color:var(--muted);border-top:1px solid var(--border);font-size:0.85em;}
+footer {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-soft);
+  font-size: 0.85em;
+}
 
-/* ── DEMO MODAL ── */
-.modal-overlay{position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity 0.3s ease;}
-.modal-overlay.open{opacity:1;pointer-events:all;}
-.modal{background:var(--bg2);border:1px solid var(--border);border-radius:24px;width:100%;max-width:860px;max-height:90vh;overflow:hidden;display:flex;flex-direction:column;transform:translateY(30px) scale(0.97);transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1);box-shadow:0 30px 80px rgba(0,0,0,0.6);}
-.modal-overlay.open .modal{transform:translateY(0) scale(1);}
-.modal-header{display:flex;justify-content:space-between;align-items:center;padding:24px 28px;border-bottom:1px solid var(--border);flex-shrink:0;}
-.modal-title{font-family:'Syne',sans-serif;font-size:1.2em;font-weight:700;}
-.modal-subtitle{font-size:0.8em;color:var(--muted);margin-top:2px;}
-.modal-close{background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--muted);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1.2em;display:flex;align-items:center;justify-content:center;transition:all 0.2s;flex-shrink:0;}
-.modal-close:hover{background:rgba(255,80,80,0.15);color:#ff6b6b;border-color:#ff6b6b;}
-.modal-tabs{display:flex;gap:4px;padding:16px 28px 0;border-bottom:1px solid var(--border);flex-shrink:0;}
-.modal-tab{padding:8px 18px;border-radius:10px 10px 0 0;font-size:0.82em;font-weight:600;cursor:pointer;color:var(--muted);border:1px solid transparent;border-bottom:none;transition:all 0.2s;background:none;}
-.modal-tab.active{color:var(--accent);background:var(--bg3);border-color:var(--border);}
-.modal-body{overflow-y:auto;padding:28px;flex:1;}
-.modal-actions{padding:20px 28px;border-top:1px solid var(--border);display:flex;gap:12px;justify-content:flex-end;flex-shrink:0;background:var(--bg2);}
-.tab-panel{display:none;}
-.tab-panel.active{display:block;}
+/* ═══════════════════════════════════════════════════════════════════ */
+/*  MODAL                                                               */
+/* ═══════════════════════════════════════════════════════════════════ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: rgba(44,37,32,0.9);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
 
-/* ── FADE IN ── */
-.fade-in{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease;}
-.fade-in.visible{opacity:1;transform:translateY(0);}
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
 
-/* ── RESPONSIVE ── */
-@media(max-width:768px){
-  nav{padding:14px 20px;}
-  .nav-links{display:none;}
-  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--bg2);padding:20px;border-bottom:1px solid var(--border);gap:16px;}
-  .nav-burger{display:block;}
-  .hero-section{padding:120px 20px 60px;}
-  .about-grid,.contact-grid{grid-template-columns:1fr;}
-  .projects-grid{grid-template-columns:1fr;}
-  .cv-section{padding:40px 24px;}
-  .timeline{padding-left:20px;}
-  .theme-toggle{top:auto;bottom:20px;right:20px;}
+.modal {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-soft);
+  border-radius: 2px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(30px) scale(0.97);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: var(--shadow-md);
+}
+
+.modal-overlay.open .modal {
+  transform: translateY(0) scale(1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.modal-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+.modal-subtitle {
+  font-size: 0.8em;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.modal-close {
+  background: none;
+  border: 1px solid var(--border-soft);
+  color: var(--text-muted);
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 1.3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.modal-close:hover {
+  background: rgba(201,125,96,0.1);
+  color: var(--accent-warm);
+  border-color: var(--accent-warm);
+}
+
+.modal-body {
+  overflow-y: auto;
+  padding: 28px;
+  flex: 1;
+}
+
+.modal-actions {
+  padding: 20px 28px;
+  border-top: 1px solid var(--border-soft);
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+/* ═══════════════════════════════════════════════════════════════════ */
+/*  RESPONSIVE                                                          */
+/* ═══════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  nav {
+    padding: 14px 20px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-secondary);
+    padding: 20px;
+    border-bottom: 1px solid var(--border-soft);
+    gap: 16px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-burger {
+    display: block;
+  }
+
+  .hero-section {
+    padding: 140px 20px 80px;
+  }
+
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+
+  .theme-toggle {
+    bottom: 24px;
+    top: auto;
+  }
 }
 </style>
 </head>
 <body>
 
-<button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+<button class="theme-toggle" onclick="toggleTheme()">☀️ Light</button>
 
-<!-- ═══════════ LANDING ═══════════ -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!--  LANDING PAGE                                                        -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
 <div class="landing-page" id="landingPage">
-
-  <!-- "Mimi Ndio Wakhongola" typewriter -->
-  <p class="landing-eyebrow">
-    <span id="eyebrowTw"></span><span class="tw-cur"></span>
-  </p>
-
-  <!-- Welcome typewriter -->
-  <div class="landing-welcome">
-    <span class="welcome-wave">👋</span>
-    <div class="welcome-tw">
-      <span id="welcomeTw"></span><span class="tw-cur"></span>
-    </div>
-  </div>
-
-  <h1>Who's viewing<br>my work today?</h1>
-  <p class="landing-sub">Choose your perspective for a tailored experience</p>
+  <p class="landing-eyebrow" id="eyebrowTw"></p>
+  <p class="landing-welcome" id="welcomeTw"></p>
+  
+  <h1>What's your perspective?</h1>
+  <p class="landing-sub">Choose how you'd like to explore my work</p>
 
   <div class="cards-container">
-    <div class="viewer-card card-recruiter" onclick="showPortfolio('recruiter')">
-      <span class="card-tag">Hiring?</span>
+    <div class="viewer-card" onclick="showPortfolio('recruiter')">
+      <span class="card-tag">Hiring</span>
       <span class="icon">💼</span>
       <h2>Recruiter</h2>
-      <p>Qualifications, impact & background</p>
+      <p>Impact & qualifications</p>
     </div>
-    <div class="viewer-card card-developer" onclick="showPortfolio('developer')">
-      <span class="card-tag">Engineer</span>
-      <span class="icon">💻</span>
+    <div class="viewer-card" onclick="showPortfolio('developer')">
+      <span class="card-tag">Technical</span>
+      <span class="icon">⚙️</span>
       <h2>Developer</h2>
-      <p>Stack, architecture & code quality</p>
+      <p>Architecture & code</p>
     </div>
-    <div class="viewer-card card-client" onclick="showPortfolio('client')">
+    <div class="viewer-card" onclick="showPortfolio('client')">
       <span class="card-tag">Business</span>
-      <span class="icon">✨</span>
+      <span class="icon">📊</span>
       <h2>Client</h2>
-      <p>Solutions, ROI & delivery</p>
+      <p>Solutions & results</p>
     </div>
-    <div class="viewer-card card-explorer" onclick="showPortfolio('explorer')">
-      <span class="card-tag">Curious?</span>
-      <span class="icon">🔬</span>
+    <div class="viewer-card" onclick="showPortfolio('explorer')">
+      <span class="card-tag">Curious</span>
+      <span class="icon">🔭</span>
       <h2>Explorer</h2>
-      <p>Curiosity, learning & innovation</p>
+      <p>Learning & ideas</p>
     </div>
   </div>
 </div>
 
-<!-- ═══════════ PORTFOLIO ═══════════ -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!--  PORTFOLIO                                                          -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
 <div class="portfolio-content" id="portfolioContent">
   <nav id="navbar">
     <div class="logo" onclick="showLanding()">← EW</div>
@@ -334,38 +1102,43 @@ footer{text-align:center;padding:40px;color:var(--muted);border-top:1px solid va
 
   <!-- HERO -->
   <section id="home" class="hero-section">
-    <div class="hero-badge">Available for opportunities</div>
-    <div class="hero-tagline"><span class="typewriter" id="heroTypewriter"></span></div>
+    <div class="hero-badge">Open to opportunities</div>
+    <div class="hero-tagline" id="heroTypewriter"></div>
     <h1 class="hero-name">Emmanuel W.<br><span>Wakhongola</span></h1>
-    <p class="hero-subtitle" id="heroSub">Building intelligent, secure, and user-friendly systems at the intersection of AI, networking, and data.</p>
+    <p class="hero-subtitle" id="heroSub">Building intelligent systems at the intersection of AI, security, and networks.</p>
+    
     <div class="skill-pills">
-      <span class="pill">AI / ML</span><span class="pill">Python</span><span class="pill">Networking</span>
-      <span class="pill">Cybersecurity</span><span class="pill">SQL</span><span class="pill">Power BI</span><span class="pill">UX/UI</span>
+      <span class="pill">AI/ML</span><span class="pill">Python</span><span class="pill">Networking</span>
+      <span class="pill">Security</span><span class="pill">SQL</span><span class="pill">Power BI</span>
     </div>
+
     <div class="contact-buttons">
-      <a href="https://wa.me/254791952584" class="btn-primary" target="_blank">💬 WhatsApp Me</a>
+      <a href="https://wa.me/254791952584" class="btn-primary" target="_blank">💬 WhatsApp</a>
       <a href="mailto:wangilawakhongola@gmail.com" class="btn-outline">📧 Email</a>
       <a href="https://github.com/WangilaWakhongola" class="btn-outline" target="_blank">⌥ GitHub</a>
     </div>
-    <div class="scroll-hint"><span>↓</span>Scroll to explore</div>
+
+    <div class="scroll-hint">
+      <span>↓</span>
+      <span>Scroll to explore</span>
+    </div>
   </section>
 
   <div class="container">
-
     <!-- ABOUT -->
     <section id="about" class="section fade-in">
       <div class="section-header">
         <span class="section-num">01</span>
-        <h2 class="section-title" id="aboutTitle">About Me</h2>
+        <h2 class="section-title" id="aboutTitle">About</h2>
         <div class="section-line"></div>
       </div>
       <div class="about-grid">
         <div class="about-text" id="aboutContent"></div>
         <div class="about-stats">
-          <div class="stat-box"><div class="stat-num">25+</div><div class="stat-label">Users Supported at Total Energies</div></div>
-          <div class="stat-box"><div class="stat-num">30+</div><div class="stat-label">Young People Trained in IT</div></div>
-          <div class="stat-box"><div class="stat-num">6+</div><div class="stat-label">Projects on GitHub</div></div>
-          <div class="stat-box"><div class="stat-num">7</div><div class="stat-label">Core Technology Domains</div></div>
+          <div class="stat-box"><div class="stat-num">25+</div><div class="stat-label">Users Supported</div></div>
+          <div class="stat-box"><div class="stat-num">30+</div><div class="stat-label">Youth Trained</div></div>
+          <div class="stat-box"><div class="stat-num">6+</div><div class="stat-label">Projects</div></div>
+          <div class="stat-box"><div class="stat-num">7</div><div class="stat-label">Tech Domains</div></div>
         </div>
       </div>
     </section>
@@ -384,7 +1157,7 @@ footer{text-align:center;padding:40px;color:var(--muted);border-top:1px solid va
     <section id="skills" class="section fade-in">
       <div class="section-header">
         <span class="section-num">03</span>
-        <h2 class="section-title" id="skillsTitle">Technical Skills</h2>
+        <h2 class="section-title" id="skillsTitle">Skills</h2>
         <div class="section-line"></div>
       </div>
       <div class="skills-grid" id="skillsContent"></div>
@@ -394,7 +1167,7 @@ footer{text-align:center;padding:40px;color:var(--muted);border-top:1px solid va
     <section id="projects" class="section fade-in">
       <div class="section-header">
         <span class="section-num">04</span>
-        <h2 class="section-title">Featured Projects</h2>
+        <h2 class="section-title">Projects</h2>
         <div class="section-line"></div>
       </div>
       <div class="projects-grid" id="projectsContent"></div>
@@ -404,14 +1177,14 @@ footer{text-align:center;padding:40px;color:var(--muted);border-top:1px solid va
     <section id="cv" class="section fade-in">
       <div class="section-header">
         <span class="section-num">05</span>
-        <h2 class="section-title">Download CV</h2>
+        <h2 class="section-title">CV</h2>
         <div class="section-line"></div>
       </div>
       <div class="cv-section">
-        <h3>Get My Full Resume</h3>
-        <p>A detailed overview of my qualifications, projects, and experience.</p>
-        <button onclick="downloadCV()" class="btn-primary" style="border:none;cursor:pointer;font-size:1em;">📄 Download CV</button>
-        <div class="cv-counter" id="cvCounter"></div>
+        <h3>Download My Resume</h3>
+        <p>Complete overview of qualifications, experience, and projects.</p>
+        <button onclick="downloadCV()" class="btn-primary">📄 Download</button>
+        <div id="cvCounter" style="margin-top: 16px; font-size: 0.85em; color: var(--text-muted);"></div>
       </div>
     </section>
 
@@ -425,169 +1198,136 @@ footer{text-align:center;padding:40px;color:var(--muted);border-top:1px solid va
       <div class="contact-grid">
         <div class="contact-info">
           <h3>Let's work together</h3>
-          <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of something amazing.</p>
+          <p>Open to discussing new projects, ideas, or opportunities to build something meaningful.</p>
           <div class="contact-links">
-            <a href="https://wa.me/254791952584" class="contact-item" target="_blank">
-              <span class="ci-icon whatsapp">
-                <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.121 1.532 5.855L.054 23.617a.5.5 0 0 0 .608.63l5.98-1.437A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.876 9.876 0 0 1-5.031-1.376l-.36-.214-3.733.898.944-3.62-.235-.374A9.859 9.859 0 0 1 2.1 12C2.1 6.534 6.534 2.1 12 2.1c5.465 0 9.9 4.434 9.9 9.9 0 5.465-4.435 9.9-9.9 9.9z"/></svg>
-              </span>
+            <a href="https://wa.me/254791952584" class="contact-item" target="_blank" title="WhatsApp">
+              <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
             </a>
-            <a href="mailto:wangilawakhongola@gmail.com" class="contact-item">
-              <span class="ci-icon gmail">
-                <svg viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" fill="#EA4335"/></svg>
-              </span>
+            <a href="mailto:wangilawakhongola@gmail.com" class="contact-item" title="Email">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
             </a>
-            <a href="https://github.com/WangilaWakhongola" class="contact-item" target="_blank">
-              <span class="ci-icon github">
-                <svg viewBox="0 0 24 24" fill="white"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-              </span>
+            <a href="https://github.com/WangilaWakhongola" class="contact-item" target="_blank" title="GitHub">
+              <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
             </a>
           </div>
         </div>
         <div class="availability">
-          <div class="avail-badge">Currently available</div>
-          <div class="avail-title">Open to internships & full-time roles</div>
-          <div class="avail-desc">Based in Kenya 🇰🇪 — open to remote and on-site opportunities across AI/ML, networking, and software development.</div>
+          <div class="avail-badge">🌍 Currently Available</div>
+          <div class="avail-title">Open for opportunities</div>
+          <div class="avail-desc">Based in Kenya. Seeking roles in AI/ML, networking, and software development. Remote or on-site.</div>
         </div>
       </div>
     </section>
   </div>
-  <footer><p>© 2025 Emmanuel Wakhongola · Built with purpose ✦</p></footer>
+
+  <footer>
+    <p>© 2025 Emmanuel Wakhongola · Built with intention ✦</p>
+  </footer>
 </div>
 
-<!-- DEMO MODAL -->
+<!-- MODAL -->
 <div class="modal-overlay" id="demoModal" onclick="closeDemoIfOverlay(event)">
   <div class="modal">
     <div class="modal-header">
-      <div><div class="modal-title" id="modalTitle">Project Demo</div><div class="modal-subtitle" id="modalSubtitle"></div></div>
-      <button class="modal-close" onclick="closeDemo()">&#x2715;</button>
+      <div>
+        <div class="modal-title" id="modalTitle">Project</div>
+        <div class="modal-subtitle" id="modalSubtitle"></div>
+      </div>
+      <button class="modal-close" onclick="closeDemo()">✕</button>
     </div>
-    <div class="modal-tabs" id="modalTabs"></div>
     <div class="modal-body" id="modalBody"></div>
     <div class="modal-actions" id="modalActions"></div>
   </div>
 </div>
 
 <script>
-// ═══════════════════════════════════════════════════════
-//  TYPEWRITER UTILITY
-// ═══════════════════════════════════════════════════════
-function makeTypewriter(el, phrase, speed, pauseFull, pauseEmpty) {
+// ═══════════════════════════════════════════════════════════════════
+//  CORE FUNCTIONALITY
+// ═══════════════════════════════════════════════════════════════════
+
+function typewriter(el, text, speed = 60) {
   var i = 0, deleting = false;
   function tick() {
     if (!deleting) {
       i++;
-      el.textContent = phrase.slice(0, i);
-      if (i === phrase.length) { deleting = true; setTimeout(tick, pauseFull || 2500); return; }
+      el.textContent = text.slice(0, i);
+      if (i === text.length) { deleting = true; setTimeout(tick, 2000); return; }
     } else {
       i--;
-      el.textContent = phrase.slice(0, i);
-      if (i === 0) { deleting = false; setTimeout(tick, pauseEmpty || 700); return; }
+      el.textContent = text.slice(0, i);
+      if (i === 0) { deleting = false; setTimeout(tick, 500); return; }
     }
-    setTimeout(tick, deleting ? 40 : (speed || 80));
+    setTimeout(tick, deleting ? 40 : speed);
   }
   tick();
 }
 
-// ── LANDING TYPEWRITERS ─────────────────────────────────
-// Both start immediately on DOMContentLoaded
-document.addEventListener('DOMContentLoaded', function () {
-
-  // 1) Eyebrow — "Mimi Ndio Wakhongola"
-  var eyebrow = document.getElementById('eyebrowTw');
-  if (eyebrow) makeTypewriter(eyebrow, 'Mimi Ndio Wakhongola', 85, 2600, 700);
-
-  // 2) Welcome — "Hello there — glad you stopped by!"
-  var welcome = document.getElementById('welcomeTw');
-  if (welcome) {
-    setTimeout(function () {
-      makeTypewriter(welcome, 'Hello there — glad you stopped by!', 70, 3000, 800);
-    }, 400);
-  }
+document.addEventListener('DOMContentLoaded', function() {
+  typewriter(document.getElementById('eyebrowTw'), 'Mimi Ndio Wakhongola', 75);
+  setTimeout(() => {
+    typewriter(document.getElementById('welcomeTw'), 'Hello—glad you stopped by!', 70);
+  }, 400);
 });
 
-// ═══════════════════════════════════════════════════════
-//  PORTFOLIO DATA
-// ═══════════════════════════════════════════════════════
-var projectsHTML = {
-  recruiter: '<div class="project-card"><div class="project-header"><div class="project-icon">📡</div><div class="project-links"><button onclick="openDemo(\'network\')" class="project-link demo-btn">▶ Demo</button><a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-link">GitHub ↗</a></div></div><h3>Network Monitoring Dashboard</h3><p class="project-desc">Enterprise real-time monitoring system designed for system reliability and proactive fault detection.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Networking</span></div><span class="project-impact">↑ 99% Uptime</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🤖</div><div class="project-links"><button onclick="openDemo(\'resume\')" class="project-link demo-btn">▶ Demo</button><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-link">GitHub ↗</a></div></div><h3>AI Resume Analyzer</h3><p class="project-desc">Intelligent talent screening using ML and NLP — automates resume parsing and scoring.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">NLP</span><span class="tech-tag">ML</span></div><span class="project-impact">↓ 70% Screening Time</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📦</div><div class="project-links"><button onclick="openDemo(\'inventory\')" class="project-link demo-btn">▶ Demo</button><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-link">GitHub ↗</a></div></div><h3>Inventory Management System</h3><p class="project-desc">Efficient inventory tracking system reducing manual errors and streamlining stock management.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">SQL</span></div><span class="project-impact">↓ 95% Errors</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🛡️</div><div class="project-links"><button onclick="openDemo(\'cyber\')" class="project-link demo-btn">▶ Demo</button><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat-detection" target="_blank" class="project-link">GitHub ↗</a></div></div><h3>Cybersecurity Threat Detection</h3><p class="project-desc">ML-based threat detection providing real-time security analysis for enterprise data.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">ML</span></div><span class="project-impact">Real-time Detection</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">💰</div><div class="project-links"><button onclick="openDemo(\'finance\')" class="project-link demo-btn">▶ Demo</button><a href="https://github.com/WangilaWakhongola/ML-Powered-Personal-Finance-Assistant" target="_blank" class="project-link">GitHub ↗</a></div></div><h3>ML-Powered Finance Assistant</h3><p class="project-desc">Intelligent budgeting tool with predictive analysis to improve personal financial decisions.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">ML</span></div><span class="project-impact">Financial Intelligence</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🎨</div><div class="project-links"><button onclick="openDemo(\'tailwind\')" class="project-link demo-btn">▶ Demo</button><a href="https://github.com/WangilaWakhongola/Tailwind-Beginners-Toolkit" target="_blank" class="project-link">GitHub ↗</a></div></div><h3>Tailwind Beginners Toolkit</h3><p class="project-desc">Educational TailwindCSS resource helping developers learn modern responsive design patterns.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">Tailwind CSS</span></div><span class="project-impact">Education & Dev Tools</span></div></div>',
-
-  developer: '<div class="project-card"><div class="project-header"><div class="project-icon">📡</div><div class="project-links"><button onclick="openDemo(\'network\')" class="project-link demo-btn">▶ Demo</button><a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-link">GitHub ↗</a></div></div><h3>Network Monitoring Dashboard</h3><p class="project-desc">Real-time Python-powered system monitoring with live metrics, alerting, and network topology visualization.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Networking</span><span class="tech-tag">Real-time</span></div></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🤖</div><div class="project-links"><button onclick="openDemo(\'resume\')" class="project-link demo-btn">▶ Demo</button><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-link">GitHub ↗</a></div></div><h3>AI Resume Analyzer</h3><p class="project-desc">NLP pipeline with semantic similarity scoring, keyword extraction, and structured JSON output from unstructured resume text.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">NLP</span><span class="tech-tag">ML</span></div></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📦</div><div class="project-links"><button onclick="openDemo(\'inventory\')" class="project-link demo-btn">▶ Demo</button><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-link">GitHub ↗</a></div></div><h3>Inventory Management System</h3><p class="project-desc">Full-stack CRUD solution with optimized SQL queries, indexing strategy, and a responsive HTML frontend.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">SQL</span><span class="tech-tag">Full-stack</span></div></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🛡️</div><div class="project-links"><button onclick="openDemo(\'cyber\')" class="project-link demo-btn">▶ Demo</button><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat-detection" target="_blank" class="project-link">GitHub ↗</a></div></div><h3>Cybersecurity Threat Detection</h3><p class="project-desc">AI-powered anomaly detection with real-time log analysis and ML-based classification of network threats.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">ML</span><span class="tech-tag">Security</span></div></div></div><div class="project-card"><div class="project-header"><div class="project-icon">💰</div><div class="project-links"><button onclick="openDemo(\'finance\')" class="project-link demo-btn">▶ Demo</button><a href="https://github.com/WangilaWakhongola/ML-Powered-Personal-Finance-Assistant" target="_blank" class="project-link">GitHub ↗</a></div></div><h3>ML Finance Assistant</h3><p class="project-desc">JavaScript ML model integration with budget forecasting, spending categorization, and data visualization.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">ML</span><span class="tech-tag">Frontend</span></div></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🎨</div><div class="project-links"><button onclick="openDemo(\'tailwind\')" class="project-link demo-btn">▶ Demo</button><a href="https://github.com/WangilaWakhongola/Tailwind-Beginners-Toolkit" target="_blank" class="project-link">GitHub ↗</a></div></div><h3>Tailwind Beginners Toolkit</h3><p class="project-desc">Component library with responsive design patterns and documented CSS best practices.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">Tailwind</span><span class="tech-tag">CSS</span></div></div></div>',
-
-  client: '<div class="project-card"><div class="project-header"><div class="project-icon">📡</div><div class="project-links"><button onclick="openDemo(\'network\')" class="project-link demo-btn">▶ Demo</button><a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-link">View ↗</a></div></div><h3>Network Monitoring Dashboard</h3><p class="project-desc">Enterprise monitoring ensuring maximum uptime and proactive fault resolution — built for reliability.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Networking</span></div><span class="project-impact">↑ System Reliability</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🤖</div><div class="project-links"><button onclick="openDemo(\'resume\')" class="project-link demo-btn">▶ Demo</button><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-link">View ↗</a></div></div><h3>AI Resume Analyzer</h3><p class="project-desc">Automates recruitment screening — cuts manual review time dramatically, surfaces the best candidates faster.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">ML</span></div><span class="project-impact">↓ 70% Screening Time</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📦</div><div class="project-links"><button onclick="openDemo(\'inventory\')" class="project-link demo-btn">▶ Demo</button><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-link">View ↗</a></div></div><h3>Inventory Management System</h3><p class="project-desc">Eliminates manual stock tracking errors, gives real-time visibility into inventory levels and trends.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">SQL</span></div><span class="project-impact">↓ 95% Manual Errors</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🛡️</div><div class="project-links"><button onclick="openDemo(\'cyber\')" class="project-link demo-btn">▶ Demo</button><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat-detection" target="_blank" class="project-link">View ↗</a></div></div><h3>Cybersecurity Threat Detection</h3><p class="project-desc">AI-powered protection for enterprise data — detects threats in real time before they become incidents.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">ML</span></div><span class="project-impact">Enterprise Security</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">💰</div><div class="project-links"><button onclick="openDemo(\'finance\')" class="project-link demo-btn">▶ Demo</button><a href="https://github.com/WangilaWakhongola/ML-Powered-Personal-Finance-Assistant" target="_blank" class="project-link">View ↗</a></div></div><h3>ML Finance Assistant</h3><p class="project-desc">Helps individuals and teams make smarter financial decisions with AI-driven forecasting and budget insights.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">ML</span></div><span class="project-impact">Financial Intelligence</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🎨</div><div class="project-links"><button onclick="openDemo(\'tailwind\')" class="project-link demo-btn">▶ Demo</button><a href="https://github.com/WangilaWakhongola/Tailwind-Beginners-Toolkit" target="_blank" class="project-link">View ↗</a></div></div><h3>Tailwind Beginners Toolkit</h3><p class="project-desc">Boosts team productivity and onboarding speed for CSS development with pre-built components and guides.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">Tailwind</span></div><span class="project-impact">Team Productivity</span></div></div>',
-
-  explorer: '<div class="project-card"><div class="project-header"><div class="project-icon">📡</div><div class="project-links"><button onclick="openDemo(\'network\')" class="project-link demo-btn">▶ Demo</button><a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-link">Explore ↗</a></div></div><h3>Network Monitoring Dashboard</h3><p class="project-desc">What if you could see your entire network in real time? Born from curiosity — built in Python with live metrics.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Networking</span></div><span class="project-impact">Networks → Python</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🤖</div><div class="project-links"><button onclick="openDemo(\'resume\')" class="project-link demo-btn">▶ Demo</button><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-link">Explore ↗</a></div></div><h3>AI Resume Analyzer</h3><p class="project-desc">Can a machine understand what makes a great candidate? Dives deep into semantic analysis and ML scoring.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">NLP</span></div><span class="project-impact">AI/ML → NLP</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🛡️</div><div class="project-links"><button onclick="openDemo(\'cyber\')" class="project-link demo-btn">▶ Demo</button><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat-detection" target="_blank" class="project-link">Explore ↗</a></div></div><h3>Cybersecurity Threat Detection</h3><p class="project-desc">Can ML detect attacks before they happen? Exploring anomaly detection in network traffic at the AI + security frontier.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">ML</span></div><span class="project-impact">AI → Security</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📦</div><div class="project-links"><button onclick="openDemo(\'inventory\')" class="project-link demo-btn">▶ Demo</button><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-link">Explore ↗</a></div></div><h3>Inventory Management System</h3><p class="project-desc">Learning database architecture and full-stack thinking — from schema design to a working frontend.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">SQL</span><span class="tech-tag">HTML</span></div><span class="project-impact">Backend → Databases</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">💰</div><div class="project-links"><button onclick="openDemo(\'finance\')" class="project-link demo-btn">▶ Demo</button><a href="https://github.com/WangilaWakhongola/ML-Powered-Personal-Finance-Assistant" target="_blank" class="project-link">Explore ↗</a></div></div><h3>ML Finance Assistant</h3><p class="project-desc">What can JavaScript + ML do together in the browser? Experimenting with in-browser prediction models.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">ML</span></div><span class="project-impact">JS → ML</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🎨</div><div class="project-links"><button onclick="openDemo(\'tailwind\')" class="project-link demo-btn">▶ Demo</button><a href="https://github.com/WangilaWakhongola/Tailwind-Beginners-Toolkit" target="_blank" class="project-link">Explore ↗</a></div></div><h3>Tailwind Beginners Toolkit</h3><p class="project-desc">The best way to master a framework? Teach it. Documents patterns discovered while learning Tailwind CSS.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">Tailwind</span></div><span class="project-impact">Learn → Teach</span></div></div>'
-};
-
+// Portfolio data (same as original, reformatted)
 var portfolioData = {
   recruiter: {
-    hero: ['Turning skills into measurable value','Open to new opportunities in tech','Ready to contribute from day one'],
-    heroSub: 'Mathematics & CS student with hands-on IT experience. I deliver enterprise-grade solutions with immediate, measurable impact.',
+    hero: ['Turning skills into impact', 'Ready to deliver from day one', 'Building enterprise solutions'],
+    heroSub: 'Mathematics & CS student with hands-on experience. I deliver measurable value.',
     aboutTitle: 'Professional Profile',
-    about: '<p>I\'m a Mathematics and Computer Science student with a strong foundation in AI/ML, Networking, SQL, UX/UI, and Cybersecurity. My work bridges academic rigor and real-world application — from supporting 25+ users at Total Energies to training youth in IT fundamentals.</p><p>I thrive in environments that demand both technical depth and creative problem-solving. Seeking roles where I can apply my skills to build systems that matter.</p>',
-    expTitle: 'Professional Background',
-    skills: '<div class="skill-card"><div class="skill-icon">💡</div><h4>AI / ML & Analytics</h4><p style="font-size:.85em;color:var(--muted)">Machine learning, NLP, predictive modeling, data analysis</p><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">scikit-learn</span><span class="skill-tag">NLP</span><span class="skill-tag">Power BI</span></div></div><div class="skill-card"><div class="skill-icon">🔐</div><h4>Infrastructure & Security</h4><p style="font-size:.85em;color:var(--muted)">Network admin, cybersecurity, system administration</p><div class="skill-tags"><span class="skill-tag">TCP/IP</span><span class="skill-tag">Firewalls</span><span class="skill-tag">Monitoring</span><span class="skill-tag">Linux</span></div></div><div class="skill-card"><div class="skill-icon">💻</div><h4>Programming</h4><p style="font-size:.85em;color:var(--muted)">Multi-language competency across systems and web</p><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">C++</span><span class="skill-tag">SQL</span><span class="skill-tag">JavaScript</span><span class="skill-tag">R</span><span class="skill-tag">MATLAB</span></div></div><div class="skill-card"><div class="skill-icon">📈</div><h4>Business Intelligence</h4><p style="font-size:.85em;color:var(--muted)">Data-driven reporting and database design</p><div class="skill-tags"><span class="skill-tag">Power BI</span><span class="skill-tag">Excel</span><span class="skill-tag">SQL</span><span class="skill-tag">CRUD</span></div></div>',
-    skillsTitle: 'Core Competencies'
+    about: '<p>I\'m a Mathematics and Computer Science student with expertise in AI/ML, Networking, Security, and SQL. My work bridges academic rigor with real-world application—from supporting 25+ users at Total Energies to training 30+ youth in IT.</p><p>I thrive in environments demanding both technical depth and problem-solving. Seeking roles where I can apply my skills to build systems that matter.</p>',
+    expTitle: 'Experience',
+    skills: '<div class="skill-card"><div class="skill-icon">💡</div><h4>AI / ML & Analytics</h4><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">scikit-learn</span><span class="skill-tag">NLP</span><span class="skill-tag">Power BI</span></div></div><div class="skill-card"><div class="skill-icon">🔐</div><h4>Infrastructure & Security</h4><div class="skill-tags"><span class="skill-tag">TCP/IP</span><span class="skill-tag">Firewalls</span><span class="skill-tag">Monitoring</span><span class="skill-tag">Linux</span></div></div><div class="skill-card"><div class="skill-icon">💻</div><h4>Programming</h4><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">C++</span><span class="skill-tag">SQL</span><span class="skill-tag">JavaScript</span><span class="skill-tag">R</span></div></div><div class="skill-card"><div class="skill-icon">📈</div><h4>Business Intelligence</h4><div class="skill-tags"><span class="skill-tag">Power BI</span><span class="skill-tag">Excel</span><span class="skill-tag">SQL</span></div></div>',
+    skillsTitle: 'Competencies'
   },
   developer: {
-    hero: ['Building elegant solutions to complex problems','Writing code that scales and lasts','Obsessed with clean, maintainable architecture'],
-    heroSub: 'Full-stack developer with a deep interest in AI/ML pipelines, network systems, and performance-optimized backends.',
+    hero: ['Building elegant solutions', 'Code that lasts', 'Performance-focused architecture'],
+    heroSub: 'Full-stack developer focused on clean architecture, AI/ML pipelines, and network-level optimization.',
     aboutTitle: 'Development Philosophy',
-    about: '<p>I\'m a developer obsessed with clean architecture and performance. I believe the best code is invisible — it just works, reliably, at scale, and is a pleasure for the next developer to read.</p><p>My focus spans Python backends, ML model integration, SQL database optimization, and network-level system administration. I build with long-term maintainability in mind.</p>',
-    expTitle: 'Development Experience',
-    skills: '<div class="skill-card"><div class="skill-icon">🐍</div><h4>Python Ecosystem</h4><p style="font-size:.85em;color:var(--muted)">Backend, data science, ML integration, scripting</p><div class="skill-tags"><span class="skill-tag">Flask</span><span class="skill-tag">Django</span><span class="skill-tag">NumPy</span><span class="skill-tag">Pandas</span><span class="skill-tag">REST APIs</span></div></div><div class="skill-card"><div class="skill-icon">🌐</div><h4>Network & Systems</h4><p style="font-size:.85em;color:var(--muted)">Low-level networking, configuration, system admin</p><div class="skill-tags"><span class="skill-tag">TCP/IP</span><span class="skill-tag">DNS</span><span class="skill-tag">Linux</span><span class="skill-tag">API Integration</span></div></div><div class="skill-card"><div class="skill-icon">🗄️</div><h4>Database Architecture</h4><p style="font-size:.85em;color:var(--muted)">SQL optimization, schema design, CRUD operations</p><div class="skill-tags"><span class="skill-tag">SQL</span><span class="skill-tag">Database Design</span><span class="skill-tag">Query Optimization</span></div></div><div class="skill-card"><div class="skill-icon">🤖</div><h4>AI / ML Stack</h4><p style="font-size:.85em;color:var(--muted)">Model training, NLP pipelines, neural networks</p><div class="skill-tags"><span class="skill-tag">scikit-learn</span><span class="skill-tag">NLP</span><span class="skill-tag">Neural Nets</span><span class="skill-tag">Data Science</span></div></div><div class="skill-card"><div class="skill-icon">🎨</div><h4>Frontend & UX/UI</h4><p style="font-size:.85em;color:var(--muted)">Responsive, accessible, user-centered interfaces</p><div class="skill-tags"><span class="skill-tag">HTML/CSS</span><span class="skill-tag">JavaScript</span><span class="skill-tag">Tailwind</span><span class="skill-tag">UX Design</span></div></div><div class="skill-card"><div class="skill-icon">📊</div><h4>Data & Analytics</h4><p style="font-size:.85em;color:var(--muted)">Visualization, BI reporting, statistical analysis</p><div class="skill-tags"><span class="skill-tag">Power BI</span><span class="skill-tag">R</span><span class="skill-tag">MATLAB</span><span class="skill-tag">Excel</span></div></div>',
+    about: '<p>I believe the best code is invisible—it just works, reliably, at scale. My focus spans Python backends, ML integration, SQL optimization, and network systems.</p><p>I build with maintainability and performance as first-class concerns. Long-term thinking drives every architectural decision.</p>',
+    expTitle: 'Experience',
+    skills: '<div class="skill-card"><div class="skill-icon">🐍</div><h4>Python Ecosystem</h4><div class="skill-tags"><span class="skill-tag">Flask</span><span class="skill-tag">Django</span><span class="skill-tag">NumPy</span><span class="skill-tag">Pandas</span><span class="skill-tag">REST APIs</span></div></div><div class="skill-card"><div class="skill-icon">🌐</div><h4>Network & Systems</h4><div class="skill-tags"><span class="skill-tag">TCP/IP</span><span class="skill-tag">DNS</span><span class="skill-tag">Linux</span><span class="skill-tag">API Integration</span></div></div><div class="skill-card"><div class="skill-icon">🗄️</div><h4>Database Architecture</h4><div class="skill-tags"><span class="skill-tag">SQL</span><span class="skill-tag">Schema Design</span><span class="skill-tag">Query Optimization</span></div></div><div class="skill-card"><div class="skill-icon">🤖</div><h4>AI / ML Stack</h4><div class="skill-tags"><span class="skill-tag">scikit-learn</span><span class="skill-tag">NLP</span><span class="skill-tag">Neural Nets</span></div></div><div class="skill-card"><div class="skill-icon">🎨</div><h4>Frontend</h4><div class="skill-tags"><span class="skill-tag">HTML/CSS</span><span class="skill-tag">JavaScript</span><span class="skill-tag">Tailwind</span></div></div><div class="skill-card"><div class="skill-icon">📊</div><h4>Data & Analytics</h4><div class="skill-tags"><span class="skill-tag">Power BI</span><span class="skill-tag">R</span><span class="skill-tag">MATLAB</span></div></div>',
     skillsTitle: 'Tech Stack'
   },
   client: {
-    hero: ['Let\'s turn your vision into reality','Delivering solutions that drive results','Your business goals, my technical expertise'],
-    heroSub: 'I specialize in AI automation, custom software, and intelligent systems — built to deliver ROI from day one.',
-    aboutTitle: 'How I Help Businesses',
-    about: '<p>I transform business challenges into competitive advantages. Whether you need an AI system to automate repetitive tasks, a secure network infrastructure, or a custom software solution — I deliver results that matter to your bottom line.</p><p>I focus on understanding your business first, then building technology around it. Clear communication, on-time delivery, and measurable outcomes are non-negotiable for me.</p>',
-    expTitle: 'Client & Business Experience',
-    skills: '<div class="skill-card"><div class="skill-icon">🤖</div><h4>AI Automation Solutions</h4><p style="font-size:.85em;color:var(--muted)">Automate repetitive tasks, reduce costs, gain intelligence</p><div class="skill-tags"><span class="skill-tag">Process Automation</span><span class="skill-tag">Predictive ML</span><span class="skill-tag">Custom Models</span></div></div><div class="skill-card"><div class="skill-icon">🔨</div><h4>Custom Software Development</h4><p style="font-size:.85em;color:var(--muted)">Full-stack web apps and tools tailored to your workflow</p><div class="skill-tags"><span class="skill-tag">Web Apps</span><span class="skill-tag">Python</span><span class="skill-tag">Flask/Django</span></div></div><div class="skill-card"><div class="skill-icon">💾</div><h4>Database & BI Solutions</h4><p style="font-size:.85em;color:var(--muted)">Turn raw data into business intelligence</p><div class="skill-tags"><span class="skill-tag">SQL</span><span class="skill-tag">Power BI</span><span class="skill-tag">Data Pipelines</span></div></div><div class="skill-card"><div class="skill-icon">🛡️</div><h4>Infrastructure & Security</h4><p style="font-size:.85em;color:var(--muted)">Secure, scalable systems you can trust</p><div class="skill-tags"><span class="skill-tag">Network Security</span><span class="skill-tag">System Admin</span><span class="skill-tag">Monitoring</span></div></div>',
+    hero: ['Vision into reality', 'Results that matter', 'Technology serves business'],
+    heroSub: 'I specialize in AI automation, custom software, and intelligent systems—built for ROI.',
+    aboutTitle: 'How I Help',
+    about: '<p>I transform business challenges into competitive advantages. Whether you need an AI system, secure infrastructure, or custom software—I deliver results that matter to your bottom line.</p><p>I focus on understanding your business first, then building technology around it. Clear communication, on-time delivery, and measurable outcomes are non-negotiable.</p>',
+    expTitle: 'Experience',
+    skills: '<div class="skill-card"><div class="skill-icon">🤖</div><h4>AI Automation</h4><div class="skill-tags"><span class="skill-tag">Process Automation</span><span class="skill-tag">Predictive ML</span><span class="skill-tag">Custom Models</span></div></div><div class="skill-card"><div class="skill-icon">🔨</div><h4>Custom Software</h4><div class="skill-tags"><span class="skill-tag">Web Apps</span><span class="skill-tag">Python</span><span class="skill-tag">Flask/Django</span></div></div><div class="skill-card"><div class="skill-icon">💾</div><h4>Database & BI</h4><div class="skill-tags"><span class="skill-tag">SQL</span><span class="skill-tag">Power BI</span><span class="skill-tag">Data Pipelines</span></div></div><div class="skill-card"><div class="skill-icon">🛡️</div><h4>Infrastructure</h4><div class="skill-tags"><span class="skill-tag">Network Security</span><span class="skill-tag">System Admin</span><span class="skill-tag">Monitoring</span></div></div>',
     skillsTitle: 'What I Deliver'
   },
   explorer: {
-    hero: ['Curiosity is the engine of innovation','Learning at the frontier of AI & tech','Building to understand, understanding to build'],
-    heroSub: 'Driven by curiosity, I explore the edges of AI, security, and systems — turning questions into projects.',
-    aboutTitle: 'My Learning Journey',
-    about: '<p>I\'m a lifelong learner fascinated by how intelligent systems work — from the math behind neural networks to the protocols that hold the internet together. Every project I build starts with a question I couldn\'t stop asking.</p><p>Currently exploring the intersection of AI and cybersecurity, and how machine learning can make networks smarter and more resilient.</p>',
-    expTitle: 'Exploration & Learning',
-    skills: '<div class="skill-card"><div class="skill-icon">🧠</div><h4>AI / ML Exploration</h4><p style="font-size:.85em;color:var(--muted)">From fundamentals to applied NLP and neural networks</p><div class="skill-tags"><span class="skill-tag">ML Algorithms</span><span class="skill-tag">NLP</span><span class="skill-tag">Neural Networks</span><span class="skill-tag">Data Science</span></div></div><div class="skill-card"><div class="skill-icon">🌐</div><h4>Network Architecture</h4><p style="font-size:.85em;color:var(--muted)">Protocols, topology, monitoring, and security</p><div class="skill-tags"><span class="skill-tag">TCP/IP</span><span class="skill-tag">Protocols</span><span class="skill-tag">Monitoring</span><span class="skill-tag">Security</span></div></div><div class="skill-card"><div class="skill-icon">🔬</div><h4>Research & Experimentation</h4><p style="font-size:.85em;color:var(--muted)">Hypothesis-driven development and rapid prototyping</p><div class="skill-tags"><span class="skill-tag">R</span><span class="skill-tag">MATLAB</span><span class="skill-tag">Python</span><span class="skill-tag">Data Analysis</span></div></div><div class="skill-card"><div class="skill-icon">🎨</div><h4>Creative Technology</h4><p style="font-size:.85em;color:var(--muted)">Building interfaces and tools that teach and inspire</p><div class="skill-tags"><span class="skill-tag">HTML/CSS</span><span class="skill-tag">JavaScript</span><span class="skill-tag">UX/UI</span><span class="skill-tag">Tailwind</span></div></div>',
+    hero: ['Curiosity drives progress', 'Learning at the frontier', 'Questions become projects'],
+    heroSub: 'Driven by curiosity, I explore AI, security, and systems—turning questions into working prototypes.',
+    aboutTitle: 'Learning Journey',
+    about: '<p>I\'m fascinated by how intelligent systems work—from neural network math to internet protocols. Every project starts with a question I couldn\'t stop asking.</p><p>Currently exploring the intersection of AI and cybersecurity, and how machine learning makes networks smarter and more resilient.</p>',
+    expTitle: 'Experience',
+    skills: '<div class="skill-card"><div class="skill-icon">🧠</div><h4>AI / ML</h4><div class="skill-tags"><span class="skill-tag">ML Algorithms</span><span class="skill-tag">NLP</span><span class="skill-tag">Neural Networks</span><span class="skill-tag">Data Science</span></div></div><div class="skill-card"><div class="skill-icon">🌐</div><h4>Networks</h4><div class="skill-tags"><span class="skill-tag">TCP/IP</span><span class="skill-tag">Protocols</span><span class="skill-tag">Monitoring</span><span class="skill-tag">Security</span></div></div><div class="skill-card"><div class="skill-icon">🔬</div><h4>Research</h4><div class="skill-tags"><span class="skill-tag">R</span><span class="skill-tag">MATLAB</span><span class="skill-tag">Python</span><span class="skill-tag">Analysis</span></div></div><div class="skill-card"><div class="skill-icon">🎨</div><h4>Creative Tech</h4><div class="skill-tags"><span class="skill-tag">HTML/CSS</span><span class="skill-tag">JavaScript</span><span class="skill-tag">UX/UI</span></div></div>',
     skillsTitle: 'Areas of Exploration'
   }
 };
 
-var expHTML = '<div class="exp-card"><div class="exp-header"><div class="exp-title">IT Attachee</div><span class="exp-date">June – Sept 2025</span></div><div class="exp-company">Total Energies</div><ul class="exp-list"><li>Managed IT systems and provided technical support for 25+ staff users</li><li>Diagnosed and resolved hardware and software issues, minimizing downtime</li><li>Maintained network infrastructure, security protocols, and system configurations</li></ul></div><div class="exp-card"><div class="exp-header"><div class="exp-title">IT Support Volunteer</div><span class="exp-date">2024 – Ongoing</span></div><div class="exp-company">Community Youth Center</div><ul class="exp-list"><li>Trained 30+ young people in foundational IT skills and digital literacy</li><li>Designed and implemented a local area network infrastructure for the center</li><li>Implemented cybersecurity best practices to protect community resources</li></ul></div>';
+var expHTML = '<div class="exp-card"><div class="exp-header"><div class="exp-title">IT Attachee</div><span class="exp-date">June – Sept 2025</span></div><div class="exp-company">Total Energies</div><ul class="exp-list"><li>Managed IT systems and technical support for 25+ staff</li><li>Diagnosed and resolved hardware and software issues</li><li>Maintained network infrastructure and security protocols</li></ul></div><div class="exp-card"><div class="exp-header"><div class="exp-title">IT Support Volunteer</div><span class="exp-date">2024 – Ongoing</span></div><div class="exp-company">Community Youth Center</div><ul class="exp-list"><li>Trained 30+ young people in foundational IT skills</li><li>Designed and implemented local area network infrastructure</li><li>Implemented cybersecurity best practices</li></ul></div>';
 
-// ═══════════════════════════════════════════════════════
-//  HERO TYPEWRITER (inside portfolio)
-// ═══════════════════════════════════════════════════════
-function HeroTW(el, phrases) {
-  this.el = el; this.phrases = phrases; this.pi = 0; this.ci = 0; this.del = false; this.t = null;
-}
-HeroTW.prototype.start = function () { this._tick(); };
-HeroTW.prototype.stop  = function () { clearTimeout(this.t); };
-HeroTW.prototype._tick = function () {
-  var self = this, txt = self.phrases[self.pi];
-  if (!self.del) {
-    self.el.textContent = txt.slice(0, self.ci++);
-    if (self.ci > txt.length) { self.del = true; self.t = setTimeout(function(){self._tick();}, 2200); return; }
-  } else {
-    self.el.textContent = txt.slice(0, self.ci--);
-    if (self.ci < 0) { self.del = false; self.pi = (self.pi + 1) % self.phrases.length; self.ci = 0; self.t = setTimeout(function(){self._tick();}, 500); return; }
-  }
-  self.t = setTimeout(function(){self._tick();}, self.del ? 45 : 90);
+var projectsHTML = {
+  recruiter: '<div class="project-card"><div class="project-header"><div class="project-icon">📡</div><div class="project-links"><button onclick="openDemo(\'network\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-link">GitHub</a></div></div><h3>Network Monitor</h3><p class="project-desc">Enterprise real-time monitoring for system reliability and proactive fault detection.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Networking</span></div><span class="project-impact">99% Uptime</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🤖</div><div class="project-links"><button onclick="openDemo(\'resume\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-link">GitHub</a></div></div><h3>AI Resume Analyzer</h3><p class="project-desc">Intelligent talent screening using ML and NLP for automated resume evaluation.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">NLP</span></div><span class="project-impact">70% faster</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📦</div><div class="project-links"><button onclick="openDemo(\'inventory\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-link">GitHub</a></div></div><h3>Inventory System</h3><p class="project-desc">Efficient stock management reducing manual errors and streamlining operations.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">SQL</span></div><span class="project-impact">95% error reduction</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🛡️</div><div class="project-links"><button onclick="openDemo(\'cyber\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat-detection" target="_blank" class="project-link">GitHub</a></div></div><h3>Threat Detection</h3><p class="project-desc">ML-based threat detection providing real-time security analysis for enterprises.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">ML</span></div><span class="project-impact">Real-time</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">💰</div><div class="project-links"><button onclick="openDemo(\'finance\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/ML-Powered-Personal-Finance-Assistant" target="_blank" class="project-link">GitHub</a></div></div><h3>Finance Assistant</h3><p class="project-desc">Intelligent budgeting with predictive analysis for better financial decisions.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">ML</span></div><span class="project-impact">Smart budgeting</span></div></div>',
+  developer: '<div class="project-card"><div class="project-header"><div class="project-icon">📡</div><div class="project-links"><button onclick="openDemo(\'network\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-link">GitHub</a></div></div><h3>Network Monitor</h3><p class="project-desc">Python-powered system with live metrics, alerting, and network topology visualization.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Networking</span></div></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🤖</div><div class="project-links"><button onclick="openDemo(\'resume\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-link">GitHub</a></div></div><h3>AI Resume Analyzer</h3><p class="project-desc">NLP pipeline with semantic similarity and structured JSON output from text.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">NLP</span></div></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📦</div><div class="project-links"><button onclick="openDemo(\'inventory\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-link">GitHub</a></div></div><h3>Inventory System</h3><p class="project-desc">Full-stack CRUD with optimized SQL queries and responsive HTML frontend.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">SQL</span></div></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🛡️</div><div class="project-links"><button onclick="openDemo(\'cyber\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat-detection" target="_blank" class="project-link">GitHub</a></div></div><h3>Threat Detection</h3><p class="project-desc">AI anomaly detection with real-time log analysis and ML classification.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">ML</span></div></div></div><div class="project-card"><div class="project-header"><div class="project-icon">💰</div><div class="project-links"><button onclick="openDemo(\'finance\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/ML-Powered-Personal-Finance-Assistant" target="_blank" class="project-link">GitHub</a></div></div><h3>Finance Assistant</h3><p class="project-desc">JavaScript ML integration with forecasting and data visualization.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">ML</span></div></div></div>',
+  client: '<div class="project-card"><div class="project-header"><div class="project-icon">📡</div><div class="project-links"><button onclick="openDemo(\'network\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-link">Learn More</a></div></div><h3>Network Monitor</h3><p class="project-desc">Enterprise monitoring ensuring maximum uptime and proactive fault resolution.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span></div><span class="project-impact">System reliability</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🤖</div><div class="project-links"><button onclick="openDemo(\'resume\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-link">Learn More</a></div></div><h3>AI Resume Analyzer</h3><p class="project-desc">Automates recruitment screening—cuts manual review time dramatically.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span></div><span class="project-impact">70% faster</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📦</div><div class="project-links"><button onclick="openDemo(\'inventory\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-link">Learn More</a></div></div><h3>Inventory System</h3><p class="project-desc">Eliminates manual errors and gives real-time visibility into stock levels.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span></div><span class="project-impact">95% fewer errors</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🛡️</div><div class="project-links"><button onclick="openDemo(\'cyber\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat-detection" target="_blank" class="project-link">Learn More</a></div></div><h3>Threat Detection</h3><p class="project-desc">AI-powered protection detecting threats in real time before they escalate.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span></div><span class="project-impact">Enterprise security</span></div></div>',
+  explorer: '<div class="project-card"><div class="project-header"><div class="project-icon">📡</div><div class="project-links"><button onclick="openDemo(\'network\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-link">Explore</a></div></div><h3>Network Monitor</h3><p class="project-desc">What if you could see your entire network in real time? Built in Python.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span></div><span class="project-impact">Networks→Python</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🤖</div><div class="project-links"><button onclick="openDemo(\'resume\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-link">Explore</a></div></div><h3>AI Resume Analyzer</h3><p class="project-desc">Can machines understand what makes great candidates? Exploring semantic analysis.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">NLP</span></div><span class="project-impact">AI→NLP</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🛡️</div><div class="project-links"><button onclick="openDemo(\'cyber\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat-detection" target="_blank" class="project-link">Explore</a></div></div><h3>Threat Detection</h3><p class="project-desc">Can ML detect attacks before they happen? At the AI + security frontier.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">ML</span></div><span class="project-impact">AI→Security</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📦</div><div class="project-links"><button onclick="openDemo(\'inventory\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-link">Explore</a></div></div><h3>Inventory System</h3><p class="project-desc">Learning database architecture and full-stack thinking from schema to UI.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">SQL</span></div><span class="project-impact">Databases</span></div></div>'
 };
 
-var currentHeroTW = null;
+var demoData = {
+  network: { title: 'Network Monitor', subtitle: 'Python · Real-time', panels: ['<div style="padding:20px;background:var(--bg-secondary);border-radius:2px;border:1px solid var(--border-soft);font-family:monospace;font-size:0.85em"><div style="color:var(--text-muted)">CPU: 45% | RAM: 62% | Network ↑1.2MB/s ↓3.8MB/s</div><div style="color:var(--text-muted);margin-top:10px">Active connections: 3 | Status: OK</div></div>', '<p style="color:var(--text-muted)">Real-time system monitoring with live metrics, alerting, and network visualization.</p>'] },
+  resume: { title: 'AI Resume Analyzer', subtitle: 'Python · NLP', panels: ['<textarea style="width:100%;height:120px;padding:12px;background:var(--bg-secondary);border:1px solid var(--border-soft);border-radius:2px;color:var(--text-primary);font-family:monospace;font-size:0.85em;resize:none" readonly>Python developer with 2 years ML experience, skilled in TensorFlow and scikit-learn. Led fraud detection system team.</textarea><p style="margin-top:10px;color:var(--accent-warm);font-weight:600">Match Score: 78% Strong</p>', '<p style="color:var(--text-muted)">NLP-powered scoring and semantic analysis. Cuts recruiter review time by 70%.</p>'] },
+  cyber: { title: 'Threat Detection', subtitle: 'Python · ML', panels: ['<div style="padding:12px;background:var(--bg-secondary);border-radius:2px;border:1px solid var(--border-soft);font-family:monospace;font-size:0.8em;color:var(--text-muted)"><div>[BLOCKED] SQL Injection - 203.45.xx.xx</div><div style="color:var(--accent-warm);margin-top:6px">[ANOMALY] 47 login attempts - locked</div><div style="margin-top:6px">[BLOCKED] Port scan detected</div></div>', '<p style="color:var(--text-muted)">Anomaly detection with threat classification. Real-time response for enterprise security.</p>'] },
+  inventory: { title: 'Inventory System', subtitle: 'HTML · SQL', panels: ['<div style="padding:12px;background:var(--bg-secondary);border-radius:2px;border:1px solid var(--border-soft);font-family:monospace;font-size:0.8em;color:var(--text-muted)"><div>Products: 4 | Total Value: KSh 77,500 | Low Stock: 1</div><div style="margin-top:8px">Laptop Stand - 24 qty</div><div>USB-C Hub - 2 qty ⚠ Low</div></div>', '<p style="color:var(--text-muted)">Full CRUD operations. Real-time stock alerts and dashboard updates. RESTful API.</p>'] },
+  finance: { title: 'Finance Assistant', subtitle: 'JavaScript · ML', panels: ['<div style="padding:12px;background:var(--bg-secondary);border-radius:2px;border:1px solid var(--border-soft);font-family:monospace;font-size:0.8em;color:var(--text-muted)"><div>Balance: +12,400 | Income: 45,000 | Expenses: 32,600 | Savings: 27.6%</div><div style="margin-top:8px;color:var(--accent-warm)">ML Prediction: Next month food ~11,900</div></div>', '<p style="color:var(--text-muted)">In-browser ML predictions. Spending forecasts and budget health analysis. 100% private.</p>'] }
+};
 
-// ═══════════════════════════════════════════════════════
-//  SHOW PORTFOLIO
-// ═══════════════════════════════════════════════════════
 function showPortfolio(type) {
   var d = portfolioData[type];
-  if (currentHeroTW) currentHeroTW.stop();
   document.getElementById('landingPage').style.display = 'none';
   document.getElementById('portfolioContent').classList.add('active');
   document.getElementById('heroSub').textContent = d.heroSub;
@@ -598,15 +1338,20 @@ function showPortfolio(type) {
   document.getElementById('skillsTitle').textContent = d.skillsTitle;
   document.getElementById('skillsContent').innerHTML = d.skills;
   document.getElementById('projectsContent').innerHTML = projectsHTML[type];
-  currentHeroTW = new HeroTW(document.getElementById('heroTypewriter'), d.hero);
-  currentHeroTW.start();
+  
+  var tw = document.getElementById('heroTypewriter');
+  tw.textContent = d.hero[0];
+  var hi = 0;
+  setInterval(() => {
+    hi = (hi + 1) % d.hero.length;
+    typewriter(tw, d.hero[hi], 60);
+  }, 4000);
+  
   window.scrollTo(0, 0);
   setupScrollObserver();
-  updateCVCounter();
 }
 
 function showLanding() {
-  if (currentHeroTW) currentHeroTW.stop();
   document.getElementById('landingPage').style.display = 'flex';
   document.getElementById('portfolioContent').classList.remove('active');
   window.scrollTo(0, 0);
@@ -614,24 +1359,40 @@ function showLanding() {
 
 function scrollToSection(id) {
   var el = document.getElementById(id);
-  if (el) el.scrollIntoView({behavior:'smooth'});
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
   document.getElementById('navLinks').classList.remove('open');
+}
+
+function openDemo(key) {
+  var d = demoData[key];
+  document.getElementById('modalTitle').textContent = d.title;
+  document.getElementById('modalSubtitle').textContent = d.subtitle;
+  document.getElementById('modalBody').innerHTML = d.panels[0];
+  document.getElementById('modalActions').innerHTML = '<a href="https://github.com/WangilaWakhongola" target="_blank" class="btn-outline">View on GitHub</a>';
+  document.getElementById('demoModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDemo() {
+  document.getElementById('demoModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeDemoIfOverlay(e) {
+  if (e.target === document.getElementById('demoModal')) closeDemo();
 }
 
 function downloadCV() {
   var c = parseInt(localStorage.getItem('cvDL') || '0') + 1;
   localStorage.setItem('cvDL', c);
-  updateCVCounter();
+  var el = document.getElementById('cvCounter');
+  if (el && c > 0) el.textContent = 'Downloaded ' + c + ' time' + (c > 1 ? 's' : '') + ' from this device';
   var a = document.createElement('a');
   a.href = 'https://github.com/WangilaWakhongola/MyPortfolio/raw/main/Resume.pdf';
   a.download = 'Emmanuel_Wakhongola_CV.pdf';
-  document.body.appendChild(a); a.click(); document.body.removeChild(a);
-}
-
-function updateCVCounter() {
-  var c = localStorage.getItem('cvDL') || '0';
-  var el = document.getElementById('cvCounter');
-  if (el && parseInt(c) > 0) el.textContent = 'Downloaded ' + c + ' time' + (c > 1 ? 's' : '') + ' from this device';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
 }
 
 function toggleTheme() {
@@ -639,17 +1400,27 @@ function toggleTheme() {
   document.querySelector('.theme-toggle').textContent = document.body.classList.contains('light') ? '🌙 Dark' : '☀️ Light';
 }
 
-function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+function toggleNav() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
 
 function setupScrollObserver() {
   var obs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, {threshold: 0.1});
-  document.querySelectorAll('.fade-in').forEach(function(el) { obs.observe(el); });
+    entries.forEach(function(e) {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(function(el) {
+    obs.observe(el);
+  });
 }
 
-window.addEventListener('scroll', function () {
-  var sections = ['home','about','experience','skills','projects','cv','contact'];
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeDemo();
+});
+
+window.addEventListener('scroll', function() {
+  var sections = ['home', 'about', 'experience', 'skills', 'projects', 'cv', 'contact'];
   var cur = '';
   sections.forEach(function(id) {
     var el = document.getElementById(id);
@@ -661,167 +1432,11 @@ window.addEventListener('scroll', function () {
   });
 });
 
-// ═══════════════════════════════════════════════════════
-//  DEMO MODAL
-// ═══════════════════════════════════════════════════════
-var currentDemoKey = null, netInterval = null;
-
-var demoData = {
-  network: {
-    title: 'Network Monitoring Dashboard', subtitle: 'Python · psutil · Real-time',
-    github: 'https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard',
-    tabs: ['Live Demo', 'Features'],
-    panels: [
-      '<div style="background:#020810;border-radius:14px;overflow:hidden;border:1px solid rgba(0,198,255,0.15)"><div style="background:#0c1525;padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(0,198,255,0.1)"><div style="width:10px;height:10px;border-radius:50%;background:#ff5f56"></div><div style="width:10px;height:10px;border-radius:50%;background:#ffbd2e"></div><div style="width:10px;height:10px;border-radius:50%;background:#27c93f"></div><span style="margin-left:8px;font-size:0.72em;color:#4a5a80;font-family:monospace">Network Monitor — Live</span><span style="margin-left:auto;font-size:0.68em;color:#27c93f;animation:pulse 2s infinite">● LIVE</span></div><div style="padding:16px;font-family:monospace"><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px"><div style="background:#0f1d30;border:1px solid rgba(0,198,255,0.15);border-radius:10px;padding:12px;text-align:center"><div style="font-size:0.6em;color:#4a5a80;text-transform:uppercase;margin-bottom:4px">CPU</div><div style="font-size:1.5em;font-weight:800;color:#00c6ff" id="cpuVal">34%</div><div style="height:4px;background:#0a1528;border-radius:2px;margin-top:6px"><div id="cpuBar" style="height:4px;background:linear-gradient(90deg,#0066ff,#00c6ff);border-radius:2px;width:34%;transition:width 0.8s"></div></div></div><div style="background:#0f1d30;border:1px solid rgba(0,198,255,0.15);border-radius:10px;padding:12px;text-align:center"><div style="font-size:0.6em;color:#4a5a80;text-transform:uppercase;margin-bottom:4px">RAM</div><div style="font-size:1.5em;font-weight:800;color:#7b2fff" id="ramVal">62%</div><div style="height:4px;background:#0a1528;border-radius:2px;margin-top:6px"><div id="ramBar" style="height:4px;background:linear-gradient(90deg,#7b2fff,#b388ff);border-radius:2px;width:62%;transition:width 0.8s"></div></div></div><div style="background:#0f1d30;border:1px solid rgba(0,198,255,0.15);border-radius:10px;padding:12px;text-align:center"><div style="font-size:0.6em;color:#4a5a80;text-transform:uppercase;margin-bottom:4px">NET ↑</div><div style="font-size:1.5em;font-weight:800;color:#00d084" id="netUp">1.2 MB/s</div></div><div style="background:#0f1d30;border:1px solid rgba(0,198,255,0.15);border-radius:10px;padding:12px;text-align:center"><div style="font-size:0.6em;color:#4a5a80;text-transform:uppercase;margin-bottom:4px">NET ↓</div><div style="font-size:1.5em;font-weight:800;color:#f87171" id="netDown">3.8 MB/s</div></div></div><div style="background:#0f1d30;border:1px solid rgba(0,198,255,0.1);border-radius:10px;padding:12px;margin-bottom:12px"><div style="font-size:0.65em;color:#4a5a80;margin-bottom:8px;text-transform:uppercase">Active Connections</div><div id="connList" style="display:flex;flex-direction:column;gap:5px;font-size:0.7em"><div style="display:flex;justify-content:space-between;color:#7a8fb5"><span>192.168.1.1:443</span><span style="color:#00d084">● ESTABLISHED</span><span>TCP</span></div><div style="display:flex;justify-content:space-between;color:#7a8fb5"><span>10.0.0.55:8080</span><span style="color:#00d084">● ESTABLISHED</span><span>TCP</span></div><div style="display:flex;justify-content:space-between;color:#7a8fb5"><span>172.16.0.3:22</span><span style="color:#ffbd2e">● TIME_WAIT</span><span>TCP</span></div></div></div><div style="background:#0f1d30;border:1px solid rgba(0,198,255,0.1);border-radius:10px;padding:10px;margin-bottom:12px;font-size:0.65em"><div style="color:#4a5a80;margin-bottom:6px;text-transform:uppercase">System Log</div><div id="logArea" style="line-height:1.8;max-height:80px;overflow:hidden"><div style="color:#00d084">[INFO] Monitor started. Scanning every 2s...</div><div style="color:#7a8fb5">[INFO] 3 active connections detected</div></div></div><div style="text-align:center"><button onclick="startNetDemo()" style="background:linear-gradient(135deg,#0066ff,#00c6ff);color:#060d1a;border:none;padding:8px 20px;border-radius:8px;font-size:0.75em;font-weight:700;cursor:pointer;margin-right:8px">▶ Start Live Sim</button><button onclick="stopNetDemo()" style="background:rgba(255,255,255,0.05);color:#7a8fb5;border:1px solid rgba(255,255,255,0.1);padding:8px 20px;border-radius:8px;font-size:0.75em;cursor:pointer">■ Stop</button></div></div></div>',
-      '<div style="display:flex;flex-direction:column;gap:12px"><div style="background:rgba(0,198,255,0.05);border:1px solid rgba(0,198,255,0.15);border-radius:14px;padding:18px;display:flex;gap:14px"><span style="font-size:1.6em">📡</span><div><div style="font-family:\'Syne\',sans-serif;font-weight:700;margin-bottom:4px">Real-time System Monitoring</div><div style="font-size:0.83em;color:var(--muted);line-height:1.7">Tracks CPU, RAM, disk I/O, and network throughput every 2 seconds using Python\'s psutil. Alerts fire when thresholds are crossed.</div></div></div><div style="background:rgba(0,198,255,0.05);border:1px solid rgba(0,198,255,0.15);border-radius:14px;padding:18px;display:flex;gap:14px"><span style="font-size:1.6em">🌐</span><div><div style="font-family:\'Syne\',sans-serif;font-weight:700;margin-bottom:4px">Active Connection Tracking</div><div style="font-size:0.83em;color:var(--muted);line-height:1.7">Lists all active TCP/UDP connections with IP, port, state updated live.</div></div></div><div style="background:rgba(0,198,255,0.05);border:1px solid rgba(0,198,255,0.15);border-radius:14px;padding:18px;display:flex;gap:14px"><span style="font-size:1.6em">⚡</span><div><div style="font-family:\'Syne\',sans-serif;font-weight:700;margin-bottom:4px">Pure Python</div><div style="font-size:0.83em;color:var(--muted);line-height:1.7">psutil for system metrics, socket for network scanning, clean terminal or web dashboard output.</div></div></div></div>'
-    ]
-  },
-  resume: {
-    title: 'AI Resume Analyzer', subtitle: 'Python · NLP · ML Scoring',
-    github: 'https://github.com/WangilaWakhongola/AI-Resume-Analyzer',
-    tabs: ['Live Demo', 'Features'],
-    panels: [
-      '<div style="background:#020810;border-radius:14px;overflow:hidden;border:1px solid rgba(0,198,255,0.15)"><div style="background:#0c1525;padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(0,198,255,0.1)"><div style="width:10px;height:10px;border-radius:50%;background:#ff5f56"></div><div style="width:10px;height:10px;border-radius:50%;background:#ffbd2e"></div><div style="width:10px;height:10px;border-radius:50%;background:#27c93f"></div><span style="margin-left:8px;font-size:0.72em;color:#4a5a80;font-family:monospace">AI Resume Analyzer</span></div><div style="padding:20px;font-family:sans-serif"><label style="font-size:0.75em;color:#4a5a80;text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:6px">Paste Resume Text:</label><textarea id="resumeInput" style="width:100%;background:#0f1d30;border:1px solid rgba(0,198,255,0.15);border-radius:10px;padding:12px;color:#e8f0fe;font-size:0.8em;resize:none;height:80px;outline:none;font-family:monospace;margin-bottom:10px">Python developer with 2 years experience in machine learning, NLP, and data analysis. Skilled in TensorFlow, scikit-learn, SQL databases, and REST API development. Led a team to deliver a fraud detection system.</textarea><div style="display:flex;gap:8px;margin-bottom:16px"><button onclick="analyzeResume()" style="background:linear-gradient(135deg,#0066ff,#00c6ff);color:#060d1a;border:none;padding:9px 20px;border-radius:8px;font-size:0.78em;font-weight:700;cursor:pointer">🤖 Analyze Resume</button><button onclick="document.getElementById(\'resumeInput\').value=\'Senior cybersecurity analyst with 5 years in threat detection, penetration testing, SIEM tools, and incident response. Certified CEH and CISSP. Built anomaly detection systems using ML.\';analyzeResume()" style="background:rgba(255,255,255,0.05);color:#7a8fb5;border:1px solid rgba(255,255,255,0.1);padding:9px 14px;border-radius:8px;font-size:0.75em;cursor:pointer">Try Security CV</button></div><div id="resumeResult" style="display:none"><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px"><div style="background:#0f1d30;border:1px solid rgba(0,198,255,0.15);border-radius:10px;padding:14px;text-align:center"><div style="font-size:0.65em;color:#4a5a80;text-transform:uppercase;margin-bottom:6px">Match Score</div><div style="font-size:2.2em;font-weight:800" id="scoreDisplay">0</div><div style="font-size:0.7em;margin-top:2px" id="scoreLabel">—</div></div><div style="background:#0f1d30;border:1px solid rgba(0,198,255,0.15);border-radius:10px;padding:14px"><div style="font-size:0.65em;color:#4a5a80;text-transform:uppercase;margin-bottom:6px">Keywords Found</div><div id="keywordsFound" style="display:flex;flex-wrap:wrap;gap:4px"></div></div></div><div style="background:#0f1d30;border:1px solid rgba(0,198,255,0.15);border-radius:10px;padding:14px"><div style="font-size:0.65em;color:#4a5a80;text-transform:uppercase;margin-bottom:8px">AI Recommendations</div><div id="recommendations" style="font-size:0.78em;color:#7a8fb5;line-height:1.8"></div></div></div></div></div>',
-      '<div style="display:flex;flex-direction:column;gap:12px"><div style="background:rgba(123,47,255,0.05);border:1px solid rgba(123,47,255,0.2);border-radius:14px;padding:18px;display:flex;gap:14px"><span style="font-size:1.6em">🧠</span><div><div style="font-family:\'Syne\',sans-serif;font-weight:700;margin-bottom:4px">NLP Keyword Extraction</div><div style="font-size:0.83em;color:var(--muted);line-height:1.7">Extracts skills and qualifications from unstructured resume text. Scores matches against job description keywords.</div></div></div><div style="background:rgba(123,47,255,0.05);border:1px solid rgba(123,47,255,0.2);border-radius:14px;padding:18px;display:flex;gap:14px"><span style="font-size:1.6em">📊</span><div><div style="font-family:\'Syne\',sans-serif;font-weight:700;margin-bottom:4px">0–100 Candidate Scoring</div><div style="font-size:0.83em;color:var(--muted);line-height:1.7">Scores each resume 0–100 and classifies as Strong, Good, or Weak match — cutting recruiter review time by 70%.</div></div></div><div style="background:rgba(123,47,255,0.05);border:1px solid rgba(123,47,255,0.2);border-radius:14px;padding:18px;display:flex;gap:14px"><span style="font-size:1.6em">💡</span><div><div style="font-family:\'Syne\',sans-serif;font-weight:700;margin-bottom:4px">Actionable Recommendations</div><div style="font-size:0.83em;color:var(--muted);line-height:1.7">Generates specific improvement suggestions per candidate — what skills to add, what to emphasize.</div></div></div></div>'
-    ]
-  },
-  cyber: {
-    title: 'Cybersecurity Threat Detection', subtitle: 'Python · ML · Anomaly Detection',
-    github: 'https://github.com/WangilaWakhongola/Cybersecurity-threat-detection',
-    tabs: ['Live Demo', 'Features'],
-    panels: [
-      '<div style="background:#020810;border-radius:14px;overflow:hidden;border:1px solid rgba(248,113,113,0.2)"><div style="background:#0c1525;padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(248,113,113,0.1)"><div style="width:10px;height:10px;border-radius:50%;background:#ff5f56"></div><div style="width:10px;height:10px;border-radius:50%;background:#ffbd2e"></div><div style="width:10px;height:10px;border-radius:50%;background:#27c93f"></div><span style="margin-left:8px;font-size:0.72em;color:#4a5a80;font-family:monospace">ThreatGuard Monitor</span><span style="margin-left:auto;font-size:0.68em;color:#f87171;animation:pulse 1.5s infinite">⚠ MONITORING</span></div><div style="padding:16px;font-family:monospace"><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px"><div style="background:#0f1d30;border:1px solid rgba(248,113,113,0.2);border-radius:10px;padding:12px;text-align:center"><div style="font-size:0.6em;color:#4a5a80;text-transform:uppercase;margin-bottom:4px">Threats Blocked</div><div style="font-size:1.6em;font-weight:800;color:#f87171" id="threatCount">7</div></div><div style="background:#0f1d30;border:1px solid rgba(251,191,36,0.2);border-radius:10px;padding:12px;text-align:center"><div style="font-size:0.6em;color:#4a5a80;text-transform:uppercase;margin-bottom:4px">Anomalies</div><div style="font-size:1.6em;font-weight:800;color:#fbbf24" id="anomalyCount">3</div></div><div style="background:#0f1d30;border:1px solid rgba(0,208,84,0.2);border-radius:10px;padding:12px;text-align:center"><div style="font-size:0.6em;color:#4a5a80;text-transform:uppercase;margin-bottom:4px">Status</div><div style="font-size:1em;font-weight:800;color:#00d054;margin-top:4px">SECURE</div></div></div><div style="background:#0f1d30;border:1px solid rgba(248,113,113,0.15);border-radius:10px;padding:12px;margin-bottom:12px"><div style="font-size:0.62em;color:#4a5a80;text-transform:uppercase;margin-bottom:8px">Live Threat Log</div><div id="threatLog" style="font-size:0.68em;line-height:2;max-height:130px;overflow-y:auto"><div><span style="color:#f87171">[BLOCKED]</span> <span style="color:#7a8fb5">SQL Injection attempt — 185.234.xx.xx — Port 3306</span></div><div><span style="color:#fbbf24">[ANOMALY]</span> <span style="color:#7a8fb5">Unusual login — 3:42AM — 12 failed attempts</span></div><div><span style="color:#f87171">[BLOCKED]</span> <span style="color:#7a8fb5">Port scan detected — 192.168.1.200</span></div><div><span style="color:#00d054">[INFO]</span> <span style="color:#7a8fb5">Firewall rules updated — 14 active</span></div></div></div><div style="display:flex;gap:8px;align-items:center"><select id="attackType" style="flex:1;background:#0f1d30;border:1px solid rgba(0,198,255,0.15);border-radius:8px;padding:8px;color:#e8f0fe;font-size:0.72em;outline:none"><option>SQL Injection</option><option>Brute Force Login</option><option>Port Scan</option><option>DDoS Attempt</option><option>Ransomware Signature</option></select><button onclick="simAttack()" style="background:linear-gradient(135deg,#f87171,#ef4444);color:white;border:none;padding:9px 16px;border-radius:8px;font-size:0.75em;font-weight:700;cursor:pointer;white-space:nowrap">⚠ Simulate Attack</button></div></div></div>',
-      '<div style="display:flex;flex-direction:column;gap:12px"><div style="background:rgba(248,113,113,0.05);border:1px solid rgba(248,113,113,0.2);border-radius:14px;padding:18px;display:flex;gap:14px"><span style="font-size:1.6em">🔍</span><div><div style="font-family:\'Syne\',sans-serif;font-weight:700;margin-bottom:4px">ML Anomaly Detection</div><div style="font-size:0.83em;color:var(--muted);line-height:1.7">Z-score and isolation forest algorithms detect unusual network patterns and login spikes in real time.</div></div></div><div style="background:rgba(248,113,113,0.05);border:1px solid rgba(248,113,113,0.2);border-radius:14px;padding:18px;display:flex;gap:14px"><span style="font-size:1.6em">🛡️</span><div><div style="font-family:\'Syne\',sans-serif;font-weight:700;margin-bottom:4px">Threat Classification</div><div style="font-size:0.83em;color:var(--muted);line-height:1.7">Classifies threats by type (SQL injection, brute force, port scan, DDoS) with severity levels and timestamps.</div></div></div><div style="background:rgba(248,113,113,0.05);border:1px solid rgba(248,113,113,0.2);border-radius:14px;padding:18px;display:flex;gap:14px"><span style="font-size:1.6em">⚡</span><div><div style="font-family:\'Syne\',sans-serif;font-weight:700;margin-bottom:4px">Real-time Response</div><div style="font-size:0.83em;color:var(--muted);line-height:1.7">Automatically blocks threats and fires alerts. Designed for enterprise environments where every second of exposure matters.</div></div></div></div>'
-    ]
-  },
-  inventory: {
-    title: 'Inventory Management System', subtitle: 'HTML · SQL · Flask',
-    github: 'https://github.com/WangilaWakhongola/inventory-management-system',
-    tabs: ['Live Demo', 'Features'],
-    panels: [
-      '<div style="background:#020810;border-radius:14px;overflow:hidden;border:1px solid rgba(0,198,255,0.15)"><div style="background:#0c1525;padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(0,198,255,0.1)"><div style="width:10px;height:10px;border-radius:50%;background:#ff5f56"></div><div style="width:10px;height:10px;border-radius:50%;background:#ffbd2e"></div><div style="width:10px;height:10px;border-radius:50%;background:#27c93f"></div><span style="margin-left:8px;font-size:0.72em;color:#4a5a80;font-family:monospace">Inventory Management System</span></div><div style="padding:16px;font-family:sans-serif"><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px"><div style="background:#0f1d30;border:1px solid rgba(0,198,255,0.15);border-radius:10px;padding:12px;text-align:center"><div style="font-size:0.6em;color:#4a5a80;text-transform:uppercase">Products</div><div style="font-size:1.6em;font-weight:800;color:#38bdf8" id="demoTotal">4</div></div><div style="background:#0f1d30;border:1px solid rgba(0,198,255,0.15);border-radius:10px;padding:12px;text-align:center"><div style="font-size:0.6em;color:#4a5a80;text-transform:uppercase">Total Value</div><div style="font-size:1.1em;font-weight:800;color:#4ade80" id="demoValue">KSh 77,500</div></div><div style="background:#0f1d30;border:1px solid rgba(248,113,113,0.3);border-radius:10px;padding:12px;text-align:center"><div style="font-size:0.6em;color:#4a5a80;text-transform:uppercase">Low Stock</div><div style="font-size:1.6em;font-weight:800;color:#f87171" id="demoLow">1</div></div></div><div style="background:#0f1d30;border:1px solid rgba(0,198,255,0.1);border-radius:10px;overflow:hidden;margin-bottom:12px"><div style="padding:10px 14px;border-bottom:1px solid rgba(0,198,255,0.08);display:flex;justify-content:space-between;align-items:center"><span style="font-size:0.75em;font-weight:600;color:#e2e8f0">Product List</span><button onclick="addInventoryItem()" style="background:linear-gradient(135deg,#0066ff,#00c6ff);color:#060d1a;border:none;padding:6px 14px;border-radius:6px;font-size:0.7em;cursor:pointer;font-weight:700">+ Add Item</button></div><div id="demoTable" style="font-size:0.72em"><div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:7px 14px;color:#4a5a80;border-bottom:1px solid rgba(0,198,255,0.05);text-transform:uppercase;font-size:0.9em"><span>Product</span><span>Category</span><span>Qty</span><span>Price</span></div><div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:9px 14px;color:#94a3b8;border-bottom:1px solid rgba(255,255,255,0.03)"><span>Laptop Stand</span><span>Hardware</span><span style="color:#4ade80">24</span><span>KSh 3,200</span></div><div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:9px 14px;color:#94a3b8;border-bottom:1px solid rgba(255,255,255,0.03)"><span>USB-C Hub</span><span>Accessories</span><span style="color:#f87171">2 ⚠</span><span>KSh 1,800</span></div><div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:9px 14px;color:#94a3b8;border-bottom:1px solid rgba(255,255,255,0.03)"><span>Wireless Mouse</span><span>Accessories</span><span style="color:#4ade80">15</span><span>KSh 2,500</span></div><div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:9px 14px;color:#94a3b8"><span>SSD 512GB</span><span>Hardware</span><span style="color:#4ade80">8</span><span>KSh 12,000</span></div></div></div><p style="font-size:0.7em;color:#4a5a80;text-align:center">Click "+ Add Item" to add random stock</p></div></div>',
-      '<div style="display:flex;flex-direction:column;gap:12px"><div style="background:rgba(0,198,255,0.05);border:1px solid rgba(0,198,255,0.15);border-radius:14px;padding:18px;display:flex;gap:14px"><span style="font-size:1.6em">📦</span><div><div style="font-family:\'Syne\',sans-serif;font-weight:700;margin-bottom:4px">Full CRUD Operations</div><div style="font-size:0.83em;color:var(--muted);line-height:1.7">Add, view, edit, and delete inventory items without page refreshes.</div></div></div><div style="background:rgba(0,198,255,0.05);border:1px solid rgba(0,198,255,0.15);border-radius:14px;padding:18px;display:flex;gap:14px"><span style="font-size:1.6em">⚠️</span><div><div style="font-family:\'Syne\',sans-serif;font-weight:700;margin-bottom:4px">Low Stock Alerts</div><div style="font-size:0.83em;color:var(--muted);line-height:1.7">Automatically flags items below reorder level in red. Dashboard stats update in real time.</div></div></div><div style="background:rgba(0,198,255,0.05);border:1px solid rgba(0,198,255,0.15);border-radius:14px;padding:18px;display:flex;gap:14px"><span style="font-size:1.6em">🔍</span><div><div style="font-family:\'Syne\',sans-serif;font-weight:700;margin-bottom:4px">Search & Filter</div><div style="font-size:0.83em;color:var(--muted);line-height:1.7">Search by product name or filter by category. Powered by Flask + SQLite with RESTful API endpoints.</div></div></div></div>'
-    ]
-  },
-  finance: {
-    title: 'ML-Powered Finance Assistant', subtitle: 'React · Recharts · ML Predictions',
-    github: 'https://github.com/WangilaWakhongola/ML-Powered-Personal-Finance-Assistant',
-    tabs: ['Live Demo', 'Features'],
-    panels: [
-      '<div style="background:#020810;border-radius:14px;overflow:hidden;border:1px solid rgba(0,198,255,0.15)"><div style="background:#0c1525;padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(0,198,255,0.1)"><div style="width:10px;height:10px;border-radius:50%;background:#ff5f56"></div><div style="width:10px;height:10px;border-radius:50%;background:#ffbd2e"></div><div style="width:10px;height:10px;border-radius:50%;background:#27c93f"></div><span style="margin-left:8px;font-size:0.72em;color:#4a5a80;font-family:monospace">FinanceAI Dashboard</span></div><div style="padding:16px;font-family:sans-serif"><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px"><div style="background:#0f1d30;border:1px solid rgba(0,198,255,0.15);border-radius:10px;padding:10px;text-align:center"><div style="font-size:0.58em;color:#4a5a80;text-transform:uppercase">Balance</div><div style="font-size:1.1em;font-weight:800;color:#4ade80;margin-top:3px">+12,400</div></div><div style="background:#0f1d30;border:1px solid rgba(0,198,255,0.15);border-radius:10px;padding:10px;text-align:center"><div style="font-size:0.58em;color:#4a5a80;text-transform:uppercase">Income</div><div style="font-size:1.1em;font-weight:800;color:#38bdf8;margin-top:3px">45,000</div></div><div style="background:#0f1d30;border:1px solid rgba(0,198,255,0.15);border-radius:10px;padding:10px;text-align:center"><div style="font-size:0.58em;color:#4a5a80;text-transform:uppercase">Expenses</div><div style="font-size:1.1em;font-weight:800;color:#f87171;margin-top:3px">32,600</div></div><div style="background:#0f1d30;border:1px solid rgba(0,198,255,0.15);border-radius:10px;padding:10px;text-align:center"><div style="font-size:0.58em;color:#4a5a80;text-transform:uppercase">Savings</div><div style="font-size:1.1em;font-weight:800;color:#a78bfa;margin-top:3px">27.6%</div></div></div><div style="display:flex;gap:8px;margin-bottom:12px"><input id="txDesc" placeholder="Description" style="flex:1;background:#0f1d30;border:1px solid rgba(0,198,255,0.15);border-radius:8px;padding:8px 12px;color:#e8f0fe;font-size:0.75em;outline:none"><input id="txAmt" placeholder="Amount" type="number" style="width:90px;background:#0f1d30;border:1px solid rgba(0,198,255,0.15);border-radius:8px;padding:8px 12px;color:#e8f0fe;font-size:0.75em;outline:none"><select id="txType" style="background:#0f1d30;border:1px solid rgba(0,198,255,0.15);border-radius:8px;padding:8px;color:#e8f0fe;font-size:0.75em;outline:none"><option value="expense">Expense</option><option value="income">Income</option></select><button onclick="addTx()" style="background:linear-gradient(135deg,#0066ff,#00c6ff);color:#060d1a;border:none;padding:8px 14px;border-radius:8px;font-size:0.75em;font-weight:700;cursor:pointer">Add</button></div><div style="background:#0f1d30;border:1px solid rgba(123,47,255,0.25);border-radius:10px;padding:12px;margin-bottom:10px"><div style="font-size:0.62em;color:#a78bfa;text-transform:uppercase;margin-bottom:8px">🤖 ML Predictions</div><div style="font-size:0.72em;color:#7a8fb5;line-height:2"><div style="display:flex;justify-content:space-between"><span>Next month food est.</span><span style="color:#fbbf24">KSh 11,900</span></div><div style="display:flex;justify-content:space-between"><span>Anomaly detected</span><span style="color:#f87171">⚠ Transport</span></div><div style="display:flex;justify-content:space-between"><span>Budget health</span><span style="color:#4ade80">Good ✓</span></div></div></div><div id="txList" style="font-size:0.72em;color:#7a8fb5;max-height:70px;overflow-y:auto"></div></div></div>',
-      '<div style="display:flex;flex-direction:column;gap:12px"><div style="background:rgba(123,47,255,0.05);border:1px solid rgba(123,47,255,0.2);border-radius:14px;padding:18px;display:flex;gap:14px"><span style="font-size:1.6em">🤖</span><div><div style="font-family:\'Syne\',sans-serif;font-weight:700;margin-bottom:4px">ML Spending Predictions</div><div style="font-size:0.83em;color:var(--muted);line-height:1.7">Linear regression predicts next month\'s expenses per category. Z-score anomaly detection flags unusual transactions automatically.</div></div></div><div style="background:rgba(123,47,255,0.05);border:1px solid rgba(123,47,255,0.2);border-radius:14px;padding:18px;display:flex;gap:14px"><span style="font-size:1.6em">📈</span><div><div style="font-family:\'Syne\',sans-serif;font-weight:700;margin-bottom:4px">Interactive Charts</div><div style="font-size:0.83em;color:var(--muted);line-height:1.7">Built with React 18 + Recharts. All charts update in real time as you add transactions.</div></div></div><div style="background:rgba(123,47,255,0.05);border:1px solid rgba(123,47,255,0.2);border-radius:14px;padding:18px;display:flex;gap:14px"><span style="font-size:1.6em">🔒</span><div><div style="font-family:\'Syne\',sans-serif;font-weight:700;margin-bottom:4px">100% Private</div><div style="font-size:0.83em;color:var(--muted);line-height:1.7">All data in browser localStorage — no cloud, no servers, no tracking. Complete financial privacy.</div></div></div></div>'
-    ]
-  },
-  tailwind: {
-    title: 'Tailwind Beginners Toolkit', subtitle: 'HTML · TailwindCSS · No Build Tools',
-    github: 'https://github.com/WangilaWakhongola/Tailwind-Beginners-Toolkit',
-    tabs: ['Live Demo', 'Features'],
-    panels: [
-      '<div style="background:#020810;border-radius:14px;overflow:hidden;border:1px solid rgba(0,198,255,0.15)"><div style="background:#0c1525;padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(0,198,255,0.1)"><div style="width:10px;height:10px;border-radius:50%;background:#ff5f56"></div><div style="width:10px;height:10px;border-radius:50%;background:#ffbd2e"></div><div style="width:10px;height:10px;border-radius:50%;background:#27c93f"></div><span style="margin-left:8px;font-size:0.72em;color:#4a5a80;font-family:monospace">Tailwind Profile Card</span></div><div style="background:linear-gradient(135deg,#eff6ff,#eef2ff);padding:30px 20px;display:flex;align-items:center;justify-content:center;min-height:300px"><div style="background:white;border-radius:20px;padding:32px 28px;max-width:300px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.12);text-align:center;font-family:sans-serif;transition:transform 0.3s" onmouseover="this.style.transform=\'scale(1.03)\'" onmouseout="this.style.transform=\'scale(1)\'"><div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#6366f1);margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-size:2em;box-shadow:0 8px 24px rgba(99,102,241,0.35)">👨‍💻</div><div style="font-size:1.2em;font-weight:700;color:#1e293b;margin-bottom:2px">Emmanuel Wakhongola</div><div style="font-size:0.8em;color:#64748b;margin-bottom:14px">AI/ML · Networking · Cybersecurity</div><div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:18px"><span style="background:#dbeafe;color:#1d4ed8;padding:3px 12px;border-radius:50px;font-size:0.72em;font-weight:600">Python</span><span style="background:#ede9fe;color:#7c3aed;padding:3px 12px;border-radius:50px;font-size:0.72em;font-weight:600">AI/ML</span><span style="background:#dcfce7;color:#166534;padding:3px 12px;border-radius:50px;font-size:0.72em;font-weight:600">SQL</span><span style="background:#fef3c7;color:#92400e;padding:3px 12px;border-radius:50px;font-size:0.72em;font-weight:600">Networking</span></div><div style="display:flex;gap:8px;justify-content:center"><button style="background:#3b82f6;color:white;padding:9px 18px;border-radius:8px;border:none;font-weight:600;font-size:0.8em;cursor:pointer" onmouseover="this.style.background=\'#1d4ed8\'" onmouseout="this.style.background=\'#3b82f6\'">Contact</button><button style="background:transparent;color:#3b82f6;padding:9px 18px;border-radius:8px;border:2px solid #3b82f6;font-weight:600;font-size:0.8em;cursor:pointer" onmouseover="this.style.background=\'#eff6ff\'" onmouseout="this.style.background=\'transparent\'">View Work</button></div></div></div></div><p style="font-size:0.78em;color:var(--muted);text-align:center;margin-top:10px">↑ Hover card to see animation — built with zero custom CSS</p>',
-      '<div style="display:flex;flex-direction:column;gap:12px"><div style="background:rgba(56,189,248,0.05);border:1px solid rgba(56,189,248,0.2);border-radius:14px;padding:18px;display:flex;gap:14px"><span style="font-size:1.6em">🎨</span><div><div style="font-family:\'Syne\',sans-serif;font-weight:700;margin-bottom:4px">Zero Custom CSS</div><div style="font-size:0.83em;color:var(--muted);line-height:1.7">Entire card — gradients, animations, layout, responsiveness — built with only Tailwind utility classes.</div></div></div><div style="background:rgba(56,189,248,0.05);border:1px solid rgba(56,189,248,0.2);border-radius:14px;padding:18px;display:flex;gap:14px"><span style="font-size:1.6em">📱</span><div><div style="font-family:\'Syne\',sans-serif;font-weight:700;margin-bottom:4px">Fully Responsive</div><div style="font-size:0.83em;color:var(--muted);line-height:1.7">Mobile-first design using Tailwind responsive prefixes. Works on phone, tablet, and desktop.</div></div></div><div style="background:rgba(56,189,248,0.05);border:1px solid rgba(56,189,248,0.2);border-radius:14px;padding:18px;display:flex;gap:14px"><span style="font-size:1.6em">⚡</span><div><div style="font-family:\'Syne\',sans-serif;font-weight:700;margin-bottom:4px">No Build Tools</div><div style="font-size:0.83em;color:var(--muted);line-height:1.7">Tailwind via CDN — no npm, no Node.js, no configuration. Open the file and it works instantly.</div></div></div></div>'
-    ]
-  }
-};
-
-function openDemo(key) {
-  currentDemoKey = key;
-  var d = demoData[key];
-  document.getElementById('modalTitle').textContent = d.title;
-  document.getElementById('modalSubtitle').textContent = d.subtitle;
-  document.getElementById('modalTabs').innerHTML = d.tabs.map(function(t,i){ return '<button class="modal-tab '+(i===0?'active':'')+'" onclick="switchTab('+i+')">'+t+'</button>'; }).join('');
-  document.getElementById('modalBody').innerHTML = '<div class="tab-panel active">'+d.panels[0]+'</div>';
-  document.getElementById('modalActions').innerHTML = '<a href="'+d.github+'" target="_blank" class="btn-outline" style="font-size:0.85em;padding:10px 22px">⌥ GitHub</a>';
-  document.getElementById('demoModal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function switchTab(i) {
-  document.querySelectorAll('.modal-tab').forEach(function(t,j){ t.classList.toggle('active', j===i); });
-  document.getElementById('modalBody').innerHTML = '<div class="tab-panel active">'+demoData[currentDemoKey].panels[i]+'</div>';
-}
-function closeDemo() {
-  stopNetDemo();
-  document.getElementById('demoModal').classList.remove('open');
-  document.body.style.overflow = '';
-}
-function closeDemoIfOverlay(e) { if(e.target===document.getElementById('demoModal')) closeDemo(); }
-document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeDemo(); });
-
-// Network sim
-function startNetDemo() {
-  if (netInterval) return;
-  var ips=['192.168.1.1','10.0.0.55','172.16.0.3','10.10.1.99','8.8.8.8'];
-  var states=['ESTABLISHED','TIME_WAIT','CLOSE_WAIT','LISTEN'];
-  var sc={'ESTABLISHED':'#00d084','TIME_WAIT':'#ffbd2e','CLOSE_WAIT':'#f87171','LISTEN':'#38bdf8'};
-  var logs=[['[INFO]','#00d084','eth0 — 1 Gbps link up'],['[WARN]','#ffbd2e','CPU spike — 89%'],['[INFO]','#00d084','Packet loss: 0.0%'],['[WARN]','#ffbd2e','Unusual traffic port 8443'],['[INFO]','#00d084','DNS 8.8.8.8 — 12ms']];
-  var li=0;
-  netInterval=setInterval(function(){
-    var cpu=Math.floor(20+Math.random()*70), ram=Math.floor(40+Math.random()*45);
-    var g=function(id){return document.getElementById(id);};
-    if(g('cpuVal')){g('cpuVal').textContent=cpu+'%';g('cpuBar').style.width=cpu+'%';g('cpuVal').style.color=cpu>70?'#f87171':'#00c6ff';}
-    if(g('ramVal')){g('ramVal').textContent=ram+'%';g('ramBar').style.width=ram+'%';}
-    if(g('netUp'))g('netUp').textContent=(Math.random()*5).toFixed(1)+' MB/s';
-    if(g('netDown'))g('netDown').textContent=(Math.random()*12).toFixed(1)+' MB/s';
-    var cl=g('connList');
-    if(cl){var ip=ips[Math.floor(Math.random()*ips.length)],st=states[Math.floor(Math.random()*states.length)];if(cl.children.length>=4)cl.removeChild(cl.children[0]);var r=document.createElement('div');r.style.cssText='display:flex;justify-content:space-between;color:#7a8fb5';r.innerHTML='<span>'+ip+':'+(Math.floor(1000+Math.random()*60000))+'</span><span style="color:'+sc[st]+'">● '+st+'</span><span>TCP</span>';cl.appendChild(r);}
-    var la=g('logArea');
-    if(la){var m=logs[li%logs.length];var e=document.createElement('div');e.style.color=m[1];e.textContent=m[0]+' '+m[2];la.appendChild(e);la.scrollTop=la.scrollHeight;li++;}
-  },1200);
-}
-function stopNetDemo(){if(netInterval){clearInterval(netInterval);netInterval=null;}}
-
-// Resume analyzer
-function analyzeResume(){
-  var text=(document.getElementById('resumeInput')||{}).value||'';
-  var kws={'python':8,'machine learning':10,'ml':8,'nlp':9,'sql':7,'tensorflow':9,'scikit':9,'data':6,'api':5,'flask':7,'django':7,'javascript':6,'cybersecurity':10,'penetration':9,'siem':9,'threat':8,'cissp':10,'ceh':9,'network':7,'linux':6,'security':8,'anomaly':8,'fraud':8,'team':5,'led':6};
-  var low=text.toLowerCase(),found=[],score=0;
-  for(var k in kws){if(low.indexOf(k)>-1){found.push(k);score+=kws[k];}}
-  score=Math.min(Math.round(score*1.8),100);
-  var r=document.getElementById('resumeResult');if(!r)return;r.style.display='block';
-  var se=document.getElementById('scoreDisplay'),la=document.getElementById('scoreLabel');
-  if(se){se.textContent=score;se.style.color=score>=70?'#4ade80':score>=45?'#fbbf24':'#f87171';la.style.color=se.style.color;la.textContent=score>=70?'✓ Strong Match':score>=45?'⚠ Good Match':'✗ Weak Match';}
-  var ke=document.getElementById('keywordsFound');if(ke)ke.innerHTML=found.slice(0,8).map(function(k){return '<span style="background:rgba(0,198,255,0.1);border:1px solid rgba(0,198,255,0.2);border-radius:5px;padding:2px 8px;font-size:0.72em;color:var(--accent);margin:2px">'+k+'</span>';}).join('');
-  var rcs=[];if(low.indexOf('python')<0)rcs.push('→ Add Python to skills');if(low.indexOf('github')<0)rcs.push('→ Include GitHub profile link');if(found.length<4)rcs.push('→ Add more technical keywords');if(low.indexOf('led')<0&&low.indexOf('managed')<0)rcs.push('→ Highlight leadership experience');if(score>=70)rcs.push('→ Strong profile — keep CV to 1-2 pages');
-  var re=document.getElementById('recommendations');if(re)re.innerHTML=rcs.length?rcs.map(function(r){return '<div style="padding:3px 0">'+r+'</div>';}).join(''):'<div style="color:#4ade80">✓ Great resume — no major gaps!</div>';
-}
-
-// Cybersecurity attack sim
-function simAttack(){
-  var type=(document.getElementById('attackType')||{}).value||'SQL Injection';
-  var log=document.getElementById('threatLog'),tc=document.getElementById('threatCount'),ac=document.getElementById('anomalyCount');
-  if(!log)return;
-  var atk={'SQL Injection':{tag:'BLOCKED',color:'#f87171',msg:'SQL Injection — payload stripped — 203.45.xx.xx'},'Brute Force Login':{tag:'ANOMALY',color:'#fbbf24',msg:'Brute force — 47 attempts in 60s — locked'},'Port Scan':{tag:'BLOCKED',color:'#f87171',msg:'Port scan — 1024 ports probed — IP blacklisted'},'DDoS Attempt':{tag:'BLOCKED',color:'#f87171',msg:'DDoS — 50k req/s — rate limiting active'},'Ransomware Signature':{tag:'CRITICAL',color:'#ff4444',msg:'Ransomware signature — process terminated'}};
-  var d=atk[type]||atk['SQL Injection'];
-  var e=document.createElement('div');e.innerHTML='<span style="color:'+d.color+'">['+d.tag+']</span> <span style="color:#7a8fb5">'+d.msg+'</span>';
-  log.insertBefore(e,log.firstChild);if(log.children.length>8)log.removeChild(log.lastChild);
-  if(tc)tc.textContent=parseInt(tc.textContent||0)+1;
-  if(d.tag==='ANOMALY'&&ac)ac.textContent=parseInt(ac.textContent||0)+1;
-}
-
-// Inventory add
-function addInventoryItem(){
-  var items=[['Mechanical Keyboard','Hardware','12','KSh 8,500'],['Monitor Cable','Accessories','3 ⚠','KSh 800'],['Mouse Pad XL','Accessories','20','KSh 600'],['SSD 256GB','Hardware','7','KSh 5,500'],['HDMI Switch','Hardware','4','KSh 2,200'],['Webcam 1080p','Accessories','1 ⚠','KSh 4,800']];
-  var tbl=document.getElementById('demoTable');if(!tbl)return;
-  var it=items[Math.floor(Math.random()*items.length)];
-  var row=document.createElement('div');row.style.cssText='display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:9px 14px;color:#94a3b8;border-top:1px solid rgba(255,255,255,0.03)';
-  row.innerHTML='<span>'+it[0]+'</span><span>'+it[1]+'</span><span style="color:'+(it[2].indexOf('⚠')>-1?'#f87171':'#4ade80')+'">'+it[2]+'</span><span>'+it[3]+'</span>';
-  tbl.appendChild(row);
-  var g=function(id){return document.getElementById(id);};
-  if(g('demoTotal'))g('demoTotal').textContent=parseInt(g('demoTotal').textContent||0)+1;
-  if(it[2].indexOf('⚠')>-1&&g('demoLow'))g('demoLow').textContent=parseInt(g('demoLow').textContent||0)+1;
-}
-
-// Finance add transaction
-var finExp=32600,finInc=45000;
-function addTx(){
-  var desc=(document.getElementById('txDesc')||{}).value||'Transaction';
-  var amt=parseFloat((document.getElementById('txAmt')||{}).value)||0;
-  var type=(document.getElementById('txType')||{}).value||'expense';
-  if(!amt)return;
-  if(type==='expense')finExp+=amt;else finInc+=amt;
-  var tl=document.getElementById('txList');
-  if(tl){var r=document.createElement('div');r.style.cssText='display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.04)';r.innerHTML='<span>'+desc+'</span><span style="color:'+(type==='expense'?'#f87171':'#4ade80')+'">'+(type==='expense'?'-':'+')+' KSh '+amt.toLocaleString()+'</span>';tl.insertBefore(r,tl.firstChild);if(tl.children.length>4)tl.removeChild(tl.lastChild);}
-  if(document.getElementById('txDesc'))document.getElementById('txDesc').value='';
-  if(document.getElementById('txAmt'))document.getElementById('txAmt').value='';
+document.addEventListener('DOMContentLoaded', updateCVCounter);
+function updateCVCounter() {
+  var c = localStorage.getItem('cvDL') || '0';
+  var el = document.getElementById('cvCounter');
+  if (el && parseInt(c) > 0) el.textContent = 'Downloaded ' + c + ' time' + (c > 1 ? 's' : '') + ' from this device';
 }
 </script>
 </body>
