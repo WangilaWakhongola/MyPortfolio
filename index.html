@@ -4,36 +4,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Emmanuel W. Wakhongola | Portfolio</title>
-<meta property="og:title" content="Emmanuel W. Wakhongola | AI/ML & Tech Portfolio">
-<meta property="og:description" content="Mathematics & CS student building intelligent, secure, and user-friendly systems.">
+<meta property="og:title" content="Emmanuel W. Wakhongola | AI and ML & Tech Portfolio">
+<meta property="og:description" content="Mathematics & CS student building intelligent, secure, and user friendly systems.">
 <meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%232563eb'/%3E%3Ctext x='50%' y='50%' font-family='Arial, sans-serif' font-size='90' font-weight='bold' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'%3EEW%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz@9..144&family=Crimson+Text:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════════════════════════════════════════════════════ */
-/*  WARM BRUTALIST PORTFOLIO — Organic, Intentional, Human              */
+/*  WARM BRUTALIST PORTFOLIO — REDESIGNED                              */
 /* ═══════════════════════════════════════════════════════════════════ */
 
 :root {
-  /* Warm earth palette */
-  --bg-primary: #faf8f3;
-  --bg-secondary: #f3ede6;
-  --text-primary: #2c2520;
-  --text-muted: #6b6259;
-  --accent-warm: #c97d60;
-  --accent-dark: #8b5a3c;
-  --accent-sage: #7a8b6f;
-  --border-soft: rgba(43,37,32,0.08);
-  --shadow-soft: 0 4px 12px rgba(43,37,32,0.06);
-  --shadow-md: 0 12px 32px rgba(43,37,32,0.12);
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --text-primary: #0f172a;
+  --text-muted: #475569;
+  --accent-warm: #2563eb;
+  --accent-dark: #1e40af;
+  --accent-sage: #059669;
+  --border-soft: rgba(15,23,42,0.08);
+  --shadow-soft: 0 4px 12px rgba(15,23,42,0.08);
+  --shadow-md: 0 12px 32px rgba(15,23,42,0.12);
 }
 
 body.light {
-  --bg-primary: #2c2520;
-  --bg-secondary: #3d3530;
-  --text-primary: #f5f1ec;
-  --text-muted: #c9bfb3;
-  --border-soft: rgba(245,241,236,0.12);
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --text-primary: #f1f5f9;
+  --text-muted: #cbd5e1;
+  --border-soft: rgba(241,245,249,0.12);
 }
 
 * {
@@ -55,33 +55,26 @@ body {
   transition: background 0.3s ease;
 }
 
-/* Typography hierarchy */
 h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 700; letter-spacing: -0.01em; }
-h1 { font-size: clamp(2em, 8vw, 4em); line-height: 1.1; }
-h2 { font-size: clamp(1.6em, 5vw, 2.6em); }
-h3 { font-size: 1.3em; }
-h4 { font-size: 1em; }
+h1 { font-size: clamp(1.5em, 5vw, 2.8em); line-height: 1.1; }
+h2 { font-size: clamp(1.2em, 3.5vw, 2em); }
+h3 { font-size: 1.1em; }
+h4 { font-size: 0.95em; }
 
 .serif { font-family: 'Crimson Text', serif; }
-
-/* ── UTILITIES ── */
-.container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
-.section { padding: 100px 0; position: relative; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+.section { padding: 80px 0; position: relative; }
 .fade-in { opacity: 0; transform: translateY(20px); }
 .fade-in.visible { opacity: 1; transform: translateY(0); transition: all 0.7s ease-out; }
 
 /* ── THEME TOGGLE ── */
 .theme-toggle {
-  position: fixed;
-  top: 24px;
-  right: 24px;
-  z-index: 9999;
   background: var(--bg-secondary);
   border: 1px solid var(--border-soft);
-  padding: 10px 16px;
-  border-radius: 4px;
+  padding: 8px 14px;
+  border-radius: 2px;
   cursor: pointer;
-  font-size: 0.85em;
+  font-size: 0.8em;
   color: var(--text-muted);
   font-family: 'Fraunces', serif;
   font-weight: 600;
@@ -102,7 +95,7 @@ h4 { font-size: 1em; }
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 60px 28px;
+  padding: 60px 40px;
   text-align: center;
   position: relative;
 }
@@ -115,7 +108,7 @@ h4 { font-size: 1em; }
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(201,125,96,0.08), transparent);
+  background: radial-gradient(circle, rgba(37,99,235,0.08), transparent);
   pointer-events: none;
 }
 
@@ -129,6 +122,7 @@ h4 { font-size: 1em; }
   font-weight: 600;
   opacity: 0;
   animation: fadeUp 0.6s ease forwards 0.1s;
+  display: none;
 }
 
 .landing-welcome {
@@ -162,9 +156,9 @@ h4 { font-size: 1em; }
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 1200px;
   width: 100%;
   opacity: 0;
   animation: fadeUp 0.8s ease forwards 0.55s;
@@ -174,7 +168,7 @@ h4 { font-size: 1em; }
   background: var(--bg-secondary);
   border: 2px solid var(--border-soft);
   border-radius: 2px;
-  padding: 40px 28px;
+  padding: 28px 20px;
   text-align: center;
   cursor: pointer;
   transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -188,21 +182,21 @@ h4 { font-size: 1em; }
 }
 
 .viewer-card .icon {
-  font-size: 3.2em;
-  margin-bottom: 16px;
+  font-size: 2.4em;
+  margin-bottom: 12px;
   display: block;
 }
 
 .viewer-card h2 {
-  font-size: 1.15em;
-  margin-bottom: 8px;
+  font-size: 1em;
+  margin-bottom: 6px;
   color: var(--accent-warm);
 }
 
 .viewer-card p {
-  font-size: 0.9em;
+  font-size: 0.8em;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .viewer-card .card-tag {
@@ -219,14 +213,8 @@ h4 { font-size: 1em; }
 }
 
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ═══════════════════════════════════════════════════════════════════ */
@@ -237,7 +225,7 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(250,248,243,0.95);
+  background: rgba(255,255,255,0.95);
   backdrop-filter: blur(10px);
   padding: 18px 40px;
   display: flex;
@@ -245,6 +233,7 @@ nav {
   align-items: center;
   z-index: 1000;
   border-bottom: 1px solid var(--border-soft);
+  gap: 20px;
 }
 
 body.light nav {
@@ -262,14 +251,14 @@ body.light nav {
 
 .nav-links {
   display: flex;
-  gap: 32px;
+  gap: 28px;
   list-style: none;
 }
 
 .nav-links a {
   color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.9em;
+  font-size: 0.85em;
   font-weight: 500;
   cursor: pointer;
   transition: color 0.2s;
@@ -331,7 +320,7 @@ body.light nav {
 
 .hero-tagline {
   font-family: 'Crimson Text', serif;
-  font-size: 1.4em;
+  font-size: 1.2em;
   color: var(--text-muted);
   margin-bottom: 24px;
   min-height: 50px;
@@ -346,8 +335,17 @@ body.light nav {
   color: var(--accent-warm);
 }
 
+.hero-role {
+  font-size: 1em;
+  color: var(--accent-warm);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
 .hero-subtitle {
-  font-size: 1.05em;
+  font-size: 0.95em;
   color: var(--text-muted);
   margin-bottom: 48px;
   max-width: 640px;
@@ -367,7 +365,7 @@ body.light nav {
   border: 1px solid var(--border-soft);
   border-radius: 4px;
   padding: 8px 18px;
-  font-size: 0.85em;
+  font-size: 0.8em;
   color: var(--text-muted);
   transition: all 0.2s;
 }
@@ -393,7 +391,7 @@ body.light nav {
   border-radius: 2px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.9em;
+  font-size: 0.85em;
   transition: all 0.3s;
   border: none;
   cursor: pointer;
@@ -442,32 +440,38 @@ body.light nav {
   50% { transform: translateY(8px); }
 }
 
-/* ── SECTION HEADERS ── */
+/* ═══════════════════════════════════════════════════════════════════ */
+/*  SECTION HEADERS - REDESIGNED TO FIT ON ONE LINE                    */
+/* ═══════════════════════════════════════════════════════════════════ */
 .section-header {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
   margin-bottom: 60px;
+  width: 100%;
 }
 
 .section-num {
   font-family: 'Fraunces', serif;
-  font-size: 0.9em;
+  font-size: 0.65em;
   color: var(--accent-warm);
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: 700;
   white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 30px;
 }
 
 .section-title {
+  font-size: 1.35em;
   white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: -0.01em;
 }
 
 .section-line {
-  flex: 1;
-  height: 1px;
-  background: var(--border-soft);
+  display: none;
 }
 
 /* ── ABOUT SECTION ── */
@@ -481,11 +485,11 @@ body.light nav {
 .about-text {
   color: var(--text-muted);
   line-height: 1.9;
-  font-size: 1.05em;
+  font-size: 1em;
 }
 
 .about-text p {
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .about-stats {
@@ -516,9 +520,9 @@ body.light nav {
 }
 
 .stat-label {
-  font-size: 0.8em;
+  font-size: 0.75em;
   color: var(--text-muted);
-  margin-top: 6px;
+  margin-top: 8px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   font-weight: 600;
@@ -532,7 +536,7 @@ body.light nav {
 
 .exp-card {
   position: relative;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
   background: var(--bg-secondary);
   border: 1px solid var(--border-soft);
   border-radius: 2px;
@@ -543,6 +547,7 @@ body.light nav {
 
 .exp-card:hover {
   box-shadow: var(--shadow-soft);
+  transform: translateX(4px);
 }
 
 .exp-header {
@@ -550,22 +555,22 @@ body.light nav {
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
   margin-bottom: 12px;
 }
 
 .exp-title {
-  font-size: 1.15em;
+  font-size: 1.1em;
   font-weight: 700;
   color: var(--accent-warm);
 }
 
 .exp-date {
-  font-size: 0.75em;
+  font-size: 0.7em;
   color: var(--text-muted);
   background: rgba(201,125,96,0.05);
   border: 1px solid var(--border-soft);
-  padding: 4px 12px;
+  padding: 6px 14px;
   border-radius: 2px;
   text-transform: uppercase;
   font-weight: 600;
@@ -574,9 +579,9 @@ body.light nav {
 
 .exp-company {
   font-size: 0.9em;
-  color: var(--text-muted);
+  color: var(--accent-warm);
   margin-bottom: 16px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .exp-list {
@@ -602,7 +607,7 @@ body.light nav {
 /* ── SKILLS ── */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 24px;
 }
 
@@ -610,7 +615,7 @@ body.light nav {
   background: var(--bg-secondary);
   border: 1px solid var(--border-soft);
   border-radius: 2px;
-  padding: 32px;
+  padding: 28px;
   transition: all 0.3s;
   position: relative;
 }
@@ -639,38 +644,39 @@ body.light nav {
 }
 
 .skill-icon {
-  font-size: 2.2em;
-  margin-bottom: 14px;
+  font-size: 2em;
+  margin-bottom: 12px;
 }
 
 .skill-card h4 {
   margin-bottom: 12px;
   color: var(--text-primary);
+  font-size: 0.95em;
 }
 
 .skill-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 14px;
+  gap: 6px;
+  margin-top: 12px;
 }
 
 .skill-tag {
   background: rgba(201,125,96,0.05);
   border: 1px solid var(--border-soft);
   border-radius: 2px;
-  padding: 4px 12px;
-  font-size: 0.75em;
+  padding: 4px 10px;
+  font-size: 0.7em;
   color: var(--text-muted);
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
 }
 
 /* ── PROJECTS ── */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 28px;
 }
 
@@ -678,17 +684,17 @@ body.light nav {
   background: var(--bg-secondary);
   border: 1px solid var(--border-soft);
   border-radius: 2px;
-  padding: 36px;
+  padding: 32px;
   transition: all 0.35s;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   position: relative;
 }
 
 .project-card:hover {
   border-color: var(--accent-warm);
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   box-shadow: var(--shadow-md);
 }
 
@@ -699,27 +705,28 @@ body.light nav {
 }
 
 .project-icon {
-  font-size: 2.2em;
+  font-size: 2em;
 }
 
 .project-links {
   display: flex;
-  gap: 10px;
+  gap: 8px;
 }
 
 .project-link {
   background: rgba(201,125,96,0.05);
   border: 1px solid var(--border-soft);
   color: var(--text-muted);
-  padding: 6px 14px;
+  padding: 6px 12px;
   border-radius: 2px;
-  font-size: 0.75em;
+  font-size: 0.7em;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.2s;
   cursor: pointer;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .project-link:hover {
@@ -729,15 +736,15 @@ body.light nav {
 }
 
 .project-card h3 {
-  margin: 8px 0;
-  font-size: 1.2em;
+  margin: 0;
+  font-size: 1.1em;
   color: var(--accent-warm);
 }
 
 .project-desc {
   font-size: 0.9em;
   color: var(--text-muted);
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 .project-footer {
@@ -754,7 +761,7 @@ body.light nav {
 .project-tech {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
 }
 
 .tech-tag {
@@ -762,15 +769,15 @@ body.light nav {
   border: 1px solid var(--border-soft);
   color: var(--accent-sage);
   border-radius: 2px;
-  padding: 3px 10px;
-  font-size: 0.7em;
+  padding: 3px 9px;
+  font-size: 0.65em;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.02em;
 }
 
 .project-impact {
-  font-size: 0.75em;
+  font-size: 0.7em;
   color: var(--accent-warm);
   font-weight: 700;
   text-transform: uppercase;
@@ -782,7 +789,7 @@ body.light nav {
   background: var(--bg-secondary);
   border: 1px solid var(--border-soft);
   border-radius: 2px;
-  padding: 60px;
+  padding: 50px;
   text-align: center;
 }
 
@@ -793,33 +800,34 @@ body.light nav {
 
 .cv-section p {
   color: var(--text-muted);
-  margin-bottom: 32px;
-  font-size: 1.05em;
+  margin-bottom: 28px;
+  font-size: 1em;
 }
 
 /* ── CONTACT ── */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  gap: 50px;
   align-items: center;
 }
 
 .contact-info h3 {
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   color: var(--text-primary);
 }
 
 .contact-info p {
   color: var(--text-muted);
   line-height: 1.8;
-  font-size: 1.05em;
-  margin-bottom: 32px;
+  font-size: 0.95em;
+  margin-bottom: 28px;
 }
 
 .contact-links {
   display: flex;
-  gap: 16px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .contact-item {
@@ -829,8 +837,8 @@ body.light nav {
   background: var(--bg-secondary);
   border: 1px solid var(--border-soft);
   border-radius: 2px;
-  width: 68px;
-  height: 68px;
+  width: 70px;
+  height: 70px;
   text-decoration: none;
   transition: all 0.3s;
 }
@@ -851,18 +859,18 @@ body.light nav {
   background: rgba(201,125,96,0.08);
   border: 1px solid var(--border-soft);
   border-radius: 2px;
-  padding: 40px;
+  padding: 36px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 .avail-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.8em;
+  font-size: 0.75em;
   color: var(--accent-warm);
   font-weight: 700;
   text-transform: uppercase;
@@ -870,15 +878,15 @@ body.light nav {
 }
 
 .avail-title {
-  font-size: 1.25em;
+  font-size: 1.2em;
   font-weight: 700;
   color: var(--text-primary);
 }
 
 .avail-desc {
   color: var(--text-muted);
-  font-size: 0.95em;
-  line-height: 1.8;
+  font-size: 0.9em;
+  line-height: 1.7;
 }
 
 /* ── FOOTER ── */
@@ -897,7 +905,7 @@ footer {
   position: fixed;
   inset: 0;
   z-index: 9000;
-  background: rgba(44,37,32,0.9);
+  background: rgba(15,23,42,0.9);
   backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
@@ -991,7 +999,11 @@ footer {
 /*  RESPONSIVE                                                          */
 /* ═══════════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
-  nav {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav-links {
     padding: 14px 20px;
   }
 
@@ -1020,17 +1032,30 @@ footer {
     padding: 140px 20px 80px;
   }
 
+  .container {
+    padding: 0 24px;
+  }
+
   .about-grid,
   .contact-grid {
     grid-template-columns: 1fr;
   }
 
-  .projects-grid {
+  .projects-grid,
+  .skills-grid {
     grid-template-columns: 1fr;
   }
 
   .section {
-    padding: 70px 0;
+    padding: 60px 0;
+  }
+
+  .section-header {
+    margin-bottom: 50px;
+  }
+
+  .section-title {
+    font-size: 1.2em;
   }
 
   .theme-toggle {
@@ -1038,15 +1063,48 @@ footer {
     top: auto;
   }
 }
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .skill-pills {
+    gap: 8px;
+  }
+
+  .pill {
+    padding: 6px 14px;
+    font-size: 0.8em;
+  }
+
+  .contact-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact-buttons a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .projects-grid {
+    gap: 16px;
+  }
+
+  .project-card {
+    padding: 24px;
+  }
+}
 </style>
 </head>
 <body>
 
-<button class="theme-toggle" onclick="toggleTheme()">☀️ Light</button>
-
-<!-- ═══════════════════════════════════════════════════════════════════ -->
-<!--  LANDING PAGE                                                        -->
-<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- LANDING PAGE -->
 <div class="landing-page" id="landingPage">
   <p class="landing-eyebrow" id="eyebrowTw"></p>
   <p class="landing-welcome" id="welcomeTw"></p>
@@ -1082,9 +1140,7 @@ footer {
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════════════ -->
-<!--  PORTFOLIO                                                          -->
-<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- PORTFOLIO -->
 <div class="portfolio-content" id="portfolioContent">
   <nav id="navbar">
     <div class="logo" onclick="showLanding()">← EW</div>
@@ -1098,6 +1154,7 @@ footer {
       <li><a onclick="scrollToSection('contact')">Contact</a></li>
     </ul>
     <button class="nav-burger" onclick="toggleNav()">☰</button>
+    <button class="theme-toggle" onclick="toggleTheme()">☀️ Light</button>
   </nav>
 
   <!-- HERO -->
@@ -1105,15 +1162,16 @@ footer {
     <div class="hero-badge">Open to opportunities</div>
     <div class="hero-tagline" id="heroTypewriter"></div>
     <h1 class="hero-name">Emmanuel W.<br><span>Wakhongola</span></h1>
+    <p class="hero-role" id="heroRole">IT Support Specialist</p>
     <p class="hero-subtitle" id="heroSub">Building intelligent systems at the intersection of AI, security, and networks.</p>
     
     <div class="skill-pills">
-      <span class="pill">AI/ML</span><span class="pill">Python</span><span class="pill">Networking</span>
+      <span class="pill">AI and ML</span><span class="pill">Python</span><span class="pill">Networking</span>
       <span class="pill">Security</span><span class="pill">SQL</span><span class="pill">Power BI</span>
     </div>
 
     <div class="contact-buttons">
-      <a href="https://wa.me/254791952584" class="btn-primary" target="_blank">💬 WhatsApp</a>
+      <a href="https://wa.me/254791952584" class="btn-outline" target="_blank">💬 WhatsApp</a>
       <a href="mailto:wangilawakhongola@gmail.com" class="btn-outline">📧 Email</a>
       <a href="https://github.com/WangilaWakhongola" class="btn-outline" target="_blank">⌥ GitHub</a>
     </div>
@@ -1129,8 +1187,7 @@ footer {
     <section id="about" class="section fade-in">
       <div class="section-header">
         <span class="section-num">01</span>
-        <h2 class="section-title" id="aboutTitle">About</h2>
-        <div class="section-line"></div>
+        <h2 class="section-title">About</h2>
       </div>
       <div class="about-grid">
         <div class="about-text" id="aboutContent"></div>
@@ -1147,8 +1204,7 @@ footer {
     <section id="experience" class="section fade-in">
       <div class="section-header">
         <span class="section-num">02</span>
-        <h2 class="section-title" id="experienceTitle">Experience</h2>
-        <div class="section-line"></div>
+        <h2 class="section-title">Experience</h2>
       </div>
       <div class="timeline" id="experienceContent"></div>
     </section>
@@ -1157,8 +1213,7 @@ footer {
     <section id="skills" class="section fade-in">
       <div class="section-header">
         <span class="section-num">03</span>
-        <h2 class="section-title" id="skillsTitle">Skills</h2>
-        <div class="section-line"></div>
+        <h2 class="section-title">Skills</h2>
       </div>
       <div class="skills-grid" id="skillsContent"></div>
     </section>
@@ -1168,7 +1223,6 @@ footer {
       <div class="section-header">
         <span class="section-num">04</span>
         <h2 class="section-title">Projects</h2>
-        <div class="section-line"></div>
       </div>
       <div class="projects-grid" id="projectsContent"></div>
     </section>
@@ -1178,7 +1232,6 @@ footer {
       <div class="section-header">
         <span class="section-num">05</span>
         <h2 class="section-title">CV</h2>
-        <div class="section-line"></div>
       </div>
       <div class="cv-section">
         <h3>Download My Resume</h3>
@@ -1192,8 +1245,7 @@ footer {
     <section id="contact" class="section fade-in">
       <div class="section-header">
         <span class="section-num">06</span>
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="section-line"></div>
+        <h2 class="section-title">Contact</h2>
       </div>
       <div class="contact-grid">
         <div class="contact-info">
@@ -1214,14 +1266,14 @@ footer {
         <div class="availability">
           <div class="avail-badge">🌍 Currently Available</div>
           <div class="avail-title">Open for opportunities</div>
-          <div class="avail-desc">Based in Kenya. Seeking roles in AI/ML, networking, and software development. Remote or on-site.</div>
+          <div class="avail-desc">Based in Kenya. Seeking roles in AI and ML, networking, and software development. Remote or on site.</div>
         </div>
       </div>
     </section>
   </div>
 
   <footer>
-    <p>© 2025 Emmanuel Wakhongola · Built with intention ✦</p>
+    <p>© 2025 Emmanuel Wakhongola · Built with intention</p>
   </footer>
 </div>
 
@@ -1241,111 +1293,119 @@ footer {
 </div>
 
 <script>
-// ═══════════════════════════════════════════════════════════════════
-//  CORE FUNCTIONALITY
-// ═══════════════════════════════════════════════════════════════════
-
-function typewriter(el, text, speed = 60) {
-  var i = 0, deleting = false;
-  function tick() {
-    if (!deleting) {
-      i++;
-      el.textContent = text.slice(0, i);
-      if (i === text.length) { deleting = true; setTimeout(tick, 2000); return; }
-    } else {
-      i--;
-      el.textContent = text.slice(0, i);
-      if (i === 0) { deleting = false; setTimeout(tick, 500); return; }
-    }
-    setTimeout(tick, deleting ? 40 : speed);
-  }
-  tick();
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  typewriter(document.getElementById('eyebrowTw'), 'Mimi Ndio Wakhongola', 75);
-  setTimeout(() => {
-    typewriter(document.getElementById('welcomeTw'), 'Hello—glad you stopped by!', 70);
-  }, 400);
-});
-
-// Portfolio data (same as original, reformatted)
+// Portfolio data
 var portfolioData = {
   recruiter: {
-    hero: ['Turning skills into impact', 'Ready to deliver from day one', 'Building enterprise solutions'],
-    heroSub: 'Mathematics & CS student with hands-on experience. I deliver measurable value.',
-    aboutTitle: 'Professional Profile',
-    about: '<p>I\'m a Mathematics and Computer Science student with expertise in AI/ML, Networking, Security, and SQL. My work bridges academic rigor with real-world application—from supporting 25+ users at Total Energies to training 30+ youth in IT.</p><p>I thrive in environments demanding both technical depth and problem-solving. Seeking roles where I can apply my skills to build systems that matter.</p>',
-    expTitle: 'Experience',
-    skills: '<div class="skill-card"><div class="skill-icon">💡</div><h4>AI / ML & Analytics</h4><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">scikit-learn</span><span class="skill-tag">NLP</span><span class="skill-tag">Power BI</span></div></div><div class="skill-card"><div class="skill-icon">🔐</div><h4>Infrastructure & Security</h4><div class="skill-tags"><span class="skill-tag">TCP/IP</span><span class="skill-tag">Firewalls</span><span class="skill-tag">Monitoring</span><span class="skill-tag">Linux</span></div></div><div class="skill-card"><div class="skill-icon">💻</div><h4>Programming</h4><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">C++</span><span class="skill-tag">SQL</span><span class="skill-tag">JavaScript</span><span class="skill-tag">R</span></div></div><div class="skill-card"><div class="skill-icon">📈</div><h4>Business Intelligence</h4><div class="skill-tags"><span class="skill-tag">Power BI</span><span class="skill-tag">Excel</span><span class="skill-tag">SQL</span></div></div>',
-    skillsTitle: 'Competencies'
+    hero: ['Reliable IT support', 'Keeping systems running', 'User-focused solutions'],
+    heroSub: 'IT support specialist with hands-on experience. I ensure systems work flawlessly.',
+    about: '<p>I\'m a Mathematics and Computer Science student specializing in IT support, infrastructure management, and systems administration. My expertise spans network administration, troubleshooting, user support, and IT security—from supporting 25+ users at Total Energies to training 30+ youth in IT fundamentals.</p><p>I excel at delivering reliable technical support, maintaining system uptime, and solving complex IT problems. Seeking IT support roles where I can ensure organizational systems run smoothly and users stay productive.</p>',
+    skills: '<div class="skill-card"><div class="skill-icon">🖥️</div><h4>IT Support & Helpdesk</h4><div class="skill-tags"><span class="skill-tag">User Support</span><span class="skill-tag">Troubleshooting</span><span class="skill-tag">Hardware</span><span class="skill-tag">Software</span></div></div><div class="skill-card"><div class="skill-icon">⚙️</div><h4>System Administration</h4><div class="skill-tags"><span class="skill-tag">Windows Server</span><span class="skill-tag">Linux</span><span class="skill-tag">Active Directory</span><span class="skill-tag">Monitoring</span></div></div><div class="skill-card"><div class="skill-icon">🌐</div><h4>Network Administration</h4><div class="skill-tags"><span class="skill-tag">TCP/IP</span><span class="skill-tag">DNS</span><span class="skill-tag">Firewalls</span><span class="skill-tag">VPN</span></div></div><div class="skill-card"><div class="skill-icon">🔐</div><h4>IT Security</h4><div class="skill-tags"><span class="skill-tag">Network Security</span><span class="skill-tag">Access Control</span><span class="skill-tag">Backup Systems</span><span class="skill-tag">Compliance</span></div></div>'
   },
   developer: {
-    hero: ['Building elegant solutions', 'Code that lasts', 'Performance-focused architecture'],
-    heroSub: 'Full-stack developer focused on clean architecture, AI/ML pipelines, and network-level optimization.',
-    aboutTitle: 'Development Philosophy',
+    hero: ['Building elegant solutions', 'Code that lasts', 'Performance focused architecture'],
+    heroSub: 'Full stack developer focused on clean architecture, AI and ML pipelines, and network optimization.',
     about: '<p>I believe the best code is invisible—it just works, reliably, at scale. My focus spans Python backends, ML integration, SQL optimization, and network systems.</p><p>I build with maintainability and performance as first-class concerns. Long-term thinking drives every architectural decision.</p>',
-    expTitle: 'Experience',
-    skills: '<div class="skill-card"><div class="skill-icon">🐍</div><h4>Python Ecosystem</h4><div class="skill-tags"><span class="skill-tag">Flask</span><span class="skill-tag">Django</span><span class="skill-tag">NumPy</span><span class="skill-tag">Pandas</span><span class="skill-tag">REST APIs</span></div></div><div class="skill-card"><div class="skill-icon">🌐</div><h4>Network & Systems</h4><div class="skill-tags"><span class="skill-tag">TCP/IP</span><span class="skill-tag">DNS</span><span class="skill-tag">Linux</span><span class="skill-tag">API Integration</span></div></div><div class="skill-card"><div class="skill-icon">🗄️</div><h4>Database Architecture</h4><div class="skill-tags"><span class="skill-tag">SQL</span><span class="skill-tag">Schema Design</span><span class="skill-tag">Query Optimization</span></div></div><div class="skill-card"><div class="skill-icon">🤖</div><h4>AI / ML Stack</h4><div class="skill-tags"><span class="skill-tag">scikit-learn</span><span class="skill-tag">NLP</span><span class="skill-tag">Neural Nets</span></div></div><div class="skill-card"><div class="skill-icon">🎨</div><h4>Frontend</h4><div class="skill-tags"><span class="skill-tag">HTML/CSS</span><span class="skill-tag">JavaScript</span><span class="skill-tag">Tailwind</span></div></div><div class="skill-card"><div class="skill-icon">📊</div><h4>Data & Analytics</h4><div class="skill-tags"><span class="skill-tag">Power BI</span><span class="skill-tag">R</span><span class="skill-tag">MATLAB</span></div></div>',
-    skillsTitle: 'Tech Stack'
+    skills: '<div class="skill-card"><div class="skill-icon">🐍</div><h4>Python Ecosystem</h4><div class="skill-tags"><span class="skill-tag">Flask</span><span class="skill-tag">Django</span><span class="skill-tag">NumPy</span><span class="skill-tag">Pandas</span></div></div><div class="skill-card"><div class="skill-icon">🌐</div><h4>Network & Systems</h4><div class="skill-tags"><span class="skill-tag">TCP/IP</span><span class="skill-tag">DNS</span><span class="skill-tag">Linux</span></div></div><div class="skill-card"><div class="skill-icon">🗄️</div><h4>Database Architecture</h4><div class="skill-tags"><span class="skill-tag">SQL</span><span class="skill-tag">Schema Design</span></div></div><div class="skill-card"><div class="skill-icon">🤖</div><h4>AI / ML Stack</h4><div class="skill-tags"><span class="skill-tag">scikit-learn</span><span class="skill-tag">NLP</span></div></div><div class="skill-card"><div class="skill-icon">🎨</div><h4>Frontend</h4><div class="skill-tags"><span class="skill-tag">HTML/CSS</span><span class="skill-tag">JavaScript</span></div></div><div class="skill-card"><div class="skill-icon">📊</div><h4>Data & Analytics</h4><div class="skill-tags"><span class="skill-tag">Power BI</span><span class="skill-tag">R</span></div></div>'
   },
   client: {
     hero: ['Vision into reality', 'Results that matter', 'Technology serves business'],
     heroSub: 'I specialize in AI automation, custom software, and intelligent systems—built for ROI.',
-    aboutTitle: 'How I Help',
     about: '<p>I transform business challenges into competitive advantages. Whether you need an AI system, secure infrastructure, or custom software—I deliver results that matter to your bottom line.</p><p>I focus on understanding your business first, then building technology around it. Clear communication, on-time delivery, and measurable outcomes are non-negotiable.</p>',
-    expTitle: 'Experience',
-    skills: '<div class="skill-card"><div class="skill-icon">🤖</div><h4>AI Automation</h4><div class="skill-tags"><span class="skill-tag">Process Automation</span><span class="skill-tag">Predictive ML</span><span class="skill-tag">Custom Models</span></div></div><div class="skill-card"><div class="skill-icon">🔨</div><h4>Custom Software</h4><div class="skill-tags"><span class="skill-tag">Web Apps</span><span class="skill-tag">Python</span><span class="skill-tag">Flask/Django</span></div></div><div class="skill-card"><div class="skill-icon">💾</div><h4>Database & BI</h4><div class="skill-tags"><span class="skill-tag">SQL</span><span class="skill-tag">Power BI</span><span class="skill-tag">Data Pipelines</span></div></div><div class="skill-card"><div class="skill-icon">🛡️</div><h4>Infrastructure</h4><div class="skill-tags"><span class="skill-tag">Network Security</span><span class="skill-tag">System Admin</span><span class="skill-tag">Monitoring</span></div></div>',
-    skillsTitle: 'What I Deliver'
+    skills: '<div class="skill-card"><div class="skill-icon">🤖</div><h4>AI Automation</h4><div class="skill-tags"><span class="skill-tag">Process Automation</span><span class="skill-tag">Predictive ML</span></div></div><div class="skill-card"><div class="skill-icon">🔨</div><h4>Custom Software</h4><div class="skill-tags"><span class="skill-tag">Web Apps</span><span class="skill-tag">Python</span></div></div><div class="skill-card"><div class="skill-icon">💾</div><h4>Database & BI</h4><div class="skill-tags"><span class="skill-tag">SQL</span><span class="skill-tag">Power BI</span></div></div><div class="skill-card"><div class="skill-icon">🛡️</div><h4>Infrastructure</h4><div class="skill-tags"><span class="skill-tag">Network Security</span><span class="skill-tag">System Admin</span></div></div>'
   },
   explorer: {
     hero: ['Curiosity drives progress', 'Learning at the frontier', 'Questions become projects'],
     heroSub: 'Driven by curiosity, I explore AI, security, and systems—turning questions into working prototypes.',
-    aboutTitle: 'Learning Journey',
     about: '<p>I\'m fascinated by how intelligent systems work—from neural network math to internet protocols. Every project starts with a question I couldn\'t stop asking.</p><p>Currently exploring the intersection of AI and cybersecurity, and how machine learning makes networks smarter and more resilient.</p>',
-    expTitle: 'Experience',
-    skills: '<div class="skill-card"><div class="skill-icon">🧠</div><h4>AI / ML</h4><div class="skill-tags"><span class="skill-tag">ML Algorithms</span><span class="skill-tag">NLP</span><span class="skill-tag">Neural Networks</span><span class="skill-tag">Data Science</span></div></div><div class="skill-card"><div class="skill-icon">🌐</div><h4>Networks</h4><div class="skill-tags"><span class="skill-tag">TCP/IP</span><span class="skill-tag">Protocols</span><span class="skill-tag">Monitoring</span><span class="skill-tag">Security</span></div></div><div class="skill-card"><div class="skill-icon">🔬</div><h4>Research</h4><div class="skill-tags"><span class="skill-tag">R</span><span class="skill-tag">MATLAB</span><span class="skill-tag">Python</span><span class="skill-tag">Analysis</span></div></div><div class="skill-card"><div class="skill-icon">🎨</div><h4>Creative Tech</h4><div class="skill-tags"><span class="skill-tag">HTML/CSS</span><span class="skill-tag">JavaScript</span><span class="skill-tag">UX/UI</span></div></div>',
-    skillsTitle: 'Areas of Exploration'
+    skills: '<div class="skill-card"><div class="skill-icon">🧠</div><h4>AI / ML</h4><div class="skill-tags"><span class="skill-tag">ML Algorithms</span><span class="skill-tag">NLP</span><span class="skill-tag">Neural Networks</span></div></div><div class="skill-card"><div class="skill-icon">🌐</div><h4>Networks</h4><div class="skill-tags"><span class="skill-tag">TCP/IP</span><span class="skill-tag">Protocols</span></div></div><div class="skill-card"><div class="skill-icon">🔬</div><h4>Research</h4><div class="skill-tags"><span class="skill-tag">R</span><span class="skill-tag">MATLAB</span><span class="skill-tag">Python</span></div></div><div class="skill-card"><div class="skill-icon">🎨</div><h4>Creative Tech</h4><div class="skill-tags"><span class="skill-tag">HTML/CSS</span><span class="skill-tag">JavaScript</span></div></div>'
   }
 };
 
 var expHTML = '<div class="exp-card"><div class="exp-header"><div class="exp-title">IT Attachee</div><span class="exp-date">June – Sept 2025</span></div><div class="exp-company">Total Energies</div><ul class="exp-list"><li>Managed IT systems and technical support for 25+ staff</li><li>Diagnosed and resolved hardware and software issues</li><li>Maintained network infrastructure and security protocols</li></ul></div><div class="exp-card"><div class="exp-header"><div class="exp-title">IT Support Volunteer</div><span class="exp-date">2024 – Ongoing</span></div><div class="exp-company">Community Youth Center</div><ul class="exp-list"><li>Trained 30+ young people in foundational IT skills</li><li>Designed and implemented local area network infrastructure</li><li>Implemented cybersecurity best practices</li></ul></div>';
 
 var projectsHTML = {
-  recruiter: '<div class="project-card"><div class="project-header"><div class="project-icon">📡</div><div class="project-links"><button onclick="openDemo(\'network\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-link">GitHub</a></div></div><h3>Network Monitor</h3><p class="project-desc">Enterprise real-time monitoring for system reliability and proactive fault detection.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Networking</span></div><span class="project-impact">99% Uptime</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🤖</div><div class="project-links"><button onclick="openDemo(\'resume\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-link">GitHub</a></div></div><h3>AI Resume Analyzer</h3><p class="project-desc">Intelligent talent screening using ML and NLP for automated resume evaluation.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">NLP</span></div><span class="project-impact">70% faster</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📦</div><div class="project-links"><button onclick="openDemo(\'inventory\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-link">GitHub</a></div></div><h3>Inventory System</h3><p class="project-desc">Efficient stock management reducing manual errors and streamlining operations.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">SQL</span></div><span class="project-impact">95% error reduction</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🛡️</div><div class="project-links"><button onclick="openDemo(\'cyber\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat-detection" target="_blank" class="project-link">GitHub</a></div></div><h3>Threat Detection</h3><p class="project-desc">ML-based threat detection providing real-time security analysis for enterprises.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">ML</span></div><span class="project-impact">Real-time</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">💰</div><div class="project-links"><button onclick="openDemo(\'finance\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/ML-Powered-Personal-Finance-Assistant" target="_blank" class="project-link">GitHub</a></div></div><h3>Finance Assistant</h3><p class="project-desc">Intelligent budgeting with predictive analysis for better financial decisions.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">ML</span></div><span class="project-impact">Smart budgeting</span></div></div>',
-  developer: '<div class="project-card"><div class="project-header"><div class="project-icon">📡</div><div class="project-links"><button onclick="openDemo(\'network\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-link">GitHub</a></div></div><h3>Network Monitor</h3><p class="project-desc">Python-powered system with live metrics, alerting, and network topology visualization.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Networking</span></div></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🤖</div><div class="project-links"><button onclick="openDemo(\'resume\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-link">GitHub</a></div></div><h3>AI Resume Analyzer</h3><p class="project-desc">NLP pipeline with semantic similarity and structured JSON output from text.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">NLP</span></div></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📦</div><div class="project-links"><button onclick="openDemo(\'inventory\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-link">GitHub</a></div></div><h3>Inventory System</h3><p class="project-desc">Full-stack CRUD with optimized SQL queries and responsive HTML frontend.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">SQL</span></div></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🛡️</div><div class="project-links"><button onclick="openDemo(\'cyber\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat-detection" target="_blank" class="project-link">GitHub</a></div></div><h3>Threat Detection</h3><p class="project-desc">AI anomaly detection with real-time log analysis and ML classification.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">ML</span></div></div></div><div class="project-card"><div class="project-header"><div class="project-icon">💰</div><div class="project-links"><button onclick="openDemo(\'finance\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/ML-Powered-Personal-Finance-Assistant" target="_blank" class="project-link">GitHub</a></div></div><h3>Finance Assistant</h3><p class="project-desc">JavaScript ML integration with forecasting and data visualization.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">ML</span></div></div></div>',
-  client: '<div class="project-card"><div class="project-header"><div class="project-icon">📡</div><div class="project-links"><button onclick="openDemo(\'network\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-link">Learn More</a></div></div><h3>Network Monitor</h3><p class="project-desc">Enterprise monitoring ensuring maximum uptime and proactive fault resolution.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span></div><span class="project-impact">System reliability</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🤖</div><div class="project-links"><button onclick="openDemo(\'resume\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-link">Learn More</a></div></div><h3>AI Resume Analyzer</h3><p class="project-desc">Automates recruitment screening—cuts manual review time dramatically.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span></div><span class="project-impact">70% faster</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📦</div><div class="project-links"><button onclick="openDemo(\'inventory\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-link">Learn More</a></div></div><h3>Inventory System</h3><p class="project-desc">Eliminates manual errors and gives real-time visibility into stock levels.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span></div><span class="project-impact">95% fewer errors</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🛡️</div><div class="project-links"><button onclick="openDemo(\'cyber\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat-detection" target="_blank" class="project-link">Learn More</a></div></div><h3>Threat Detection</h3><p class="project-desc">AI-powered protection detecting threats in real time before they escalate.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span></div><span class="project-impact">Enterprise security</span></div></div>',
-  explorer: '<div class="project-card"><div class="project-header"><div class="project-icon">📡</div><div class="project-links"><button onclick="openDemo(\'network\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-link">Explore</a></div></div><h3>Network Monitor</h3><p class="project-desc">What if you could see your entire network in real time? Built in Python.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span></div><span class="project-impact">Networks→Python</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🤖</div><div class="project-links"><button onclick="openDemo(\'resume\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-link">Explore</a></div></div><h3>AI Resume Analyzer</h3><p class="project-desc">Can machines understand what makes great candidates? Exploring semantic analysis.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">NLP</span></div><span class="project-impact">AI→NLP</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🛡️</div><div class="project-links"><button onclick="openDemo(\'cyber\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat-detection" target="_blank" class="project-link">Explore</a></div></div><h3>Threat Detection</h3><p class="project-desc">Can ML detect attacks before they happen? At the AI + security frontier.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">ML</span></div><span class="project-impact">AI→Security</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📦</div><div class="project-links"><button onclick="openDemo(\'inventory\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-link">Explore</a></div></div><h3>Inventory System</h3><p class="project-desc">Learning database architecture and full-stack thinking from schema to UI.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">SQL</span></div><span class="project-impact">Databases</span></div></div>'
+  recruiter: '<div class="project-card"><div class="project-header"><div class="project-icon">👥</div><div class="project-links"><button onclick="openDemo(\'skillswap\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/SkillSwap" target="_blank" class="project-link">GitHub</a></div></div><h3>SkillSwap</h3><p class="project-desc">Location-based skill exchange platform connecting people to learn and teach practical skills in their communities.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">React</span></div><span class="project-impact">Community Building</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🎨</div><div class="project-links"><button onclick="openDemo(\'tailwind\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Tailwind-Beginners-Toolkit" target="_blank" class="project-link">GitHub</a></div></div><h3>Tailwind Toolkit</h3><p class="project-desc">Comprehensive TailwindCSS learning resource with hands-on examples and AI-assisted development patterns.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">TailwindCSS</span></div><span class="project-impact">Learning Resource</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📡</div><div class="project-links"><button onclick="openDemo(\'network\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-link">GitHub</a></div></div><h3>Network Monitor</h3><p class="project-desc">Enterprise real time monitoring for system reliability and proactive fault detection.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Networking</span></div><span class="project-impact">99% Uptime</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🤖</div><div class="project-links"><button onclick="openDemo(\'resume\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-link">GitHub</a></div></div><h3>AI Resume Analyzer</h3><p class="project-desc">Intelligent talent screening using ML and NLP for automated resume evaluation.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">NLP</span></div><span class="project-impact">70% faster</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📦</div><div class="project-links"><button onclick="openDemo(\'inventory\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-link">GitHub</a></div></div><h3>Inventory System</h3><p class="project-desc">Efficient stock management reducing manual errors and streamlining operations.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">SQL</span></div><span class="project-impact">95% reduction</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🛡️</div><div class="project-links"><button onclick="openDemo(\'cyber\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat detection" target="_blank" class="project-link">GitHub</a></div></div><h3>Threat Detection</h3><p class="project-desc">ML-based threat detection providing real time security analysis for enterprises.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">ML</span></div><span class="project-impact">Real time</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">💰</div><div class="project-links"><button onclick="openDemo(\'finance\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/ML-Powered-Personal-Finance-Assistant" target="_blank" class="project-link">GitHub</a></div></div><h3>Finance Assistant</h3><p class="project-desc">Intelligent budgeting with predictive analysis for better financial decisions.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">ML</span></div><span class="project-impact">Smart budgeting</span></div></div>',
+  developer: '<div class="project-card"><div class="project-header"><div class="project-icon">👥</div><div class="project-links"><button onclick="openDemo(\'skillswap\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/SkillSwap" target="_blank" class="project-link">GitHub</a></div></div><h3>SkillSwap</h3><p class="project-desc">Real time location-based platform with React frontend and backend services for skill matching and community engagement.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">React</span></div></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🎨</div><div class="project-links"><button onclick="openDemo(\'tailwind\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Tailwind-Beginners-Toolkit" target="_blank" class="project-link">GitHub</a></div></div><h3>Tailwind Toolkit</h3><p class="project-desc">Structured learning project demonstrating TailwindCSS best practices and responsive design patterns.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">TailwindCSS</span></div></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📡</div><div class="project-links"><button onclick="openDemo(\'network\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-link">GitHub</a></div></div><h3>Network Monitor</h3><p class="project-desc">Python-powered system with live metrics, alerting, and network topology visualization.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Networking</span></div></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🤖</div><div class="project-links"><button onclick="openDemo(\'resume\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-link">GitHub</a></div></div><h3>AI Resume Analyzer</h3><p class="project-desc">NLP pipeline with semantic similarity and structured JSON output from text.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">NLP</span></div></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📦</div><div class="project-links"><button onclick="openDemo(\'inventory\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-link">GitHub</a></div></div><h3>Inventory System</h3><p class="project-desc">Full stack CRUD with optimized SQL queries and responsive HTML frontend.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">SQL</span></div></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🛡️</div><div class="project-links"><button onclick="openDemo(\'cyber\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat detection" target="_blank" class="project-link">GitHub</a></div></div><h3>Threat Detection</h3><p class="project-desc">AI anomaly detection with real time log analysis and ML classification.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">ML</span></div></div></div><div class="project-card"><div class="project-header"><div class="project-icon">💰</div><div class="project-links"><button onclick="openDemo(\'finance\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/ML-Powered-Personal-Finance-Assistant" target="_blank" class="project-link">GitHub</a></div></div><h3>Finance Assistant</h3><p class="project-desc">JavaScript ML integration with forecasting and data visualization.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">ML</span></div></div></div>',
+  client: '<div class="project-card"><div class="project-header"><div class="project-icon">👥</div><div class="project-links"><button onclick="openDemo(\'skillswap\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/SkillSwap" target="_blank" class="project-link">GitHub</a></div></div><h3>SkillSwap</h3><p class="project-desc">Connects people locally to exchange practical skills building active learning communities.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">JavaScript</span></div><span class="project-impact">Community Impact</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🎨</div><div class="project-links"><button onclick="openDemo(\'tailwind\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Tailwind-Beginners-Toolkit" target="_blank" class="project-link">GitHub</a></div></div><h3>Tailwind Toolkit</h3><p class="project-desc">Educational resource for mastering modern CSS styling and responsive design.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span></div><span class="project-impact">Learning Tool</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📡</div><div class="project-links"><button onclick="openDemo(\'network\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-link">GitHub</a></div></div><h3>Network Monitor</h3><p class="project-desc">Enterprise monitoring ensuring maximum uptime and proactive fault resolution.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span></div><span class="project-impact">System reliability</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🤖</div><div class="project-links"><button onclick="openDemo(\'resume\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-link">GitHub</a></div></div><h3>AI Resume Analyzer</h3><p class="project-desc">Automates recruitment screening cutting manual review time dramatically.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span></div><span class="project-impact">70% faster</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📦</div><div class="project-links"><button onclick="openDemo(\'inventory\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-link">GitHub</a></div></div><h3>Inventory System</h3><p class="project-desc">Eliminates manual errors and gives real time visibility into stock levels.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span></div><span class="project-impact">95% fewer errors</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🛡️</div><div class="project-links"><button onclick="openDemo(\'cyber\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat detection" target="_blank" class="project-link">GitHub</a></div></div><h3>Threat Detection</h3><p class="project-desc">AI-powered protection detecting threats in real time before they escalate.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span></div><span class="project-impact">Enterprise security</span></div></div>',
+  explorer: '<div class="project-card"><div class="project-header"><div class="project-icon">👥</div><div class="project-links"><button onclick="openDemo(\'skillswap\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/SkillSwap" target="_blank" class="project-link">GitHub</a></div></div><h3>SkillSwap</h3><p class="project-desc">Can technology create meaningful community connections? Building a skill exchange marketplace.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">JavaScript</span></div><span class="project-impact">Community→Tech</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🎨</div><div class="project-links"><button onclick="openDemo(\'tailwind\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Tailwind-Beginners-Toolkit" target="_blank" class="project-link">GitHub</a></div></div><h3>Tailwind Toolkit</h3><p class="project-desc">Learning modern CSS approaches and building responsive UIs with utility-first thinking.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">TailwindCSS</span></div><span class="project-impact">Frontend Design</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📡</div><div class="project-links"><button onclick="openDemo(\'network\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-link">GitHub</a></div></div><h3>Network Monitor</h3><p class="project-desc">What if you could see your entire network in real time? Built in Python.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span></div><span class="project-impact">Networks→Python</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🤖</div><div class="project-links"><button onclick="openDemo(\'resume\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-link">GitHub</a></div></div><h3>AI Resume Analyzer</h3><p class="project-desc">Can machines understand what makes great candidates? Exploring semantic analysis.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">NLP</span></div><span class="project-impact">AI→NLP</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🛡️</div><div class="project-links"><button onclick="openDemo(\'cyber\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat detection" target="_blank" class="project-link">GitHub</a></div></div><h3>Threat Detection</h3><p class="project-desc">Can ML detect attacks before they happen? At the AI + security frontier.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">ML</span></div><span class="project-impact">AI→Security</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📦</div><div class="project-links"><button onclick="openDemo(\'inventory\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-link">GitHub</a></div></div><h3>Inventory System</h3><p class="project-desc">Learning database architecture and full stack thinking from schema to UI.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">SQL</span></div><span class="project-impact">Databases</span></div></div>'
 };
 
 var demoData = {
-  network: { title: 'Network Monitor', subtitle: 'Python · Real-time', panels: ['<div style="padding:20px;background:var(--bg-secondary);border-radius:2px;border:1px solid var(--border-soft);font-family:monospace;font-size:0.85em"><div style="color:var(--text-muted)">CPU: 45% | RAM: 62% | Network ↑1.2MB/s ↓3.8MB/s</div><div style="color:var(--text-muted);margin-top:10px">Active connections: 3 | Status: OK</div></div>', '<p style="color:var(--text-muted)">Real-time system monitoring with live metrics, alerting, and network visualization.</p>'] },
+  skillswap: { title: 'SkillSwap', subtitle: 'JavaScript · React', panels: ['<div style="padding:20px;background:var(--bg-secondary);border-radius:2px;border:1px solid var(--border-soft);font-family:monospace;font-size:0.85em"><div style="color:var(--text-muted)">Available Skills in Your Area: 23</div><div style="color:var(--text-muted);margin-top:10px">Photography → Learn Cooking (2km)</div><div style="color:var(--accent-warm);margin-top:6px">Web Design → Learn Photography (1.5km)</div></div>', '<p style="color:var(--text-muted)">Location-based skill exchange connecting people in real time. Trade skills with nearby community members.</p>'] },
+  tailwind: { title: 'Tailwind Toolkit', subtitle: 'HTML · TailwindCSS', panels: ['<div style="padding:20px;background:var(--bg-secondary);border-radius:2px;border:1px solid var(--border-soft);font-family:monospace;font-size:0.85em"><div style="color:var(--text-muted)">Responsive Components</div><div style="color:var(--text-muted);margin-top:10px">✓ Navigation · Buttons · Cards</div><div style="color:var(--text-muted);margin-top:6px">✓ Forms · Layouts · Utilities</div></div>', '<p style="color:var(--text-muted)">Comprehensive learning resource for TailwindCSS with hands-on examples and best practices.</p>'] },
+  network: { title: 'Network Monitor', subtitle: 'Python · Real time', panels: ['<div style="padding:20px;background:var(--bg-secondary);border-radius:2px;border:1px solid var(--border-soft);font-family:monospace;font-size:0.85em"><div style="color:var(--text-muted)">CPU: 45% | RAM: 62% | Network ↑1.2MB/s ↓3.8MB/s</div><div style="color:var(--text-muted);margin-top:10px">Active connections: 3 | Status: OK</div></div>', '<p style="color:var(--text-muted)">Real time system monitoring with live metrics, alerting, and network visualization.</p>'] },
   resume: { title: 'AI Resume Analyzer', subtitle: 'Python · NLP', panels: ['<textarea style="width:100%;height:120px;padding:12px;background:var(--bg-secondary);border:1px solid var(--border-soft);border-radius:2px;color:var(--text-primary);font-family:monospace;font-size:0.85em;resize:none" readonly>Python developer with 2 years ML experience, skilled in TensorFlow and scikit-learn. Led fraud detection system team.</textarea><p style="margin-top:10px;color:var(--accent-warm);font-weight:600">Match Score: 78% Strong</p>', '<p style="color:var(--text-muted)">NLP-powered scoring and semantic analysis. Cuts recruiter review time by 70%.</p>'] },
-  cyber: { title: 'Threat Detection', subtitle: 'Python · ML', panels: ['<div style="padding:12px;background:var(--bg-secondary);border-radius:2px;border:1px solid var(--border-soft);font-family:monospace;font-size:0.8em;color:var(--text-muted)"><div>[BLOCKED] SQL Injection - 203.45.xx.xx</div><div style="color:var(--accent-warm);margin-top:6px">[ANOMALY] 47 login attempts - locked</div><div style="margin-top:6px">[BLOCKED] Port scan detected</div></div>', '<p style="color:var(--text-muted)">Anomaly detection with threat classification. Real-time response for enterprise security.</p>'] },
-  inventory: { title: 'Inventory System', subtitle: 'HTML · SQL', panels: ['<div style="padding:12px;background:var(--bg-secondary);border-radius:2px;border:1px solid var(--border-soft);font-family:monospace;font-size:0.8em;color:var(--text-muted)"><div>Products: 4 | Total Value: KSh 77,500 | Low Stock: 1</div><div style="margin-top:8px">Laptop Stand - 24 qty</div><div>USB-C Hub - 2 qty ⚠ Low</div></div>', '<p style="color:var(--text-muted)">Full CRUD operations. Real-time stock alerts and dashboard updates. RESTful API.</p>'] },
+  cyber: { title: 'Threat Detection', subtitle: 'Python · ML', panels: ['<div style="padding:12px;background:var(--bg-secondary);border-radius:2px;border:1px solid var(--border-soft);font-family:monospace;font-size:0.8em;color:var(--text-muted)"><div>[BLOCKED] SQL Injection - 203.45.xx.xx</div><div style="color:var(--accent-warm);margin-top:6px">[ANOMALY] 47 login attempts - locked</div><div style="margin-top:6px">[BLOCKED] Port scan detected</div></div>', '<p style="color:var(--text-muted)">Anomaly detection with threat classification. Real time response for enterprise security.</p>'] },
+  inventory: { title: 'Inventory System', subtitle: 'HTML · SQL', panels: ['<div style="padding:12px;background:var(--bg-secondary);border-radius:2px;border:1px solid var(--border-soft);font-family:monospace;font-size:0.8em;color:var(--text-muted)"><div>Products: 4 | Total Value: KSh 77,500 | Low Stock: 1</div><div style="margin-top:8px">Laptop Stand - 24 qty</div><div>USB-C Hub - 2 qty ⚠ Low</div></div>', '<p style="color:var(--text-muted)">Full CRUD operations. Real time stock alerts and dashboard updates. RESTful API.</p>'] },
   finance: { title: 'Finance Assistant', subtitle: 'JavaScript · ML', panels: ['<div style="padding:12px;background:var(--bg-secondary);border-radius:2px;border:1px solid var(--border-soft);font-family:monospace;font-size:0.8em;color:var(--text-muted)"><div>Balance: +12,400 | Income: 45,000 | Expenses: 32,600 | Savings: 27.6%</div><div style="margin-top:8px;color:var(--accent-warm)">ML Prediction: Next month food ~11,900</div></div>', '<p style="color:var(--text-muted)">In-browser ML predictions. Spending forecasts and budget health analysis. 100% private.</p>'] }
 };
+
+function typewriter(el, text, speed = 60) {
+  if (!el) return;
+  
+  // Clear any existing text
+  el.textContent = '';
+  var i = 0;
+  
+  function type() {
+    if (i < text.length) {
+      el.textContent += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    } else {
+      // After typing completes, wait then delete
+      setTimeout(() => deleteText(), 2000);
+    }
+  }
+  
+  function deleteText() {
+    if (i > 0) {
+      el.textContent = text.substring(0, i - 1);
+      i--;
+      setTimeout(deleteText, 40);
+    } else {
+      // Start over
+      setTimeout(() => type(), 500);
+    }
+  }
+  
+  type();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var welcomeEl = document.getElementById('welcomeTw');
+  if (welcomeEl) {
+    setTimeout(() => {
+      typewriter(welcomeEl, 'Hello glad you stopped by', 70);
+    }, 400);
+  }
+});
 
 function showPortfolio(type) {
   var d = portfolioData[type];
   document.getElementById('landingPage').style.display = 'none';
   document.getElementById('portfolioContent').classList.add('active');
+  var roleMap = {recruiter: 'Network Guardian', developer: 'Code Architect', client: 'Systems Innovator', explorer: 'Tech Visionary'};
+  document.getElementById('heroRole').textContent = roleMap[type] || 'IT Professional';
   document.getElementById('heroSub').textContent = d.heroSub;
-  document.getElementById('aboutTitle').textContent = d.aboutTitle;
   document.getElementById('aboutContent').innerHTML = d.about;
-  document.getElementById('experienceTitle').textContent = d.expTitle;
-  document.getElementById('experienceContent').innerHTML = expHTML;
-  document.getElementById('skillsTitle').textContent = d.skillsTitle;
   document.getElementById('skillsContent').innerHTML = d.skills;
   document.getElementById('projectsContent').innerHTML = projectsHTML[type];
+  document.getElementById('experienceContent').innerHTML = expHTML;
   
   var tw = document.getElementById('heroTypewriter');
-  tw.textContent = d.hero[0];
-  var hi = 0;
-  setInterval(() => {
-    hi = (hi + 1) % d.hero.length;
+  if (tw && d.hero && d.hero.length > 0) {
+    tw.textContent = d.hero[0];
+    var hi = 0;
     typewriter(tw, d.hero[hi], 60);
-  }, 4000);
+    
+    setInterval(() => {
+      if (tw) {
+        hi = (hi + 1) % d.hero.length;
+        typewriter(tw, d.hero[hi], 60);
+      }
+    }, 4000);
+  }
   
   window.scrollTo(0, 0);
   setupScrollObserver();
@@ -1365,10 +1425,19 @@ function scrollToSection(id) {
 
 function openDemo(key) {
   var d = demoData[key];
+  var githubLinks = {
+    skillswap: 'https://github.com/WangilaWakhongola/SkillSwap',
+    tailwind: 'https://github.com/WangilaWakhongola/Tailwind-Beginners-Toolkit',
+    network: 'https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard',
+    resume: 'https://github.com/WangilaWakhongola/AI-Resume-Analyzer',
+    cyber: 'https://github.com/WangilaWakhongola/Cybersecurity-threat detection',
+    inventory: 'https://github.com/WangilaWakhongola/inventory-management-system',
+    finance: 'https://github.com/WangilaWakhongola/ML-Powered-Personal-Finance-Assistant'
+  };
   document.getElementById('modalTitle').textContent = d.title;
   document.getElementById('modalSubtitle').textContent = d.subtitle;
   document.getElementById('modalBody').innerHTML = d.panels[0];
-  document.getElementById('modalActions').innerHTML = '<a href="https://github.com/WangilaWakhongola" target="_blank" class="btn-outline">View on GitHub</a>';
+  document.getElementById('modalActions').innerHTML = '<a href="' + githubLinks[key] + '" target="_blank" class="btn-outline">View on GitHub</a>';
   document.getElementById('demoModal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
