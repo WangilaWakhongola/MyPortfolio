@@ -890,6 +890,75 @@ body.light nav {
   line-height: 1.7;
 }
 
+/* ── ACHIEVEMENTS ── */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.achievement-badge {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-soft);
+  border-radius: 2px;
+  padding: 24px 20px;
+  text-align: center;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.achievement-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent-warm);
+  border-radius: 2px 2px 0 0;
+}
+
+.achievement-badge:hover {
+  border-color: var(--accent-warm);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+
+.achievement-icon {
+  font-size: 2em;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.achievement-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 0.9em;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.achievement-desc {
+  font-size: 0.75em;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.achievement-label {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.65em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-warm);
+  background: rgba(201,125,96,0.08);
+  border: 1px solid var(--border-soft);
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+
 /* ── FOOTER ── */
 footer {
   text-align: center;
@@ -1151,6 +1220,7 @@ footer {
       <li><a onclick="scrollToSection('experience')">Experience</a></li>
       <li><a onclick="scrollToSection('skills')">Skills</a></li>
       <li><a onclick="scrollToSection('projects')">Projects</a></li>
+      <li><a onclick="scrollToSection('achievements')">Achievements</a></li>
       <li><a onclick="scrollToSection('cv')">CV</a></li>
       <li><a onclick="scrollToSection('contact')">Contact</a></li>
     </ul>
@@ -1228,10 +1298,19 @@ footer {
       <div class="projects-grid" id="projectsContent"></div>
     </section>
 
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="section fade-in">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2 class="section-title">Achievements</h2>
+      </div>
+      <div class="achievements-grid" id="achievementsContent"></div>
+    </section>
+
     <!-- CV -->
     <section id="cv" class="section fade-in">
       <div class="section-header">
-        <span class="section-num">05</span>
+        <span class="section-num">06</span>
         <h2 class="section-title">CV</h2>
       </div>
       <div class="cv-section">
@@ -1245,7 +1324,7 @@ footer {
     <!-- CONTACT -->
     <section id="contact" class="section fade-in">
       <div class="section-header">
-        <span class="section-num">06</span>
+        <span class="section-num">07</span>
         <h2 class="section-title">Contact</h2>
       </div>
       <div class="contact-grid">
@@ -1324,6 +1403,8 @@ var portfolioData = {
 
 var expHTML = '<div class="exp-card"><div class="exp-header"><div class="exp-title">IT Attachee</div><span class="exp-date">June – Sept 2025</span></div><div class="exp-company">Total Energies</div><ul class="exp-list"><li>Managed IT systems and technical support for 25+ staff</li><li>Diagnosed and resolved hardware and software issues</li><li>Maintained network infrastructure and security protocols</li></ul></div><div class="exp-card"><div class="exp-header"><div class="exp-title">IT Support Volunteer</div><span class="exp-date">2024 – Ongoing</span></div><div class="exp-company">Community Youth Center</div><ul class="exp-list"><li>Trained 30+ young people in foundational IT skills</li><li>Designed and implemented local area network infrastructure</li><li>Implemented cybersecurity best practices</li></ul></div>';
 
+var achievementsHTML = '<div class="achievement-badge"><span class="achievement-icon">💼</span><div class="achievement-title">IT Professional</div><div class="achievement-desc">IT Attachee at Total Energies supporting 25+ staff across technical operations.</div><span class="achievement-label">Industry</span></div><div class="achievement-badge"><span class="achievement-icon">👥</span><div class="achievement-title">Community Trainer</div><div class="achievement-desc">Trained 30+ youth in foundational IT skills at the Community Youth Center.</div><span class="achievement-label">Impact</span></div><div class="achievement-badge"><span class="achievement-icon">🤖</span><div class="achievement-title">AI Builder</div><div class="achievement-desc">Developed 3+ ML-powered applications including an AI Resume Analyzer and Threat Detection system.</div><span class="achievement-label">AI / ML</span></div><div class="achievement-badge"><span class="achievement-icon">🔒</span><div class="achievement-title">Security Practitioner</div><div class="achievement-desc">Built an ML-based cybersecurity threat detection system for real-time enterprise security analysis.</div><span class="achievement-label">Security</span></div><div class="achievement-badge"><span class="achievement-icon">📡</span><div class="achievement-title">Network Engineer</div><div class="achievement-desc">Designed and implemented LAN infrastructure and built a real-time network monitoring dashboard.</div><span class="achievement-label">Networking</span></div><div class="achievement-badge"><span class="achievement-icon">💻</span><div class="achievement-title">Open Source</div><div class="achievement-desc">6+ projects published on GitHub spanning AI, networking, finance, and community tools.</div><span class="achievement-label">GitHub</span></div><div class="achievement-badge"><span class="achievement-icon">🎓</span><div class="achievement-title">CS & Mathematics</div><div class="achievement-desc">Pursuing Mathematics & Computer Science — bridging theory and applied systems.</div><span class="achievement-label">Academic</span></div><div class="achievement-badge"><span class="achievement-icon">🚀</span><div class="achievement-title">Full Stack</div><div class="achievement-desc">Delivered end-to-end web applications from database schema to responsive frontend UI.</div><span class="achievement-label">Development</span></div>';
+
 var projectsHTML = {
   recruiter: '<div class="project-card"><div class="project-header"><div class="project-icon">👥</div><div class="project-links"><button onclick="openDemo(\'skillswap\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/skillswap-map" target="_blank" class="project-link">GitHub</a></div></div><h3>SkillSwap</h3><p class="project-desc">Location-based skill exchange platform connecting people to learn and teach practical skills in their communities.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">React</span></div><span class="project-impact">Community Building</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🎨</div><div class="project-links"><button onclick="openDemo(\'tailwind\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Tailwind-Beginners-Toolkit" target="_blank" class="project-link">GitHub</a></div></div><h3>Tailwind Toolkit</h3><p class="project-desc">Comprehensive TailwindCSS learning resource with hands-on examples and AI-assisted development patterns.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">TailwindCSS</span></div><span class="project-impact">Learning Resource</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📡</div><div class="project-links"><button onclick="openDemo(\'network\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-link">GitHub</a></div></div><h3>Network Monitor</h3><p class="project-desc">Enterprise real time monitoring for system reliability and proactive fault detection.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Networking</span></div><span class="project-impact">99% Uptime</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🤖</div><div class="project-links"><button onclick="openDemo(\'resume\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-link">GitHub</a></div></div><h3>AI Resume Analyzer</h3><p class="project-desc">Intelligent talent screening using ML and NLP for automated resume evaluation.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">NLP</span></div><span class="project-impact">70% faster</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📦</div><div class="project-links"><button onclick="openDemo(\'inventory\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-link">GitHub</a></div></div><h3>Inventory System</h3><p class="project-desc">Efficient stock management reducing manual errors and streamlining operations.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">SQL</span></div><span class="project-impact">95% reduction</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🛡️</div><div class="project-links"><button onclick="openDemo(\'cyber\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat detection" target="_blank" class="project-link">GitHub</a></div></div><h3>Threat Detection</h3><p class="project-desc">ML-based threat detection providing real time security analysis for enterprises.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">ML</span></div><span class="project-impact">Real time</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">💰</div><div class="project-links"><button onclick="openDemo(\'finance\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/ML-Powered-Personal-Finance-Assistant" target="_blank" class="project-link">GitHub</a></div></div><h3>Finance Assistant</h3><p class="project-desc">Intelligent budgeting with predictive analysis for better financial decisions.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">ML</span></div><span class="project-impact">Smart budgeting</span></div></div>',
   developer: '<div class="project-card"><div class="project-header"><div class="project-icon">👥</div><div class="project-links"><button onclick="openDemo(\'skillswap\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/skillswap-map" target="_blank" class="project-link">GitHub</a></div></div><h3>SkillSwap</h3><p class="project-desc">Real time location-based platform with React frontend and backend services for skill matching and community engagement.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">React</span></div></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🎨</div><div class="project-links"><button onclick="openDemo(\'tailwind\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Tailwind-Beginners-Toolkit" target="_blank" class="project-link">GitHub</a></div></div><h3>Tailwind Toolkit</h3><p class="project-desc">Structured learning project demonstrating TailwindCSS best practices and responsive design patterns.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">TailwindCSS</span></div></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📡</div><div class="project-links"><button onclick="openDemo(\'network\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-link">GitHub</a></div></div><h3>Network Monitor</h3><p class="project-desc">Python-powered system with live metrics, alerting, and network topology visualization.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Networking</span></div></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🤖</div><div class="project-links"><button onclick="openDemo(\'resume\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-link">GitHub</a></div></div><h3>AI Resume Analyzer</h3><p class="project-desc">NLP pipeline with semantic similarity and structured JSON output from text.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">NLP</span></div></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📦</div><div class="project-links"><button onclick="openDemo(\'inventory\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-link">GitHub</a></div></div><h3>Inventory System</h3><p class="project-desc">Full stack CRUD with optimized SQL queries and responsive HTML frontend.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">SQL</span></div></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🛡️</div><div class="project-links"><button onclick="openDemo(\'cyber\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat detection" target="_blank" class="project-link">GitHub</a></div></div><h3>Threat Detection</h3><p class="project-desc">AI anomaly detection with real time log analysis and ML classification.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">ML</span></div></div></div><div class="project-card"><div class="project-header"><div class="project-icon">💰</div><div class="project-links"><button onclick="openDemo(\'finance\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/ML-Powered-Personal-Finance-Assistant" target="_blank" class="project-link">GitHub</a></div></div><h3>Finance Assistant</h3><p class="project-desc">JavaScript ML integration with forecasting and data visualization.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">ML</span></div></div></div>',
@@ -1401,6 +1482,7 @@ function showPortfolio(type) {
   document.getElementById('skillsContent').innerHTML = d.skills;
   document.getElementById('projectsContent').innerHTML = projectsHTML[type];
   document.getElementById('experienceContent').innerHTML = expHTML;
+  document.getElementById('achievementsContent').innerHTML = achievementsHTML;
   
   var tw = document.getElementById('heroTypewriter');
   if (tw && d.hero && d.hero.length > 0) {
@@ -1501,7 +1583,7 @@ document.addEventListener('keydown', function(e) {
 });
 
 window.addEventListener('scroll', function() {
-  var sections = ['home', 'about', 'experience', 'skills', 'projects', 'cv', 'contact'];
+  var sections = ['home', 'about', 'experience', 'skills', 'projects', 'achievements', 'cv', 'contact'];
   var cur = '';
   sections.forEach(function(id) {
     var el = document.getElementById(id);
