@@ -988,6 +988,43 @@ footer {
   flex: 1;
 }
 
+.modal-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.modal-tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-muted);
+  padding: 8px 18px;
+  cursor: pointer;
+  font-size: 0.85em;
+  font-weight: 500;
+  transition: all 0.2s;
+  margin-bottom: -1px;
+}
+
+.modal-tab.active {
+  color: var(--accent-warm);
+  border-bottom-color: var(--accent-warm);
+}
+
+.modal-tab:hover {
+  color: var(--text-primary);
+}
+
+.modal-panel {
+  display: none;
+}
+
+.modal-panel.active {
+  display: block;
+}
+
 .modal-actions {
   padding: 20px 28px;
   border-top: 1px solid var(--border-soft);
@@ -1448,10 +1485,27 @@ function openDemo(key) {
   };
   document.getElementById('modalTitle').textContent = d.title;
   document.getElementById('modalSubtitle').textContent = d.subtitle;
-  document.getElementById('modalBody').innerHTML = d.panels[0];
+  var tabs = '<div class="modal-tabs"><button class="modal-tab active" data-panel="0">Preview</button><button class="modal-tab" data-panel="1">Details</button></div>';
+  var panel0 = '<div class="modal-panel active" id="modalPanel0">' + d.panels[0] + '</div>';
+  var panel1 = '<div class="modal-panel" id="modalPanel1">' + d.panels[1] + '</div>';
+  document.getElementById('modalBody').innerHTML = tabs + panel0 + panel1;
   document.getElementById('modalActions').innerHTML = '<a href="' + githubLinks[key] + '" target="_blank" class="btn-outline">View on GitHub</a>';
   document.getElementById('demoModal').classList.add('open');
   document.body.style.overflow = 'hidden';
+}
+
+document.addEventListener('click', function(e) {
+  var btn = e.target.closest('.modal-tab[data-panel]');
+  if (btn) switchPanel(parseInt(btn.getAttribute('data-panel'), 10));
+});
+
+function switchPanel(index) {
+  document.querySelectorAll('.modal-panel').forEach(function(p, i) {
+    p.classList.toggle('active', i === index);
+  });
+  document.querySelectorAll('.modal-tab').forEach(function(t, i) {
+    t.classList.toggle('active', i === index);
+  });
 }
 
 function closeDemo() {
