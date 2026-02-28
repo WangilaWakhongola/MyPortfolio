@@ -35,12 +35,15 @@ To host your own fork:
 
 ## Contributing
 
-Contributions, suggestions, and bug reports are welcome!
+Contributions, suggestions, and bug reports are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide, including local setup, code-style rules, and the PR checklist.
+
+Quick summary:
 
 1. **Open an issue** to discuss the change you'd like to make before submitting a PR.
 2. **Fork** the repository and create a feature branch (`git checkout -b feat/your-improvement`).
 3. Make your changes and verify the site still looks correct locally.
-4. **Open a Pull Request** against the `main` branch with a clear description of what changed and why.
+4. Run `htmlhint index.html` to confirm there are no HTML errors.
+5. **Open a Pull Request** against the `main` branch and fill in the PR template.
 
 Please keep PRs focused and minimal — one logical change per PR makes review easier.
 
