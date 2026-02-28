@@ -1322,7 +1322,7 @@ var portfolioData = {
   }
 };
 
-var expHTML = '<div class="exp-card"><div class="exp-header"><div class="exp-title">IT Attachee</div><span class="exp-date">June – Sept 2025</span></div><div class="exp-company">Total Energies</div><ul class="exp-list"><li>Managed IT systems and technical support for 25+ staff</li><li>Diagnosed and resolved hardware and software issues</li><li>Maintained network infrastructure and security protocols</li></ul></div><div class="exp-card"><div class="exp-header"><div class="exp-title">IT Support Volunteer</div><span class="exp-date">2024 – Ongoing</span></div><div class="exp-company">Community Youth Center</div><ul class="exp-list"><li>Trained 30+ young people in foundational IT skills</li><li>Designed and implemented local area network infrastructure</li><li>Implemented cybersecurity best practices</li></ul></div>';
+var experienceHTML = '<div class="exp-card"><div class="exp-header"><div class="exp-title">IT Attachee</div><span class="exp-date">June – Sept 2025</span></div><div class="exp-company">Total Energies</div><ul class="exp-list"><li>Managed IT systems and technical support for 25+ staff</li><li>Diagnosed and resolved hardware and software issues</li><li>Maintained network infrastructure and security protocols</li></ul></div><div class="exp-card"><div class="exp-header"><div class="exp-title">IT Support Volunteer</div><span class="exp-date">2024 – Ongoing</span></div><div class="exp-company">Community Youth Center</div><ul class="exp-list"><li>Trained 30+ young people in foundational IT skills</li><li>Designed and implemented local area network infrastructure</li><li>Implemented cybersecurity best practices</li></ul></div>';
 
 var projectsHTML = {
   recruiter: '<div class="project-card"><div class="project-header"><div class="project-icon">👥</div><div class="project-links"><button onclick="openDemo(\'skillswap\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/skillswap-map" target="_blank" class="project-link">GitHub</a></div></div><h3>SkillSwap</h3><p class="project-desc">Location-based skill exchange platform connecting people to learn and teach practical skills in their communities.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">React</span></div><span class="project-impact">Community Building</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🎨</div><div class="project-links"><button onclick="openDemo(\'tailwind\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Tailwind-Beginners-Toolkit" target="_blank" class="project-link">GitHub</a></div></div><h3>Tailwind Toolkit</h3><p class="project-desc">Comprehensive TailwindCSS learning resource with hands-on examples and AI-assisted development patterns.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">TailwindCSS</span></div><span class="project-impact">Learning Resource</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📡</div><div class="project-links"><button onclick="openDemo(\'network\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-link">GitHub</a></div></div><h3>Network Monitor</h3><p class="project-desc">Enterprise real time monitoring for system reliability and proactive fault detection.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Networking</span></div><span class="project-impact">99% Uptime</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🤖</div><div class="project-links"><button onclick="openDemo(\'resume\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-link">GitHub</a></div></div><h3>AI Resume Analyzer</h3><p class="project-desc">Intelligent talent screening using ML and NLP for automated resume evaluation.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">NLP</span></div><span class="project-impact">70% faster</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📦</div><div class="project-links"><button onclick="openDemo(\'inventory\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-link">GitHub</a></div></div><h3>Inventory System</h3><p class="project-desc">Efficient stock management reducing manual errors and streamlining operations.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">SQL</span></div><span class="project-impact">95% reduction</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🛡️</div><div class="project-links"><button onclick="openDemo(\'cyber\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat detection" target="_blank" class="project-link">GitHub</a></div></div><h3>Threat Detection</h3><p class="project-desc">ML-based threat detection providing real time security analysis for enterprises.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">ML</span></div><span class="project-impact">Real time</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">💰</div><div class="project-links"><button onclick="openDemo(\'finance\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/ML-Powered-Personal-Finance-Assistant" target="_blank" class="project-link">GitHub</a></div></div><h3>Finance Assistant</h3><p class="project-desc">Intelligent budgeting with predictive analysis for better financial decisions.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">ML</span></div><span class="project-impact">Smart budgeting</span></div></div>',
@@ -1344,16 +1344,16 @@ var demoData = {
 function typewriter(el, text, speed = 60) {
   if (!el) return;
   
-  var i = 0;
+  var charIndex = 0;
   var isDeleting = false;
   var timeoutId;
   
   function type() {
     if (!isDeleting) {
       // Typing
-      if (i < text.length) {
-        el.textContent = text.substring(0, i + 1);
-        i++;
+      if (charIndex < text.length) {
+        el.textContent = text.substring(0, charIndex + 1);
+        charIndex++;
         timeoutId = setTimeout(type, speed);
       } else {
         // Wait before deleting
@@ -1364,9 +1364,9 @@ function typewriter(el, text, speed = 60) {
       }
     } else {
       // Deleting
-      if (i > 0) {
-        i--;
-        el.textContent = text.substring(0, i);
+      if (charIndex > 0) {
+        charIndex--;
+        el.textContent = text.substring(0, charIndex);
         timeoutId = setTimeout(type, 40);
       } else {
         // Wait before typing again
@@ -1382,36 +1382,36 @@ function typewriter(el, text, speed = 60) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  var welcomeEl = document.getElementById('welcomeTw');
-  if (welcomeEl) {
+  var welcomeTypewriterElement = document.getElementById('welcomeTw');
+  if (welcomeTypewriterElement) {
     setTimeout(() => {
-      typewriter(welcomeEl, 'Hello glad you stopped by', 70);
+      typewriter(welcomeTypewriterElement, 'Hello glad you stopped by', 70);
     }, 400);
   }
 });
 
 function showPortfolio(type) {
-  var d = portfolioData[type];
+  var selectedPortfolioData = portfolioData[type];
   document.getElementById('landingPage').style.display = 'none';
   document.getElementById('portfolioContent').classList.add('active');
   var roleMap = {recruiter: 'Network Guardian', developer: 'Code Architect', client: 'Systems Innovator', explorer: 'Tech Visionary'};
   document.getElementById('heroRole').textContent = roleMap[type] || 'IT Professional';
-  document.getElementById('heroSub').textContent = d.heroSub;
-  document.getElementById('aboutContent').innerHTML = d.about;
-  document.getElementById('skillsContent').innerHTML = d.skills;
+  document.getElementById('heroSub').textContent = selectedPortfolioData.heroSub;
+  document.getElementById('aboutContent').innerHTML = selectedPortfolioData.about;
+  document.getElementById('skillsContent').innerHTML = selectedPortfolioData.skills;
   document.getElementById('projectsContent').innerHTML = projectsHTML[type];
-  document.getElementById('experienceContent').innerHTML = expHTML;
+  document.getElementById('experienceContent').innerHTML = experienceHTML;
   
-  var tw = document.getElementById('heroTypewriter');
-  if (tw && d.hero && d.hero.length > 0) {
-    tw.textContent = '';
-    var hi = 0;
+  var heroTypewriterElement = document.getElementById('heroTypewriter');
+  if (heroTypewriterElement && selectedPortfolioData.hero && selectedPortfolioData.hero.length > 0) {
+    heroTypewriterElement.textContent = '';
+    var heroIndex = 0;
     var typewriterInterval;
     
     function startTypewriter() {
-      typewriter(tw, d.hero[hi], 60);
+      typewriter(heroTypewriterElement, selectedPortfolioData.hero[heroIndex], 60);
       typewriterInterval = setTimeout(() => {
-        hi = (hi + 1) % d.hero.length;
+        heroIndex = (heroIndex + 1) % selectedPortfolioData.hero.length;
         startTypewriter();
       }, 5000);
     }
@@ -1430,13 +1430,13 @@ function showLanding() {
 }
 
 function scrollToSection(id) {
-  var el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth' });
+  var sectionElement = document.getElementById(id);
+  if (sectionElement) sectionElement.scrollIntoView({ behavior: 'smooth' });
   document.getElementById('navLinks').classList.remove('open');
 }
 
 function openDemo(key) {
-  var d = demoData[key];
+  var projectDemoData = demoData[key];
   var githubLinks = {
     skillswap: 'https://github.com/WangilaWakhongola/skillswap-map',
     tailwind: 'https://github.com/WangilaWakhongola/Tailwind-Beginners-Toolkit',
@@ -1446,9 +1446,9 @@ function openDemo(key) {
     inventory: 'https://github.com/WangilaWakhongola/inventory-management-system',
     finance: 'https://github.com/WangilaWakhongola/ML-Powered-Personal-Finance-Assistant'
   };
-  document.getElementById('modalTitle').textContent = d.title;
-  document.getElementById('modalSubtitle').textContent = d.subtitle;
-  document.getElementById('modalBody').innerHTML = d.panels[0];
+  document.getElementById('modalTitle').textContent = projectDemoData.title;
+  document.getElementById('modalSubtitle').textContent = projectDemoData.subtitle;
+  document.getElementById('modalBody').innerHTML = projectDemoData.panels[0];
   document.getElementById('modalActions').innerHTML = '<a href="' + githubLinks[key] + '" target="_blank" class="btn-outline">View on GitHub</a>';
   document.getElementById('demoModal').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -1464,16 +1464,16 @@ function closeDemoIfOverlay(e) {
 }
 
 function downloadCV() {
-  var c = parseInt(localStorage.getItem('cvDL') || '0') + 1;
-  localStorage.setItem('cvDL', c);
-  var el = document.getElementById('cvCounter');
-  if (el && c > 0) el.textContent = 'Downloaded ' + c + ' time' + (c > 1 ? 's' : '') + ' from this device';
-  var a = document.createElement('a');
-  a.href = 'https://github.com/WangilaWakhongola/MyPortfolio/raw/main/Resume.pdf';
-  a.download = 'Emmanuel_Wakhongola_CV.pdf';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
+  var downloadCount = parseInt(localStorage.getItem('cvDL') || '0') + 1;
+  localStorage.setItem('cvDL', downloadCount);
+  var cvCounterElement = document.getElementById('cvCounter');
+  if (cvCounterElement && downloadCount > 0) cvCounterElement.textContent = 'Downloaded ' + downloadCount + ' time' + (downloadCount > 1 ? 's' : '') + ' from this device';
+  var downloadLink = document.createElement('a');
+  downloadLink.href = 'https://github.com/WangilaWakhongola/MyPortfolio/raw/main/Resume.pdf';
+  downloadLink.download = 'Emmanuel_Wakhongola_CV.pdf';
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
 }
 
 function toggleTheme() {
@@ -1486,13 +1486,13 @@ function toggleNav() {
 }
 
 function setupScrollObserver() {
-  var obs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting) e.target.classList.add('visible');
+  var fadeInObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
   }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-in').forEach(function(el) {
-    obs.observe(el);
+  document.querySelectorAll('.fade-in').forEach(function(fadeInElement) {
+    fadeInObserver.observe(fadeInElement);
   });
 }
 
@@ -1502,22 +1502,22 @@ document.addEventListener('keydown', function(e) {
 
 window.addEventListener('scroll', function() {
   var sections = ['home', 'about', 'experience', 'skills', 'projects', 'cv', 'contact'];
-  var cur = '';
+  var currentSectionId = '';
   sections.forEach(function(id) {
-    var el = document.getElementById(id);
-    if (el && window.scrollY >= el.offsetTop - 120) cur = id;
+    var sectionElement = document.getElementById(id);
+    if (sectionElement && window.scrollY >= sectionElement.offsetTop - 120) currentSectionId = id;
   });
-  document.querySelectorAll('.nav-links a').forEach(function(l) {
-    l.classList.remove('active');
-    if (l.getAttribute('onclick') && l.getAttribute('onclick').indexOf(cur) > -1) l.classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(function(navLink) {
+    navLink.classList.remove('active');
+    if (navLink.getAttribute('onclick') && navLink.getAttribute('onclick').indexOf(currentSectionId) > -1) navLink.classList.add('active');
   });
 });
 
 document.addEventListener('DOMContentLoaded', updateCVCounter);
 function updateCVCounter() {
-  var c = localStorage.getItem('cvDL') || '0';
-  var el = document.getElementById('cvCounter');
-  if (el && parseInt(c) > 0) el.textContent = 'Downloaded ' + c + ' time' + (c > 1 ? 's' : '') + ' from this device';
+  var downloadCount = localStorage.getItem('cvDL') || '0';
+  var cvCounterElement = document.getElementById('cvCounter');
+  if (cvCounterElement && parseInt(downloadCount) > 0) cvCounterElement.textContent = 'Downloaded ' + downloadCount + ' time' + (downloadCount > 1 ? 's' : '') + ' from this device';
 }
 </script>
 </body>
