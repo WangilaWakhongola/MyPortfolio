@@ -605,6 +605,37 @@ body.light nav {
   font-size: 0.6em;
 }
 
+.exp-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+
+.exp-status.open {
+  color: var(--accent-sage);
+  background: rgba(5,150,105,0.08);
+  border: 1px solid rgba(5,150,105,0.25);
+}
+
+.exp-status.closed {
+  color: var(--text-muted);
+  background: rgba(71,85,105,0.08);
+  border: 1px solid var(--border-soft);
+}
+
+.exp-date-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 /* ── SKILLS ── */
 .skills-grid {
   display: grid;
@@ -1322,7 +1353,7 @@ var portfolioData = {
   }
 };
 
-var expHTML = '<div class="exp-card"><div class="exp-header"><div class="exp-title">IT Attachee</div><span class="exp-date">June – Sept 2025</span></div><div class="exp-company">Total Energies</div><ul class="exp-list"><li>Managed IT systems and technical support for 25+ staff</li><li>Diagnosed and resolved hardware and software issues</li><li>Maintained network infrastructure and security protocols</li></ul></div><div class="exp-card"><div class="exp-header"><div class="exp-title">IT Support Volunteer</div><span class="exp-date">2024 – Ongoing</span></div><div class="exp-company">Community Youth Center</div><ul class="exp-list"><li>Trained 30+ young people in foundational IT skills</li><li>Designed and implemented local area network infrastructure</li><li>Implemented cybersecurity best practices</li></ul></div>';
+var expHTML = '<div class="exp-card"><div class="exp-header"><div class="exp-title">IT Attachee</div><div class="exp-date-wrapper"><span class="exp-date">June – Sept 2025</span><span class="exp-status closed">● Closed</span></div></div><div class="exp-company">Total Energies</div><ul class="exp-list"><li>Managed IT systems and technical support for 25+ staff</li><li>Diagnosed and resolved hardware and software issues</li><li>Maintained network infrastructure and security protocols</li></ul></div><div class="exp-card"><div class="exp-header"><div class="exp-title">IT Support Volunteer</div><div class="exp-date-wrapper"><span class="exp-date">2024 – Ongoing</span><span class="exp-status open">● Open</span></div></div><div class="exp-company">Community Youth Center</div><ul class="exp-list"><li>Trained 30+ young people in foundational IT skills</li><li>Designed and implemented local area network infrastructure</li><li>Implemented cybersecurity best practices</li></ul></div>';
 
 var projectsHTML = {
   recruiter: '<div class="project-card"><div class="project-header"><div class="project-icon">👥</div><div class="project-links"><button onclick="openDemo(\'skillswap\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/skillswap-map" target="_blank" class="project-link">GitHub</a></div></div><h3>SkillSwap</h3><p class="project-desc">Location-based skill exchange platform connecting people to learn and teach practical skills in their communities.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">React</span></div><span class="project-impact">Community Building</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🎨</div><div class="project-links"><button onclick="openDemo(\'tailwind\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Tailwind-Beginners-Toolkit" target="_blank" class="project-link">GitHub</a></div></div><h3>Tailwind Toolkit</h3><p class="project-desc">Comprehensive TailwindCSS learning resource with hands-on examples and AI-assisted development patterns.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">TailwindCSS</span></div><span class="project-impact">Learning Resource</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📡</div><div class="project-links"><button onclick="openDemo(\'network\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-link">GitHub</a></div></div><h3>Network Monitor</h3><p class="project-desc">Enterprise real time monitoring for system reliability and proactive fault detection.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Networking</span></div><span class="project-impact">99% Uptime</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🤖</div><div class="project-links"><button onclick="openDemo(\'resume\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-link">GitHub</a></div></div><h3>AI Resume Analyzer</h3><p class="project-desc">Intelligent talent screening using ML and NLP for automated resume evaluation.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">NLP</span></div><span class="project-impact">70% faster</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📦</div><div class="project-links"><button onclick="openDemo(\'inventory\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-link">GitHub</a></div></div><h3>Inventory System</h3><p class="project-desc">Efficient stock management reducing manual errors and streamlining operations.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">SQL</span></div><span class="project-impact">95% reduction</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🛡️</div><div class="project-links"><button onclick="openDemo(\'cyber\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat detection" target="_blank" class="project-link">GitHub</a></div></div><h3>Threat Detection</h3><p class="project-desc">ML-based threat detection providing real time security analysis for enterprises.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">ML</span></div><span class="project-impact">Real time</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">💰</div><div class="project-links"><button onclick="openDemo(\'finance\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/ML-Powered-Personal-Finance-Assistant" target="_blank" class="project-link">GitHub</a></div></div><h3>Finance Assistant</h3><p class="project-desc">Intelligent budgeting with predictive analysis for better financial decisions.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">ML</span></div><span class="project-impact">Smart budgeting</span></div></div>',
