@@ -784,6 +784,77 @@ body.light nav {
   letter-spacing: 0.05em;
 }
 
+/* ── ACHIEVEMENTS ── */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.achievement-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-soft);
+  border-radius: 2px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.achievement-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent-warm);
+  border-radius: 2px 2px 0 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+
+.achievement-card:hover {
+  border-color: var(--accent-warm);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+
+.achievement-card:hover::after {
+  transform: scaleX(1);
+}
+
+.achievement-icon {
+  font-size: 2em;
+}
+
+.achievement-card h4 {
+  color: var(--accent-warm);
+  font-size: 0.95em;
+  margin: 0;
+}
+
+.achievement-card p {
+  color: var(--text-muted);
+  font-size: 0.85em;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.achievement-date {
+  font-size: 0.7em;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-soft);
+}
+
 /* ── CV SECTION ── */
 .cv-section {
   background: var(--bg-secondary);
@@ -1151,6 +1222,7 @@ footer {
       <li><a onclick="scrollToSection('skills')">Skills</a></li>
       <li><a onclick="scrollToSection('projects')">Projects</a></li>
       <li><a onclick="scrollToSection('cv')">CV</a></li>
+      <li><a onclick="scrollToSection('achievements')">Achievements</a></li>
       <li><a onclick="scrollToSection('contact')">Contact</a></li>
     </ul>
     <button class="nav-burger" onclick="toggleNav()">☰</button>
@@ -1241,10 +1313,19 @@ footer {
       </div>
     </section>
 
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="section fade-in">
+      <div class="section-header">
+        <span class="section-num">06</span>
+        <h2 class="section-title">Achievements</h2>
+      </div>
+      <div class="achievements-grid" id="achievementsContent"></div>
+    </section>
+
     <!-- CONTACT -->
     <section id="contact" class="section fade-in">
       <div class="section-header">
-        <span class="section-num">06</span>
+        <span class="section-num">07</span>
         <h2 class="section-title">Contact</h2>
       </div>
       <div class="contact-grid">
@@ -1330,7 +1411,9 @@ var projectsHTML = {
   explorer: '<div class="project-card"><div class="project-header"><div class="project-icon">👥</div><div class="project-links"><button onclick="openDemo(\'skillswap\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/skillswap-map" target="_blank" class="project-link">GitHub</a></div></div><h3>SkillSwap</h3><p class="project-desc">Can technology create meaningful community connections? Building a skill exchange marketplace.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">JavaScript</span></div><span class="project-impact">Community→Tech</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🎨</div><div class="project-links"><button onclick="openDemo(\'tailwind\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Tailwind-Beginners-Toolkit" target="_blank" class="project-link">GitHub</a></div></div><h3>Tailwind Toolkit</h3><p class="project-desc">Learning modern CSS approaches and building responsive UIs with utility-first thinking.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">TailwindCSS</span></div><span class="project-impact">Frontend Design</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📡</div><div class="project-links"><button onclick="openDemo(\'network\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Network-Monitoring-Dashboard" target="_blank" class="project-link">GitHub</a></div></div><h3>Network Monitor</h3><p class="project-desc">What if you could see your entire network in real time? Built in Python.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">Python</span></div><span class="project-impact">Networks→Python</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🤖</div><div class="project-links"><button onclick="openDemo(\'resume\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/AI-Resume-Analyzer" target="_blank" class="project-link">GitHub</a></div></div><h3>AI Resume Analyzer</h3><p class="project-desc">Can machines understand what makes great candidates? Exploring semantic analysis.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">NLP</span></div><span class="project-impact">AI→NLP</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">🛡️</div><div class="project-links"><button onclick="openDemo(\'cyber\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/Cybersecurity-threat detection" target="_blank" class="project-link">GitHub</a></div></div><h3>Threat Detection</h3><p class="project-desc">Can ML detect attacks before they happen? At the AI + security frontier.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">ML</span></div><span class="project-impact">AI→Security</span></div></div><div class="project-card"><div class="project-header"><div class="project-icon">📦</div><div class="project-links"><button onclick="openDemo(\'inventory\')" class="project-link">View</button><a href="https://github.com/WangilaWakhongola/inventory-management-system" target="_blank" class="project-link">GitHub</a></div></div><h3>Inventory System</h3><p class="project-desc">Learning database architecture and full stack thinking from schema to UI.</p><div class="project-footer"><div class="project-tech"><span class="tech-tag">SQL</span></div><span class="project-impact">Databases</span></div></div>'
 };
 
-var demoData = {
+var achievementsHTML = '<div class="achievement-card"><div class="achievement-icon">🎓</div><h4>Mathematics &amp; Computer Science</h4><p>Pursuing a dual degree combining mathematical foundations with software and systems engineering.</p><div class="achievement-date">2023 – Present</div></div><div class="achievement-card"><div class="achievement-icon">🏢</div><h4>IT Attachee — Total Energies</h4><p>Successfully managed IT infrastructure and provided technical support to 25+ staff during an industry placement.</p><div class="achievement-date">June – Sept 2025</div></div><div class="achievement-card"><div class="achievement-icon">👨‍🏫</div><h4>Community IT Trainer</h4><p>Trained 30+ young people in foundational IT skills including networking, cybersecurity, and software basics.</p><div class="achievement-date">2024 – Ongoing</div></div><div class="achievement-card"><div class="achievement-icon">🤖</div><h4>AI &amp; ML Portfolio Projects</h4><p>Built and deployed 7+ AI and machine learning projects spanning NLP, anomaly detection, and predictive analytics.</p><div class="achievement-date">2024 – Present</div></div><div class="achievement-card"><div class="achievement-icon">🌐</div><h4>Network Infrastructure Design</h4><p>Designed and implemented local area network infrastructure for a community youth center from the ground up.</p><div class="achievement-date">2024</div></div><div class="achievement-card"><div class="achievement-icon">🛡️</div><h4>Cybersecurity Best Practices Implementation</h4><p>Implemented organisation-wide cybersecurity protocols and access control policies at a community centre.</p><div class="achievement-date">2024</div></div>';
+
+
   skillswap: { title: 'SkillSwap', subtitle: 'JavaScript · React', panels: ['<div style="padding:20px;background:var(--bg-secondary);border-radius:2px;border:1px solid var(--border-soft);font-family:monospace;font-size:0.85em"><div style="color:var(--text-muted)">Available Skills in Your Area: 23</div><div style="color:var(--text-muted);margin-top:10px">Photography → Learn Cooking (2km)</div><div style="color:var(--accent-warm);margin-top:6px">Web Design → Learn Photography (1.5km)</div></div>', '<p style="color:var(--text-muted)">Location-based skill exchange connecting people in real time. Trade skills with nearby community members.</p>'] },
   tailwind: { title: 'Tailwind Toolkit', subtitle: 'HTML · TailwindCSS', panels: ['<div style="padding:20px;background:var(--bg-secondary);border-radius:2px;border:1px solid var(--border-soft);font-family:monospace;font-size:0.85em"><div style="color:var(--text-muted)">Responsive Components</div><div style="color:var(--text-muted);margin-top:10px">✓ Navigation · Buttons · Cards</div><div style="color:var(--text-muted);margin-top:6px">✓ Forms · Layouts · Utilities</div></div>', '<p style="color:var(--text-muted)">Comprehensive learning resource for TailwindCSS with hands-on examples and best practices.</p>'] },
   network: { title: 'Network Monitor', subtitle: 'Python · Real time', panels: ['<div style="padding:20px;background:var(--bg-secondary);border-radius:2px;border:1px solid var(--border-soft);font-family:monospace;font-size:0.85em"><div style="color:var(--text-muted)">CPU: 45% | RAM: 62% | Network ↑1.2MB/s ↓3.8MB/s</div><div style="color:var(--text-muted);margin-top:10px">Active connections: 3 | Status: OK</div></div>', '<p style="color:var(--text-muted)">Real time system monitoring with live metrics, alerting, and network visualization.</p>'] },
@@ -1400,6 +1483,7 @@ function showPortfolio(type) {
   document.getElementById('skillsContent').innerHTML = d.skills;
   document.getElementById('projectsContent').innerHTML = projectsHTML[type];
   document.getElementById('experienceContent').innerHTML = expHTML;
+  document.getElementById('achievementsContent').innerHTML = achievementsHTML;
   
   var tw = document.getElementById('heroTypewriter');
   if (tw && d.hero && d.hero.length > 0) {
@@ -1500,7 +1584,7 @@ document.addEventListener('keydown', function(e) {
 });
 
 window.addEventListener('scroll', function() {
-  var sections = ['home', 'about', 'experience', 'skills', 'projects', 'cv', 'contact'];
+  var sections = ['home', 'about', 'experience', 'skills', 'projects', 'cv', 'achievements', 'contact'];
   var cur = '';
   sections.forEach(function(id) {
     var el = document.getElementById(id);
