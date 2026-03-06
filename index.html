@@ -201,7 +201,7 @@ footer { text-align: center; padding: 40px; color: var(--text-primary); border-t
     <div class="intro-line" id="iRow3"><span id="twLine3"></span></div>
     <span class="tw-cursor" id="cursor1"></span>
   </div>
-  <button class="intro-skip" onclick="skipIntro()">Skip ↓</button>
+  <button class="intro-skip" id="skipBtn">Skip ↓</button>
   <div class="intro-progress" id="introProgress"></div>
 </div>
 
@@ -247,7 +247,7 @@ footer { text-align: center; padding: 40px; color: var(--text-primary); border-t
     </div>
     <div class="contact-buttons">
       <a href="https://wa.me/254791952584" class="btn-outline" target="_blank">💬 WhatsApp</a>
-      <a href="mailto:wangilawakhongola@gmail.com" class="btn-outline">📧 Email</a>
+      <a href="/cdn-cgi/l/email-protection#97e0f6f9f0fefbf6e0f6fcfff8f9f0f8fbf6d7f0faf6fefbb9f4f8fa" class="btn-outline">📧 Email</a>
       <a href="https://github.com/WangilaWakhongola" class="btn-outline" target="_blank">⌥ GitHub</a>
     </div>
     <div class="scroll-hint"><span>↓</span><span>Scroll to explore</span></div>
@@ -300,7 +300,7 @@ footer { text-align: center; padding: 40px; color: var(--text-primary); border-t
           <p>Open to discussing new projects, ideas, or opportunities to build something meaningful.</p>
           <div class="contact-links">
             <a href="https://wa.me/254791952584" class="contact-item" target="_blank" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg></a>
-            <a href="mailto:wangilawakhongola@gmail.com" class="contact-item" title="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+            <a href="/cdn-cgi/l/email-protection#9aedfbf4fdf3f6fbedfbf1f2f5f4fdf5f6fbdafdf7fbf3f6b4f9f5f7" class="contact-item" title="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
             <a href="https://github.com/WangilaWakhongola" class="contact-item" target="_blank" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
           </div>
         </div>
@@ -318,7 +318,7 @@ footer { text-align: center; padding: 40px; color: var(--text-primary); border-t
   </footer>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 var introSequence = [
   { el: 'twLine1', cursor: 'cursor1', text: 'Hi There! Welcome to my Portfolio.', speed: 55 },
 ];
@@ -386,12 +386,12 @@ var GH_ICON = '<svg width="13" height="13" viewBox="0 0 24 24" style="fill:curre
 var GITHUB_BASE = 'https://github.com/WangilaWakhongola/';
 
 var projects = [
+  { icon:'🏥', name:'MediCore — Hospital Management System', repo:'MediCore-App', tech:['Next.js','TypeScript','Tailwind CSS','React'], impact:'HealthTech', desc:{ recruiter:'Full-stack hospital management system with modules for patient records, doctor scheduling, appointments, and billing — built to streamline clinical operations.', developer:'Next.js 14 app with TypeScript, Tailwind CSS, and Recharts. Clean component architecture with role-based data views and a dark-themed dashboard UI.', client:'A complete digital solution for hospitals to manage patients, staff, appointments, and invoices from a single modern dashboard — reducing admin overhead significantly.', explorer:'What if every hospital had a smart, real-time command center? MediCore explores how modern web tech can transform healthcare administration.' }},
+  { icon:'🎓', name:'School Management System', repo:'School_Management_System', tech:['Next.js','TypeScript','Tailwind CSS','React'], impact:'EdTech', desc:{ recruiter:'Full-stack school management platform covering student records, teacher scheduling, attendance tracking, and grade management — built to modernize school administration.', developer:'Next.js 14 app with TypeScript and Tailwind CSS. Clean modular architecture with role-based dashboards for admins, teachers, and students.', client:'A complete digital solution for schools to manage students, staff, timetables, and performance reports from one intuitive dashboard — cutting paperwork and admin time.', explorer:'What if every school had a smart system that connected students, teachers, and administrators seamlessly? This project brings that vision to life.' }},
   { icon:'🌾', name:'Remote Farm Management', repo:'RemoteFarm_Management_System', tech:['Python','AI/ML','IoT','Cloud'], impact:'AgriTech', desc:{ recruiter:'Comprehensive digital solution enabling farmers to monitor and manage farm operations remotely in real-time, reducing losses and improving agricultural outcomes.', developer:'Built with AI/ML models, IoT sensor integration, and cloud infrastructure for data-driven, sustainable agriculture at scale.', client:'Transforms farm management with real-time monitoring and intelligent alerts — improving yields and cutting operational costs.', explorer:'Can IoT and AI truly transform African agriculture? This project explores remote sensing, smart alerts, and predictive farm analytics.' }},
   { icon:'🛡️', name:'Cybersecurity Threat Detection', repo:'Cybersecurity-threat-detection', tech:['Python','ML','Network Security'], impact:'Security', desc:{ recruiter:'ML-based system that detects network threats and anomalies in real-time, protecting enterprise infrastructure before damage occurs.', developer:'Machine learning pipeline for real-time anomaly detection and threat classification across network traffic data.', client:'Proactively shields business infrastructure by identifying and flagging threats before they escalate into incidents.', explorer:'Teaching machines to recognize danger patterns in network traffic — and act faster than any human analyst could.' }},
   { icon:'🤖', name:'AI Resume Analyzer', repo:'AI-Resume-Analyzer', tech:['Python','NLP','scikit-learn','ML'], impact:'HR Tech', desc:{ recruiter:'Intelligent talent screening tool using ML and NLP to score candidates 0–100 and generate actionable hiring recommendations.', developer:'NLP pipeline that extracts structured information from resumes, performs semantic analysis, and outputs ranked candidate scores.', client:'Automates the most time-consuming part of recruitment — screening resumes — so your team focuses only on the best fits.', explorer:'Can machines understand what makes a candidate truly stand out beyond keywords? This project attempts exactly that.' }},
-  { icon:'📡', name:'Network Monitoring Dashboard', repo:'Network-Monitoring-Dashboard', tech:['Python','psutil','Dashboard','Real-time'], impact:'Enterprise', desc:{ recruiter:'Enterprise-grade system tracking network performance, system stats, active connections, and running processes across infrastructure.', developer:'Python + psutil real-time metrics engine with a live dashboard for comprehensive visibility into system health.', client:'Keeps enterprise networks at peak performance with continuous visibility — reducing downtime and accelerating incident response.', explorer:'What does it feel like to watch an entire network breathe in real time? Every connection, every process, live.' }},
-  { icon:'🏥', name:'MediCore — Hospital Management System', repo:'medicore', tech:['Next.js','TypeScript','Tailwind CSS','React'], impact:'HealthTech', desc:{ recruiter:'Full-stack hospital management system with modules for patient records, doctor scheduling, appointments, and billing — built to streamline clinical operations.', developer:'Next.js 14 app with TypeScript, Tailwind CSS, and Recharts. Clean component architecture with role-based data views and a dark-themed dashboard UI.', client:'A complete digital solution for hospitals to manage patients, staff, appointments, and invoices from a single modern dashboard — reducing admin overhead significantly.', explorer:'What if every hospital had a smart, real-time command center? MediCore explores how modern web tech can transform healthcare administration.' }},
-  { icon:'🎓', name:'School Management System', repo:'School-Management-System', tech:['Next.js','TypeScript','Tailwind CSS','React'], impact:'EdTech', desc:{ recruiter:'Full-stack school management platform covering student records, teacher scheduling, attendance tracking, and grade management — built to modernize school administration.', developer:'Next.js 14 app with TypeScript and Tailwind CSS. Clean modular architecture with role-based dashboards for admins, teachers, and students.', client:'A complete digital solution for schools to manage students, staff, timetables, and performance reports from one intuitive dashboard — cutting paperwork and admin time.', explorer:'What if every school had a smart system that connected students, teachers, and administrators seamlessly? This project brings that vision to life.' }}
+  { icon:'📡', name:'Network Monitoring Dashboard', repo:'Network-Monitoring-Dashboard', tech:['Python','psutil','Dashboard','Real-time'], impact:'Enterprise', desc:{ recruiter:'Enterprise-grade system tracking network performance, system stats, active connections, and running processes across infrastructure.', developer:'Python + psutil real-time metrics engine with a live dashboard for comprehensive visibility into system health.', client:'Keeps enterprise networks at peak performance with continuous visibility — reducing downtime and accelerating incident response.', explorer:'What does it feel like to watch an entire network breathe in real time? Every connection, every process, live.' }}
 ];
 
 function renderProjects(mode) {
@@ -492,6 +492,8 @@ document.addEventListener('DOMContentLoaded', function() {
   startIntro();
   var c=localStorage.getItem('cvDL')||'0';
   if(parseInt(c)>0){ var el=document.getElementById('cvCounter'); if(el) el.textContent='Downloaded '+c+' time'+(parseInt(c)>1?'s':''); }
+  var skipBtn = document.getElementById('skipBtn');
+  if(skipBtn) skipBtn.addEventListener('click', function(){ skipIntro(); });
 });
 document.addEventListener('keydown', function(e){ if(e.key==='Escape') skipIntro(); });
 </script>
