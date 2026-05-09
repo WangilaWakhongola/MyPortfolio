@@ -108,26 +108,31 @@ h2 { font-size: clamp(1.2em, 3.5vw, 2em); }
 /* ── Custom SVG icon wrapper ── */
 .card-icon-wrap {
   display: flex; align-items: center; justify-content: center;
-  width: 56px; height: 56px; margin: 0 auto 14px;
-  background: rgba(37,99,235,0.07);
-  border: 1px solid rgba(37,99,235,0.18);
-  border-radius: 12px;
-  transition: background 0.3s, border-color 0.3s, transform 0.3s;
+  width: 64px; height: 64px; margin: 0 auto 16px;
+  background: linear-gradient(135deg, rgba(37,99,235,0.12) 0%, rgba(37,99,235,0.04) 100%);
+  border: 1.5px solid rgba(37,99,235,0.22);
+  border-radius: 18px;
+  transition: background 0.35s, border-color 0.35s, transform 0.35s, box-shadow 0.35s;
+  position: relative; overflow: hidden;
+}
+.card-icon-wrap::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.18), transparent 70%);
+  pointer-events: none;
 }
 .viewer-card:hover .card-icon-wrap {
-  background: rgba(37,99,235,0.14);
+  background: linear-gradient(135deg, rgba(37,99,235,0.22) 0%, rgba(37,99,235,0.08) 100%);
   border-color: var(--accent-warm);
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(-4deg);
+  box-shadow: 0 8px 28px rgba(37,99,235,0.22);
 }
 .card-icon-wrap svg {
-  width: 26px; height: 26px;
-  fill: none;
-  stroke: var(--accent-warm);
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  transition: stroke 0.3s;
+  width: 30px; height: 30px; fill: none;
+  stroke: var(--accent-warm); stroke-width: 1.6;
+  stroke-linecap: round; stroke-linejoin: round;
+  transition: transform 0.35s; position: relative; z-index: 1;
 }
+.viewer-card:hover .card-icon-wrap svg { transform: scale(1.1); }
 
 .viewer-card h2 { font-size: 1em; margin-bottom: 6px; color: var(--accent-warm); }
 .viewer-card p { font-size: 0.8em; color: var(--text-primary); line-height: 1.4; }
@@ -255,57 +260,60 @@ footer { text-align: center; padding: 40px; color: var(--text-primary); border-t
   <p class="landing-prompt">Choose your perspective</p>
   <div class="cards-container">
 
-    <!-- RECRUITER — Briefcase icon -->
+    <!-- RECRUITER — detailed person+star icon -->
     <div class="viewer-card" onclick="appShowPortfolio('recruiter')">
       <span class="card-tag">Hiring</span>
       <div class="card-icon-wrap">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-          <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
-          <line x1="12" y1="12" x2="12" y2="16"/>
-          <line x1="2" y1="12" x2="22" y2="12"/>
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          <path d="M21 21v-2a4 4 0 0 0-3-3.87"/>
         </svg>
       </div>
       <h2>Recruiter</h2>
       <p>Impact & qualifications</p>
     </div>
 
-    <!-- DEVELOPER — Code / terminal icon -->
+    <!-- DEVELOPER — terminal/code icon with layers -->
     <div class="viewer-card" onclick="appShowPortfolio('developer')">
       <span class="card-tag">Technical</span>
       <div class="card-icon-wrap">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <polyline points="16 18 22 12 16 6"/>
-          <polyline points="8 6 2 12 8 18"/>
-          <line x1="14" y1="4" x2="10" y2="20"/>
+          <rect x="2" y="3" width="20" height="14" rx="2"/>
+          <path d="M8 21h8M12 17v4"/>
+          <polyline points="6.5 9.5 9 12 6.5 14.5"/>
+          <line x1="12" y1="14.5" x2="17" y2="14.5"/>
         </svg>
       </div>
       <h2>Developer</h2>
       <p>Architecture & code</p>
     </div>
 
-    <!-- CLIENT — Bar chart icon -->
+    <!-- CLIENT — trending chart with target -->
     <div class="viewer-card" onclick="appShowPortfolio('client')">
       <span class="card-tag">Business</span>
       <div class="card-icon-wrap">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <line x1="18" y1="20" x2="18" y2="10"/>
-          <line x1="12" y1="20" x2="12" y2="4"/>
-          <line x1="6"  y1="20" x2="6"  y2="14"/>
-          <line x1="2"  y1="20" x2="22" y2="20"/>
+          <path d="M3 3v18h18"/>
+          <path d="M7 16l4-4 4 4 5-5"/>
+          <circle cx="20" cy="11" r="1.5" fill="currentColor" stroke="none" style="fill:var(--accent-warm)"/>
+          <circle cx="15" cy="16" r="1.5" fill="currentColor" stroke="none" style="fill:var(--accent-warm)"/>
         </svg>
       </div>
       <h2>Client</h2>
       <p>Solutions & results</p>
     </div>
 
-    <!-- EXPLORER — Compass icon -->
+    <!-- EXPLORER — telescope/orbit icon -->
     <div class="viewer-card" onclick="appShowPortfolio('explorer')">
       <span class="card-tag">Curious</span>
       <div class="card-icon-wrap">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="10"/>
-          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
+          <path d="M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/>
+          <circle cx="12" cy="12" r="9" stroke-dasharray="3 3"/>
         </svg>
       </div>
       <h2>Explorer</h2>
