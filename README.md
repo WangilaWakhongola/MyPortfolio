@@ -1,4 +1,4 @@
-# W. Wakhongola — Portfolio
+# W. Wakhongola Portfolio
 
 A personal portfolio website for Emmanuel W. Wakhongola, a Mathematics & Computer Science student building intelligent, secure, and user-friendly systems. The site features an interactive role-selector landing page (Recruiter, Developer, Client, Explorer) that tailors the experience for different visitors.
 
