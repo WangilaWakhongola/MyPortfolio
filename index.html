@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MyPortfolio</title>
+<title>Emmanuel Wakhongola — Portfolio</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23000000'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia%2C serif' font-size='46' font-weight='900' fill='%23ffffff' font-style='italic'%3EE%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz@9..144&family=Crimson+Text:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -44,8 +44,12 @@ h2 { font-size: clamp(1.2em, 3.5vw, 2em); }
 .section { padding: 80px 0; position: relative; }
 .fade-in { opacity: 0; transform: translateY(20px); }
 .fade-in.visible { opacity: 1; transform: translateY(0); transition: all 0.7s ease-out; }
+:focus-visible { outline: 2px solid var(--accent-warm); outline-offset: 3px; border-radius: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
 
-/* ── PRELOADER ── */
+/* ── PRELOADER (unchanged) ── */
 #introScreen {
   position: fixed; inset: 0; z-index: 99999;
   background: #0f172a;
@@ -75,6 +79,7 @@ h2 { font-size: clamp(1.2em, 3.5vw, 2em); }
 .intro-skip:hover { color: #fff; border-color: #2563eb; background: rgba(37,99,235,0.08); }
 .intro-progress { position: absolute; bottom: 0; left: 0; height: 2px; background: #2563eb; width: 0%; transition: width linear; }
 
+/* ── LANDING PAGE (unchanged) ── */
 .theme-toggle {
   background: var(--bg-secondary); border: 1px solid var(--border-soft); padding: 8px 14px;
   border-radius: 2px; cursor: pointer; font-size: 0.8em; color: var(--text-primary);
@@ -104,8 +109,6 @@ h2 { font-size: clamp(1.2em, 3.5vw, 2em); }
   transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .viewer-card:hover { transform: translateY(-8px); border-color: var(--accent-warm); box-shadow: var(--shadow-md); }
-
-/* ── Custom SVG icon wrapper ── */
 .card-icon-wrap {
   display: flex; align-items: center; justify-content: center;
   width: 64px; height: 64px; margin: 0 auto 16px;
@@ -133,98 +136,144 @@ h2 { font-size: clamp(1.2em, 3.5vw, 2em); }
   transition: transform 0.35s; position: relative; z-index: 1;
 }
 .viewer-card:hover .card-icon-wrap svg { transform: scale(1.1); }
-
 .viewer-card h2 { font-size: 1em; margin-bottom: 6px; color: var(--accent-warm); }
 .viewer-card p { font-size: 0.8em; color: var(--text-primary); line-height: 1.4; }
 .viewer-card .card-tag { display: inline-block; font-size: 0.7em; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border: 1px solid var(--border-soft); border-radius: 2px; margin-bottom: 14px; color: var(--accent-dark); font-weight: 600; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ── NAV ── */
 nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); padding: 18px 40px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; border-bottom: 1px solid var(--border-soft); gap: 20px; }
-.logo { font-family: 'Fraunces', serif; font-size: 1.2em; font-weight: 700; color: var(--accent-warm); cursor: pointer; letter-spacing: -0.02em; }
+.logo { font-family: 'Fraunces', serif; font-size: 1.2em; font-weight: 700; color: var(--accent-warm); cursor: pointer; letter-spacing: -0.02em; background: none; border: none; }
 .nav-links { display: flex; gap: 28px; list-style: none; }
 .nav-links a { color: var(--text-primary); text-decoration: none; font-size: 0.85em; font-weight: 500; cursor: pointer; transition: color 0.2s; border-bottom: 2px solid transparent; padding-bottom: 4px; }
 .nav-links a:hover, .nav-links a.active { color: var(--accent-warm); border-bottom-color: var(--accent-warm); }
 .nav-burger { display: none; background: none; border: none; cursor: pointer; color: var(--text-primary); font-size: 1.4em; }
+.scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--accent-warm); width: 0%; z-index: 1001; transition: width 0.1s linear; }
+
 .portfolio-content { display: none; }
 .portfolio-content.active { display: block; }
+
+/* ── HERO ── */
 .hero-section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 160px 40px 100px; text-align: center; position: relative; }
-.hero-badge { display: inline-block; background: rgba(37,99,235,0.08); border: 1px solid var(--border-soft); border-radius: 4px; padding: 8px 18px; font-size: 0.8em; color: var(--accent-warm); margin-bottom: 32px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
-.hero-tagline { font-family: 'Crimson Text', serif; font-size: 1.2em; color: var(--text-primary); margin-bottom: 24px; min-height: 50px; }
-.hero-name { margin-bottom: 24px; color: var(--text-primary); }
+.hero-badge { display: inline-block; background: rgba(37,99,235,0.08); border: 1px solid var(--border-soft); border-radius: 4px; padding: 8px 18px; font-size: 0.8em; color: var(--accent-warm); margin-bottom: 28px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+.hero-tagline { font-family: 'Crimson Text', serif; font-size: 1.2em; color: var(--text-primary); margin-bottom: 20px; min-height: 50px; }
+.hero-name { margin-bottom: 14px; color: var(--text-primary); }
 .hero-name span { color: var(--accent-warm); }
-.hero-role { font-size: 1em; color: var(--accent-warm); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 16px; }
-.hero-subtitle { font-size: 0.95em; color: var(--text-primary); margin-bottom: 48px; max-width: 640px; line-height: 1.8; }
+.hero-role { font-size: 1em; color: var(--accent-warm); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 22px; }
+.hero-meta { display: flex; flex-wrap: wrap; gap: 10px 22px; justify-content: center; margin-bottom: 26px; font-size: 0.82em; color: var(--text-muted); }
+.hero-meta span { display: inline-flex; align-items: center; gap: 6px; }
+.hero-meta svg { width: 14px; height: 14px; stroke: var(--accent-warm); fill: none; stroke-width: 1.8; flex-shrink: 0; }
+.hero-subtitle { font-size: 0.95em; color: var(--text-primary); margin-bottom: 40px; max-width: 640px; line-height: 1.8; }
 .skill-pills { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 48px; }
 .pill { background: var(--bg-secondary); border: 1px solid var(--border-soft); border-radius: 4px; padding: 8px 18px; font-size: 0.8em; color: var(--text-primary); transition: all 0.2s; }
 .pill:hover { color: var(--accent-warm); border-color: var(--accent-warm); }
 .contact-buttons { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-bottom: 64px; }
 .btn-primary { background: var(--accent-warm); color: white; padding: 12px 32px; border-radius: 2px; text-decoration: none; font-weight: 600; font-size: 0.85em; transition: all 0.3s; border: none; cursor: pointer; letter-spacing: 0.02em; }
 .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); }
-.btn-outline { background: transparent; border: 2px solid var(--border-soft); color: var(--text-primary); padding: 10px 28px; border-radius: 2px; text-decoration: none; font-weight: 600; font-size: 0.9em; transition: all 0.3s; cursor: pointer; letter-spacing: 0.02em; }
+.btn-outline { background: transparent; border: 2px solid var(--border-soft); color: var(--text-primary); padding: 10px 28px; border-radius: 2px; text-decoration: none; font-weight: 600; font-size: 0.9em; transition: all 0.3s; cursor: pointer; letter-spacing: 0.02em; display: inline-flex; align-items: center; gap: 8px; }
 .btn-outline:hover { border-color: var(--accent-warm); color: var(--accent-warm); transform: translateY(-2px); }
+.btn-outline svg { width: 16px; height: 16px; }
 .scroll-hint { margin-top: 60px; color: var(--text-primary); font-size: 0.85em; display: flex; flex-direction: column; align-items: center; gap: 10px; animation: bounce 2s ease-in-out infinite; }
 @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
-.section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 60px; width: 100%; }
-.section-num { font-family: 'Fraunces', serif; font-size: 0.65em; color: var(--accent-warm); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; white-space: nowrap; flex-shrink: 0; }
+
+.section-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 60px; width: 100%; }
+.section-eyebrow { font-family: 'Inter', sans-serif; font-size: 0.68em; color: var(--accent-warm); letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; white-space: nowrap; flex-shrink: 0; }
 .section-title { font-size: 1.35em; white-space: nowrap; flex-shrink: 0; }
+.section-rule { height: 1px; background: var(--border-soft); flex: 1; }
+
+/* ── ABOUT ── */
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-.about-text { color: var(--text-primary); line-height: 1.9; font-size: 1em; }
-.about-text p { margin-bottom: 20px; }
-.about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.stat-box { background: var(--bg-secondary); border: 1px solid var(--border-soft); border-radius: 2px; padding: 32px 24px; text-align: center; }
+.about-blocks { display: flex; flex-direction: column; gap: 26px; }
+.about-block-label { font-size: 0.72em; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-warm); margin-bottom: 8px; }
+.about-block-text { color: var(--text-primary); line-height: 1.85; font-size: 0.96em; }
+.about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-content: start; }
+.stat-box { background: var(--bg-secondary); border: 1px solid var(--border-soft); border-radius: 2px; padding: 32px 24px; text-align: center; transition: border-color 0.25s, transform 0.25s; }
+.stat-box:hover { border-color: var(--accent-warm); transform: translateY(-3px); }
 .stat-num { font-family: 'Fraunces', serif; font-size: 2.4em; font-weight: 700; color: var(--accent-warm); }
 .stat-label { font-size: 0.75em; color: var(--text-primary); margin-top: 8px; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600; }
-.exp-card { background: var(--bg-secondary); border: 1px solid var(--border-soft); border-left: 4px solid var(--accent-warm); border-radius: 2px; padding: 32px; margin-bottom: 40px; }
-.exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; margin-bottom: 12px; }
+
+/* ── EXPERIENCE TIMELINE ── */
+.exp-timeline { position: relative; padding-left: 32px; }
+.exp-timeline::before { content: ''; position: absolute; left: 5px; top: 8px; bottom: 8px; width: 2px; background: var(--border-soft); }
+.exp-card { position: relative; background: var(--bg-secondary); border: 1px solid var(--border-soft); border-radius: 2px; padding: 30px 32px; margin-bottom: 32px; transition: border-color 0.25s, transform 0.25s; }
+.exp-card:hover { border-color: var(--accent-warm); transform: translateX(4px); }
+.exp-card::before { content: ''; position: absolute; left: -32px; top: 34px; width: 12px; height: 12px; border-radius: 50%; background: var(--bg-primary); border: 2px solid var(--accent-warm); }
+.exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; margin-bottom: 4px; }
 .exp-title { font-size: 1.1em; font-weight: 700; color: var(--accent-warm); }
-.exp-date { font-size: 0.7em; color: var(--text-primary); background: rgba(37,99,235,0.05); border: 1px solid var(--border-soft); padding: 6px 14px; border-radius: 2px; text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em; }
+.exp-date { font-size: 0.7em; color: var(--text-primary); background: rgba(37,99,235,0.05); border: 1px solid var(--border-soft); padding: 6px 14px; border-radius: 2px; text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em; white-space: nowrap; }
 .exp-company { font-size: 0.9em; color: var(--accent-warm); margin-bottom: 16px; font-weight: 600; }
 .exp-list { list-style: none; }
 .exp-list li { font-size: 0.9em; color: var(--text-primary); padding: 6px 0 6px 20px; position: relative; line-height: 1.7; }
 .exp-list li::before { content: '▪'; position: absolute; left: 0; color: var(--accent-warm); font-size: 0.6em; }
+
+/* ── SKILLS ── */
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
 .skill-card { background: var(--bg-secondary); border: 1px solid var(--border-soft); border-radius: 2px; padding: 28px; transition: all 0.3s; }
-.skill-card:hover { border-color: var(--accent-warm); box-shadow: var(--shadow-soft); }
-.skill-icon { font-size: 2em; margin-bottom: 12px; }
+.skill-card:hover { border-color: var(--accent-warm); box-shadow: var(--shadow-soft); transform: translateY(-3px); }
+.skill-icon-wrap { display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 10px; background: rgba(37,99,235,0.08); margin-bottom: 14px; }
+.skill-icon-wrap svg { width: 22px; height: 22px; stroke: var(--accent-warm); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .skill-card h4 { margin-bottom: 12px; color: var(--text-primary); font-size: 0.95em; }
 .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
 .skill-tag { background: rgba(37,99,235,0.05); border: 1px solid var(--border-soft); border-radius: 2px; padding: 4px 10px; font-size: 0.7em; color: var(--text-primary); font-weight: 500; text-transform: uppercase; letter-spacing: 0.02em; }
+.skill-tag.top { border-color: var(--accent-warm); color: var(--accent-warm); font-weight: 700; }
+
+/* ── PROJECTS ── */
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
-.project-card { background: var(--bg-secondary); border: 1px solid var(--border-soft); border-radius: 2px; padding: 32px; transition: all 0.35s; display: flex; flex-direction: column; gap: 14px; }
+.project-card { background: var(--bg-secondary); border: 1px solid var(--border-soft); border-radius: 2px; overflow: hidden; transition: all 0.35s; display: flex; flex-direction: column; }
 .project-card:hover { border-color: var(--accent-warm); transform: translateY(-6px); box-shadow: var(--shadow-md); }
-.project-header { display: flex; justify-content: space-between; align-items: flex-start; }
-.project-icon { font-size: 2em; }
+.project-shot { height: 120px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(37,99,235,0.10), rgba(5,150,105,0.06)); border-bottom: 1px solid var(--border-soft); font-size: 2.4em; position: relative; }
+.project-status { position: absolute; top: 12px; right: 12px; font-size: 0.62em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 4px 10px; border-radius: 2px; background: var(--bg-primary); border: 1px solid var(--border-soft); color: var(--accent-sage); }
+.project-body { padding: 26px 28px 22px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
+.project-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.project-category { font-size: 0.65em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-warm); }
 .github-btn { display: inline-flex; align-items: center; gap: 6px; background: #0f172a; border: 1px solid rgba(15,23,42,0.2); color: #ffffff; padding: 6px 14px; border-radius: 2px; font-size: 0.7em; text-decoration: none; font-weight: 700; transition: all 0.25s; text-transform: uppercase; letter-spacing: 0.06em; white-space: nowrap; }
 .github-btn:hover { background: var(--accent-warm); border-color: var(--accent-warm); }
 .project-card h3 { margin: 0; font-size: 1.05em; color: var(--accent-warm); }
 .project-desc { font-size: 0.9em; color: var(--text-primary); line-height: 1.6; }
-.repo-link {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 0.75em; color: var(--text-muted);
-  text-decoration: none; font-family: 'Inter', monospace;
-  letter-spacing: 0.01em; transition: color 0.2s;
-  word-break: break-all;
-}
+.repo-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.75em; color: var(--text-muted); text-decoration: none; font-family: 'Inter', monospace; letter-spacing: 0.01em; transition: color 0.2s; word-break: break-all; }
 .repo-link:hover { color: var(--accent-warm); }
 .repo-link svg { flex-shrink: 0; opacity: 0.5; }
-.project-footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border-soft); }
+.project-footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border-soft); }
 .project-tech { display: flex; flex-wrap: wrap; gap: 6px; }
 .tech-tag { background: rgba(5,150,105,0.08); border: 1px solid var(--border-soft); color: var(--accent-sage); border-radius: 2px; padding: 3px 9px; font-size: 0.65em; font-weight: 600; text-transform: uppercase; }
-.project-impact { font-size: 0.7em; color: var(--accent-warm); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+.project-impact { font-size: 0.7em; color: var(--accent-warm); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
+
+/* ── CV ── */
 .cv-section { background: var(--bg-secondary); border: 1px solid var(--border-soft); border-radius: 2px; padding: 50px; text-align: center; }
 .cv-section h3 { margin-bottom: 14px; color: var(--accent-warm); }
 .cv-section p { color: var(--text-primary); margin-bottom: 28px; font-size: 1em; }
+
+/* ── CONTACT ── */
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
 .contact-info h3 { margin-bottom: 16px; color: var(--text-primary); }
 .contact-info p { color: var(--text-primary); line-height: 1.8; font-size: 0.95em; margin-bottom: 28px; }
-.contact-links { display: flex; gap: 20px; flex-wrap: wrap; }
-.contact-item { display: inline-flex; align-items: center; justify-content: center; background: var(--bg-secondary); border: 1px solid var(--border-soft); border-radius: 2px; width: 70px; height: 70px; text-decoration: none; transition: all 0.3s; }
+.contact-links { display: flex; gap: 16px; flex-wrap: wrap; }
+.contact-item { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; background: var(--bg-secondary); border: 1px solid var(--border-soft); border-radius: 2px; width: 96px; padding: 16px 8px; text-decoration: none; transition: all 0.3s; cursor: pointer; }
 .contact-item:hover { border-color: var(--accent-warm); transform: translateY(-4px); box-shadow: var(--shadow-soft); }
-.contact-item svg { width: 28px; height: 28px; fill: var(--text-primary); }
+.contact-item svg { width: 24px; height: 24px; fill: var(--text-primary); }
+.contact-item span { font-size: 0.68em; color: var(--text-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
 .availability { background: rgba(37,99,235,0.05); border: 1px solid var(--border-soft); border-radius: 2px; padding: 36px; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
 .avail-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 0.75em; color: var(--accent-warm); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
 .avail-title { font-size: 1.2em; font-weight: 700; color: var(--text-primary); }
 .avail-desc { color: var(--text-primary); font-size: 0.9em; line-height: 1.7; }
-footer { text-align: center; padding: 40px; color: var(--text-primary); border-top: 1px solid var(--border-soft); font-size: 0.85em; }
+
+/* ── FOOTER ── */
+footer.site-footer { padding: 36px 40px; border-top: 1px solid var(--border-soft); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; color: var(--text-muted); font-size: 0.82em; }
+.footer-left { display: flex; flex-direction: column; gap: 4px; }
+.footer-right { display: flex; align-items: center; gap: 8px; }
+.footer-heart { color: var(--accent-warm); }
+
+/* ── BACK TO TOP ── */
+.back-to-top { position: fixed; bottom: 28px; right: 28px; width: 44px; height: 44px; border-radius: 50%; background: var(--accent-warm); color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s; z-index: 900; }
+.back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { background: var(--accent-dark); }
+.back-to-top svg { width: 18px; height: 18px; stroke: #fff; fill: none; stroke-width: 2; }
+
+/* ── TOAST ── */
+.toast { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(20px); background: #0f172a; color: #fff; padding: 12px 22px; border-radius: 4px; font-size: 0.85em; font-weight: 500; opacity: 0; pointer-events: none; transition: all 0.35s ease; z-index: 1200; display: flex; align-items: center; gap: 8px; }
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+.toast svg { width: 16px; height: 16px; stroke: #34d399; fill: none; stroke-width: 2.2; }
+
 @media (max-width: 768px) {
   .cards-container { grid-template-columns: repeat(2, 1fr); }
   .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg-secondary); padding: 20px; border-bottom: 1px solid var(--border-soft); gap: 16px; }
@@ -236,10 +285,14 @@ footer { text-align: center; padding: 40px; color: var(--text-primary); border-t
   .projects-grid, .skills-grid { grid-template-columns: 1fr; }
   .section { padding: 60px 0; }
   .intro-line { font-size: clamp(1.2em, 6vw, 2em); padding: 0 20px; text-align: center; }
+  .section-title { white-space: normal; }
+  .back-to-top { bottom: 20px; right: 20px; }
 }
 </style>
 </head>
 <body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
 
 <div id="introScreen">
   <div style="display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 24px;">
@@ -260,7 +313,6 @@ footer { text-align: center; padding: 40px; color: var(--text-primary); border-t
   <p class="landing-prompt">Choose your perspective</p>
   <div class="cards-container">
 
-    <!-- RECRUITER — detailed person+star icon -->
     <div class="viewer-card" onclick="appShowPortfolio('recruiter')">
       <span class="card-tag">Hiring</span>
       <div class="card-icon-wrap">
@@ -275,7 +327,6 @@ footer { text-align: center; padding: 40px; color: var(--text-primary); border-t
       <p>Impact & qualifications</p>
     </div>
 
-    <!-- DEVELOPER — terminal/code icon with layers -->
     <div class="viewer-card" onclick="appShowPortfolio('developer')">
       <span class="card-tag">Technical</span>
       <div class="card-icon-wrap">
@@ -290,7 +341,6 @@ footer { text-align: center; padding: 40px; color: var(--text-primary); border-t
       <p>Architecture & code</p>
     </div>
 
-    <!-- CLIENT — trending chart with target -->
     <div class="viewer-card" onclick="appShowPortfolio('client')">
       <span class="card-tag">Business</span>
       <div class="card-icon-wrap">
@@ -305,7 +355,6 @@ footer { text-align: center; padding: 40px; color: var(--text-primary); border-t
       <p>Solutions & results</p>
     </div>
 
-    <!-- EXPLORER — telescope/orbit icon -->
     <div class="viewer-card" onclick="appShowPortfolio('explorer')">
       <span class="card-tag">Curious</span>
       <div class="card-icon-wrap">
@@ -325,17 +374,17 @@ footer { text-align: center; padding: 40px; color: var(--text-primary); border-t
 
 <div class="portfolio-content" id="portfolioContent">
   <nav id="navbar">
-    <div class="logo" onclick="appShowLanding()">← Back</div>
+    <button class="logo" onclick="appShowLanding()">← Back</button>
     <ul class="nav-links" id="navLinks">
-      <li><a onclick="appScrollToSection('home')">Home</a></li>
-      <li><a onclick="appScrollToSection('about')">About</a></li>
-      <li><a onclick="appScrollToSection('experience')">Experience</a></li>
-      <li><a onclick="appScrollToSection('skills')">Skills</a></li>
-      <li><a onclick="appScrollToSection('projects')">Projects</a></li>
-      <li><a onclick="appScrollToSection('cv')">CV</a></li>
-      <li><a onclick="appScrollToSection('contact')">Contact</a></li>
+      <li><a data-section="home" onclick="appScrollToSection('home')">Home</a></li>
+      <li><a data-section="about" onclick="appScrollToSection('about')">About</a></li>
+      <li><a data-section="experience" onclick="appScrollToSection('experience')">Experience</a></li>
+      <li><a data-section="skills" onclick="appScrollToSection('skills')">Skills</a></li>
+      <li><a data-section="projects" onclick="appScrollToSection('projects')">Projects</a></li>
+      <li><a data-section="cv" onclick="appScrollToSection('cv')">CV</a></li>
+      <li><a data-section="contact" onclick="appScrollToSection('contact')">Contact</a></li>
     </ul>
-    <button class="nav-burger" onclick="appToggleNav()">☰</button>
+    <button class="nav-burger" onclick="appToggleNav()" aria-label="Toggle menu">☰</button>
     <button class="theme-toggle" onclick="appToggleTheme()">☀️ Light</button>
   </nav>
 
@@ -344,24 +393,29 @@ footer { text-align: center; padding: 40px; color: var(--text-primary); border-t
     <div class="hero-tagline" id="heroTypewriter"></div>
     <h1 class="hero-name">Emmanuel W.<br><span>Wakhongola</span></h1>
     <p class="hero-role" id="heroRole">IT Support Specialist</p>
+    <div class="hero-meta">
+      <span><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Nairobi, Kenya</span>
+      <span><svg viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>BSc Mathematics &amp; Computer Science, JKUAT · 2026</span>
+      <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Available now</span>
+    </div>
     <p class="hero-subtitle" id="heroSub">Building intelligent systems at the intersection of AI, security, and networks.</p>
     <div class="skill-pills">
       <span class="pill">AI and ML</span><span class="pill">Python</span><span class="pill">Networking</span>
-      <span class="pill">Security</span><span class="pill">SQL</span><span class="pill">Power BI</span>
+      <span class="pill">Security</span><span class="pill">SQL</span><span class="pill">Linux</span>
     </div>
     <div class="contact-buttons">
-      <a href="https://wa.me/254791952584" class="btn-outline" target="_blank">💬 WhatsApp</a>
+      <a href="https://wa.me/254791952584" class="btn-outline" target="_blank" rel="noopener">💬 WhatsApp</a>
       <a href="mailto:wangilawakhongola@gmail.com" class="btn-outline">📧 Email</a>
-      <a href="https://github.com/WangilaWakhongola" class="btn-outline" target="_blank">⌥ GitHub</a>
+      <a href="https://github.com/WangilaWakhongola" class="btn-outline" target="_blank" rel="noopener">⌥ GitHub</a>
     </div>
     <div class="scroll-hint"><span>↓</span><span>Scroll to explore</span></div>
   </section>
 
   <div class="container">
     <section id="about" class="section fade-in">
-      <div class="section-header"><span class="section-num">01</span><h2 class="section-title">About</h2></div>
+      <div class="section-header"><span class="section-eyebrow">About</span><span class="section-rule"></span></div>
       <div class="about-grid">
-        <div class="about-text" id="aboutContent"></div>
+        <div class="about-blocks" id="aboutContent"></div>
         <div class="about-stats">
           <div class="stat-box"><div class="stat-num">25+</div><div class="stat-label">Users Supported</div></div>
           <div class="stat-box"><div class="stat-num">30+</div><div class="stat-label">Youth Trained</div></div>
@@ -372,22 +426,22 @@ footer { text-align: center; padding: 40px; color: var(--text-primary); border-t
     </section>
 
     <section id="experience" class="section fade-in">
-      <div class="section-header"><span class="section-num">02</span><h2 class="section-title">Experience</h2></div>
-      <div id="experienceContent"></div>
+      <div class="section-header"><span class="section-eyebrow">Experience</span><span class="section-rule"></span></div>
+      <div class="exp-timeline" id="experienceContent"></div>
     </section>
 
     <section id="skills" class="section fade-in">
-      <div class="section-header"><span class="section-num">03</span><h2 class="section-title">Skills</h2></div>
+      <div class="section-header"><span class="section-eyebrow">Skills</span><span class="section-rule"></span></div>
       <div class="skills-grid" id="skillsContent"></div>
     </section>
 
     <section id="projects" class="section fade-in">
-      <div class="section-header"><span class="section-num">04</span><h2 class="section-title">Projects</h2></div>
+      <div class="section-header"><span class="section-eyebrow">Projects</span><span class="section-rule"></span></div>
       <div class="projects-grid" id="projectsContent"></div>
     </section>
 
     <section id="cv" class="section fade-in">
-      <div class="section-header"><span class="section-num">05</span><h2 class="section-title">CV</h2></div>
+      <div class="section-header"><span class="section-eyebrow">CV</span><span class="section-rule"></span></div>
       <div class="cv-section">
         <h3>Download My Resume</h3>
         <p>Complete overview of qualifications, experience, and projects.</p>
@@ -397,29 +451,43 @@ footer { text-align: center; padding: 40px; color: var(--text-primary); border-t
     </section>
 
     <section id="contact" class="section fade-in">
-      <div class="section-header"><span class="section-num">06</span><h2 class="section-title">Contact</h2></div>
+      <div class="section-header"><span class="section-eyebrow">Contact</span><span class="section-rule"></span></div>
       <div class="contact-grid">
         <div class="contact-info">
           <h3>Let's work together</h3>
           <p>Open to discussing new projects, ideas, or opportunities to build something meaningful.</p>
           <div class="contact-links">
-            <a href="https://wa.me/254791952584" class="contact-item" target="_blank" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg></a>
-            <a href="mailto:wangilawakhongola@gmail.com" class="contact-item" title="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
-            <a href="https://github.com/WangilaWakhongola" class="contact-item" target="_blank" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+            <a href="https://wa.me/254791952584" class="contact-item" target="_blank" rel="noopener" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg><span>WhatsApp</span></a>
+            <a href="mailto:wangilawakhongola@gmail.com" class="contact-item" title="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><span>Email</span></a>
+            <button class="contact-item" title="Copy email address" onclick="appCopyEmail()" type="button"><svg viewBox="0 0 24 24" style="fill:none;stroke:var(--text-primary);stroke-width:1.8"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span>Copy</span></button>
+            <a href="https://github.com/WangilaWakhongola" class="contact-item" target="_blank" rel="noopener" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a>
           </div>
         </div>
         <div class="availability">
           <div class="avail-badge">🌍 Currently Available</div>
           <div class="avail-title">Open for opportunities</div>
-          <div class="avail-desc">Based in Kenya. Seeking roles in AI and ML, networking, and software development. Remote or on site.</div>
+          <div class="avail-desc">Based in Nairobi, Kenya. Seeking roles in AI and ML, networking, and software development. Remote or on site.</div>
         </div>
       </div>
     </section>
   </div>
-  <footer style="display:flex;justify-content:space-between;align-items:center;padding:32px 40px;color:var(--text-muted);border-top:1px solid var(--border-soft);font-size:0.85em;flex-wrap:wrap;gap:12px;">
-    <span>Crafted by <strong style="color:var(--text-primary);">Wangila Wakhongola</strong></span>
-    <span>© 2025 Emmanuel Wakhongola. All rights reserved.</span>
+
+  <footer class="site-footer">
+    <div class="footer-left">
+      <span>© <span id="footerYear"></span> Emmanuel Wakhongola. All rights reserved.</span>
+      <span>Built with HTML, CSS &amp; JavaScript · Last updated <span id="footerUpdated"></span></span>
+    </div>
+    <div class="footer-right">Thanks for stopping by <span class="footer-heart">♥</span></div>
   </footer>
+</div>
+
+<button class="back-to-top" id="backToTop" onclick="appScrollTop()" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<div class="toast" id="toast">
+  <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+  <span id="toastText"></span>
 </div>
 
 <script>
@@ -483,18 +551,32 @@ function showLandingPage() {
   setTimeout(function() { lp.classList.add('visible'); }, 30);
 }
 
+/* ── Shared icon fragments ── */
 var GH_ICON = '<svg width="13" height="13" viewBox="0 0 24 24" style="fill:currentColor;flex-shrink:0"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>';
 var LINK_ICON = '<svg width="12" height="12" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
 var GITHUB_BASE = 'https://github.com/WangilaWakhongola/';
 
+/* Reusable line-icon set for skill categories */
+var SKILL_ICONS = {
+  helpdesk: '<path d="M4 15v-3a8 8 0 0 1 16 0v3"/><path d="M20 15a2 2 0 0 1-2 2h-1v-5h1a2 2 0 0 1 2 2z"/><path d="M4 15a2 2 0 0 0 2 2h1v-5H6a2 2 0 0 0-2 2z"/>',
+  sysadmin: '<rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4"/>',
+  network: '<circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v6M12 13l-6 4M12 13l6 4"/>',
+  python: '<path d="M12 3c-4 0-4 2-4 2v3h4"/><path d="M8 8H5s-2 0-2 4 2 4 2 4h2"/><path d="M12 21c4 0 4-2 4-2v-3h-4"/><path d="M16 16h3s2 0 2-4-2-4-2-4h-2"/>',
+  database: '<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>',
+  ai: '<circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/>',
+  automation: '<circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.2 11l7.6-4M8.2 13l7.6 4"/>',
+  code: '<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><polyline points="6.5 9.5 9 12 6.5 14.5"/><line x1="12" y1="14.5" x2="17" y2="14.5"/>',
+  research: '<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/>'
+};
+function skillIcon(key) { return '<svg viewBox="0 0 24 24">' + (SKILL_ICONS[key] || SKILL_ICONS.code) + '</svg>'; }
+
 var projects = [
-  { icon:'🏥', name:'MediCore — Hospital Management System', repo:'MediCore-App', tech:['Next.js','TypeScript','Tailwind CSS','React'], impact:'HealthTech', desc:{ recruiter:'Full-stack hospital management system with modules for patient records, doctor scheduling, appointments, and billing — built to streamline clinical operations.', developer:'Next.js 14 app with TypeScript, Tailwind CSS, and Recharts. Clean component architecture with role-based data views and a dark-themed dashboard UI.', client:'A complete digital solution for hospitals to manage patients, staff, appointments, and invoices from a single modern dashboard — reducing admin overhead significantly.', explorer:'What if every hospital had a smart, real-time command center? MediCore explores how modern web tech can transform healthcare administration.' }},
-  { icon:'🎓', name:'School Management System', repo:'School_Management_System', tech:['Next.js','TypeScript','Tailwind CSS','React'], impact:'EdTech', desc:{ recruiter:'Full-stack school management platform covering student records, teacher scheduling, attendance tracking, and grade management — built to modernize school administration.', developer:'Next.js 14 app with TypeScript and Tailwind CSS. Clean modular architecture with role-based dashboards for admins, teachers, and students.', client:'A complete digital solution for schools to manage students, staff, timetables, and performance reports from one intuitive dashboard — cutting paperwork and admin time.', explorer:'What if every school had a smart system that connected students, teachers, and administrators seamlessly? This project brings that vision to life.' }},
-  { icon:'🌾', name:'Remote Farm Management', repo:'RemoteFarm_Management_System', tech:['Python','AI/ML','IoT','Cloud'], impact:'AgriTech', desc:{ recruiter:'Comprehensive digital solution enabling farmers to monitor and manage farm operations remotely in real-time, reducing losses and improving agricultural outcomes.', developer:'Built with AI/ML models, IoT sensor integration, and cloud infrastructure for data-driven, sustainable agriculture at scale.', client:'Transforms farm management with real-time monitoring and intelligent alerts — improving yields and cutting operational costs.', explorer:'Can IoT and AI truly transform African agriculture? This project explores remote sensing, smart alerts, and predictive farm analytics.' }},
-  { icon:'🛡️', name:'Cybersecurity Threat Detection', repo:'Cybersecurity-threat-detection', tech:['Python','ML','Network Security'], impact:'Security', desc:{ recruiter:'ML-based system that detects network threats and anomalies in real-time, protecting enterprise infrastructure before damage occurs.', developer:'Machine learning pipeline for real-time anomaly detection and threat classification across network traffic data.', client:'Proactively shields business infrastructure by identifying and flagging threats before they escalate into incidents.', explorer:'Teaching machines to recognize danger patterns in network traffic — and act faster than any human analyst could.' }},
-  { icon:'🤖', name:'AI Resume Analyzer', repo:'AI-Resume-Analyzer', tech:['Python','NLP','scikit-learn','ML'], impact:'HR Tech', desc:{ recruiter:'Intelligent talent screening tool using ML and NLP to score candidates 0–100 and generate actionable hiring recommendations.', developer:'NLP pipeline that extracts structured information from resumes, performs semantic analysis, and outputs ranked candidate scores.', client:'Automates the most time-consuming part of recruitment — screening resumes — so your team focuses only on the best fits.', explorer:'Can machines understand what makes a candidate truly stand out beyond keywords? This project attempts exactly that.' }},
-  { icon:'📡', name:'Network Monitoring Dashboard', repo:'Network-Monitoring-Dashboard', tech:['Python','psutil','Dashboard','Real-time'], impact:'Enterprise', desc:{ recruiter:'Enterprise-grade system tracking network performance, system stats, active connections, and running processes across infrastructure.', developer:'Python + psutil real-time metrics engine with a live dashboard for comprehensive visibility into system health.', client:'Keeps enterprise networks at peak performance with continuous visibility — reducing downtime and accelerating incident response.', explorer:'What does it feel like to watch an entire network breathe in real time? Every connection, every process, live.' }},
-  { icon:'<svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="display:inline-block"><circle cx="32" cy="32" r="32" fill="#eef0fb"/><circle cx="32" cy="41" r="5.5" fill="#b0b3c8"/><path d="M19 54 Q32 46 45 54" fill="#b0b3c8"/><polygon points="32,14 55,23 32,32 9,23" fill="#2d3191"/><rect x="29" y="11" width="6" height="7" rx="1" fill="#2d3191"/><line x1="55" y1="23" x2="55" y2="34" stroke="#2d3191" stroke-width="2.5" stroke-linecap="round"/><polygon points="55,38 51,32 59,32" fill="#2d3191"/></svg>', name:'SmartRoll — GPS Smart Attendance App', repo:'SmartRoll-App', tech:['React Native','Expo','TypeScript','Supabase'], impact:'EdTech / Mobile', desc:{ recruiter:'GPS-based mobile attendance system with biometric auth, selfie verification, and geofencing — eliminating proxy attendance and giving institutions real-time sign-in visibility.', developer:'React Native + Expo app (TypeScript) with Supabase Realtime, GPS geofencing, front-camera selfie capture, fingerprint/Face ID auth, and role-based dashboards for students and lecturers.', client:'A smart mobile solution that ensures only physically-present students can sign attendance — complete with live dashboards, at-risk student alerts, and one-click CSV export.', explorer:'What if attendance could verify itself? SmartRoll combines GPS geofencing, biometrics, and live data to make proxy attendance technically impossible.' }}
+  { icon:'🏥', name:'MediCore — Hospital Management System', category:'Web Platform', status:'Active', repo:'MediCore-App', tech:['Next.js','TypeScript','Tailwind CSS','React'], impact:'HealthTech', desc:{ recruiter:'Full-stack hospital management system with modules for patient records, doctor scheduling, appointments, and billing — built to streamline clinical operations.', developer:'Next.js app with TypeScript and Tailwind CSS. Clean component architecture with role-based data views and a dashboard UI.', client:'A complete digital solution for hospitals to manage patients, staff, appointments, and invoices from a single modern dashboard — reducing admin overhead significantly.', explorer:'What if every hospital had a smart, real-time command center? MediCore explores how modern web tech can transform healthcare administration.' }},
+  { icon:'<svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="display:inline-block"><circle cx="32" cy="32" r="32" fill="#eef0fb"/><circle cx="32" cy="41" r="5.5" fill="#b0b3c8"/><path d="M19 54 Q32 46 45 54" fill="#b0b3c8"/><polygon points="32,14 55,23 32,32 9,23" fill="#2d3191"/><rect x="29" y="11" width="6" height="7" rx="1" fill="#2d3191"/><line x1="55" y1="23" x2="55" y2="34" stroke="#2d3191" stroke-width="2.5" stroke-linecap="round"/><polygon points="55,38 51,32 59,32" fill="#2d3191"/></svg>', name:'SmartRoll — GPS Smart Attendance App', category:'Mobile App', status:'Active', repo:'SmartRoll-App', tech:['React Native','Expo','TypeScript'], impact:'EdTech / Mobile', desc:{ recruiter:'GPS-based mobile attendance app built with React Native and Expo — students sign attendance only within a classroom geofence, with biometric auth and an anti-proxy system.', developer:'React Native + Expo app in TypeScript. GPS geofencing determines attendance eligibility, paired with biometric auth and real-time reporting.', client:'A mobile solution that ensures only physically-present students can sign attendance, with real-time reports for institutions.', explorer:'What if attendance could verify itself? SmartRoll combines GPS geofencing and biometrics to make proxy attendance technically difficult.' }},
+  { icon:'💰', name:'ML-Powered Personal Finance Assistant', category:'ML Tool', status:'Active', repo:'ML-Powered-Personal-Finance-Assistant', tech:['Python','Machine Learning'], impact:'FinTech', desc:{ recruiter:'A Python-based assistant that helps users understand their spending habits and predict future finances using machine learning.', developer:'Python application applying ML models to personal transaction data to surface spending patterns and financial forecasts.', client:'Gives users a clearer picture of where their money goes and where it\'s headed — automatically, without manual budgeting.', explorer:'Can a model learn your spending habits well enough to tell you what next month looks like? This project tests that.' }},
+  { icon:'🎓', name:'University GPA & CGPA Tracker', category:'Web App', status:'Active', repo:'university-GPA-tracker', tech:['JavaScript'], impact:'EdTech', desc:{ recruiter:'Full-stack GPA and CGPA tracking system with academic analytics, course management, and semester records.', developer:'Full-stack JavaScript app for tracking coursework, computing GPA/CGPA, and managing semester-by-semester academic records.', client:'Gives students a single place to log courses and grades and instantly see accurate GPA and CGPA analytics.', explorer:'A practical answer to a very personal question: built to track my own academic progress at JKUAT, semester by semester.' }},
+  { icon:'🔐', name:'PIN Validator', category:'Security Tool', status:'Active', repo:'PIN-Validator', tech:['Python'], impact:'Security', desc:{ recruiter:'A PIN authentication system in Python with brute-force lockout after 3 failed attempts.', developer:'Python implementation of PIN-based auth with attempt tracking and an automatic lockout mechanism to block brute-force guessing.', client:'A lightweight way to protect PIN-gated access with automatic lockout after repeated failed attempts.', explorer:'How many wrong guesses should a system tolerate before it locks you out? A small project built around that exact security tradeoff.' }},
+  { icon:'🥗', name:'AfyaLishe', category:'CLI Tool', status:'Active', repo:'AfyaLishe', tech:['Python'], impact:'Health & Wellness', desc:{ recruiter:'A command-line application for tracking daily nutrition and planning meals, built in Python.', developer:'Python CLI tool for logging meals and nutrition data, with a focus on simple, dependency-light design.', client:'A straightforward way to track daily nutrition and plan meals from the terminal — no bloated app required.', explorer:'"Afya" means health in Swahili — this project explores how far a simple CLI can go in helping someone eat better.' }}
 ];
 
 function renderProjects(mode) {
@@ -503,24 +585,116 @@ function renderProjects(mode) {
     var shortUrl = 'github.com/WangilaWakhongola/' + p.repo;
     var techTags = p.tech.map(function(t) { return '<span class="tech-tag">' + t + '</span>'; }).join('');
     return '<div class="project-card">' +
-      '<div class="project-header"><div class="project-icon">' + p.icon + '</div>' +
+      '<div class="project-shot">' + p.icon + '<span class="project-status">' + p.status + '</span></div>' +
+      '<div class="project-body">' +
+      '<div class="project-header"><span class="project-category">' + p.category + '</span>' +
       '<a href="' + ghUrl + '" target="_blank" rel="noopener" class="github-btn">' + GH_ICON + ' GitHub</a></div>' +
       '<h3>' + p.name + '</h3>' +
       '<p class="project-desc">' + p.desc[mode] + '</p>' +
       '<a href="' + ghUrl + '" target="_blank" rel="noopener" class="repo-link">' + LINK_ICON + shortUrl + '</a>' +
       '<div class="project-footer"><div class="project-tech">' + techTags + '</div>' +
-      '<span class="project-impact">' + p.impact + '</span></div></div>';
+      '<span class="project-impact">' + p.impact + '</span></div></div></div>';
   }).join('');
 }
 
-var portfolioData = {
-  recruiter: { hero:['Reliable IT support','Keeping systems running','User-focused solutions'], heroSub:'IT support specialist with hands-on experience. I ensure systems work flawlessly.', about:'<p>I\'m a Mathematics and Computer Science student specializing in IT support, infrastructure management, and systems administration. From supporting 25+ users at Total Energies to training 30+ youth in IT fundamentals.</p><p>I excel at delivering reliable technical support, maintaining system uptime, and solving complex IT problems.</p>', skills:'<div class="skill-card"><div class="skill-icon">🖥️</div><h4>IT Support &amp; Helpdesk</h4><div class="skill-tags"><span class="skill-tag">User Support</span><span class="skill-tag">Troubleshooting</span><span class="skill-tag">Hardware</span><span class="skill-tag">Software</span></div></div><div class="skill-card"><div class="skill-icon">⚙️</div><h4>System Administration</h4><div class="skill-tags"><span class="skill-tag">Windows Server</span><span class="skill-tag">Linux</span><span class="skill-tag">Active Directory</span></div></div><div class="skill-card"><div class="skill-icon">🌐</div><h4>Network Administration</h4><div class="skill-tags"><span class="skill-tag">TCP/IP</span><span class="skill-tag">DNS</span><span class="skill-tag">Firewalls</span></div></div>' },
-  developer: { hero:['Building elegant solutions','Code that lasts','Performance focused'], heroSub:'Full stack developer focused on clean architecture, AI and ML pipelines, and network optimization.', about:'<p>I believe the best code is invisible—it just works, reliably, at scale. My focus spans Python backends, ML integration, SQL optimization, and network systems.</p><p>I build with maintainability and performance as first-class concerns.</p>', skills:'<div class="skill-card"><div class="skill-icon">🐍</div><h4>Python Ecosystem</h4><div class="skill-tags"><span class="skill-tag">Flask</span><span class="skill-tag">Django</span><span class="skill-tag">NumPy</span></div></div><div class="skill-card"><div class="skill-icon">🌐</div><h4>Network &amp; Systems</h4><div class="skill-tags"><span class="skill-tag">TCP/IP</span><span class="skill-tag">DNS</span><span class="skill-tag">Linux</span></div></div><div class="skill-card"><div class="skill-icon">🗄️</div><h4>Database</h4><div class="skill-tags"><span class="skill-tag">SQL</span><span class="skill-tag">Schema Design</span></div></div><div class="skill-card"><div class="skill-icon">🤖</div><h4>AI / ML Stack</h4><div class="skill-tags"><span class="skill-tag">scikit-learn</span><span class="skill-tag">NLP</span></div></div>' },
-  client: { hero:['Vision into reality','Results that matter','Technology serves business'], heroSub:'I specialize in AI automation, custom software, and intelligent systems—built for ROI.', about:'<p>I transform business challenges into competitive advantages. Whether you need an AI system, secure infrastructure, or custom software—I deliver results that matter to your bottom line.</p><p>I focus on understanding your business first, then building technology around it.</p>', skills:'<div class="skill-card"><div class="skill-icon">🤖</div><h4>AI Automation</h4><div class="skill-tags"><span class="skill-tag">Process Automation</span><span class="skill-tag">Predictive ML</span></div></div><div class="skill-card"><div class="skill-icon">🔨</div><h4>Custom Software</h4><div class="skill-tags"><span class="skill-tag">Web Apps</span><span class="skill-tag">Python</span></div></div><div class="skill-card"><div class="skill-icon">💾</div><h4>Database &amp; BI</h4><div class="skill-tags"><span class="skill-tag">SQL</span><span class="skill-tag">Power BI</span></div></div>' },
-  explorer: { hero:['Curiosity drives progress','Learning at the frontier','Questions become projects'], heroSub:'Driven by curiosity, I explore AI, security, and systems—turning questions into working prototypes.', about:'<p>I\'m fascinated by how intelligent systems work. Every project starts with a question I couldn\'t stop asking.</p><p>Currently exploring the intersection of AI and cybersecurity, and how machine learning makes networks smarter.</p>', skills:'<div class="skill-card"><div class="skill-icon">🧠</div><h4>AI / ML</h4><div class="skill-tags"><span class="skill-tag">ML Algorithms</span><span class="skill-tag">NLP</span></div></div><div class="skill-card"><div class="skill-icon">🌐</div><h4>Networks</h4><div class="skill-tags"><span class="skill-tag">TCP/IP</span><span class="skill-tag">Protocols</span></div></div><div class="skill-card"><div class="skill-icon">🔬</div><h4>Research</h4><div class="skill-tags"><span class="skill-tag">R</span><span class="skill-tag">Python</span></div></div>' }
+/* About content organized as four narrative blocks per audience */
+var aboutBlocks = {
+  recruiter: [
+    { label: 'Who I am', text: 'A Mathematics and Computer Science student at JKUAT (graduating 2026) specializing in IT support, infrastructure, and systems administration.' },
+    { label: 'What I enjoy building', text: 'Reliable systems that keep people working — from helpdesk fixes to network configurations that just don\'t go down.' },
+    { label: 'My current focus', text: 'Sharpening hands-on troubleshooting and admin skills, backed by an IT Operations attachment supporting 25+ users at TotalEnergies Kenya and training 30+ youth in IT fundamentals.' },
+    { label: 'My long-term vision', text: 'To grow into a systems and network role where uptime, security, and user experience are treated as inseparable.' }
+  ],
+  developer: [
+    { label: 'Who I am', text: 'A full-stack-leaning developer who studies Mathematics and Computer Science at JKUAT and builds with Python, SQL, and modern web stacks.' },
+    { label: 'What I enjoy building', text: 'Software that stays invisible because it just works — clean Python backends, ML pipelines, and network-aware systems.' },
+    { label: 'My current focus', text: 'Deepening OOP, ML integration, and Django/DRF architecture through applied projects like a farm management platform and a finance tracker.' },
+    { label: 'My long-term vision', text: 'To design systems where maintainability and performance are first-class from day one, not bolted on later.' }
+  ],
+  client: [
+    { label: 'Who I am', text: 'A technologist based in Nairobi who translates business problems into working software — AI automation, custom tools, and secure infrastructure.' },
+    { label: 'What I enjoy building', text: 'Solutions measured by outcomes: fewer manual hours, faster decisions, safer systems.' },
+    { label: 'My current focus', text: 'Delivering end-to-end builds — from a farm monitoring platform to automated resume screening — that solve a real, specific business pain point.' },
+    { label: 'My long-term vision', text: 'To be the person a growing team calls when they need technology that pays for itself.' }
+  ],
+  explorer: [
+    { label: 'Who I am', text: 'Someone endlessly curious about how intelligent systems work, currently completing a Mathematics and Computer Science degree at JKUAT.' },
+    { label: 'What I enjoy building', text: 'Prototypes that start as a question — "can this be automated?", "can a model catch this pattern?" — and end as working code.' },
+    { label: 'My current focus', text: 'Exploring where AI meets cybersecurity and networks, and documenting the journey through open learning repositories on GitHub.' },
+    { label: 'My long-term vision', text: 'To keep building at the edge of what I don\'t yet know, and share what I learn along the way.' }
+  ]
 };
+function renderAbout(mode) {
+  return aboutBlocks[mode].map(function(b) {
+    return '<div><div class="about-block-label">' + b.label + '</div><div class="about-block-text">' + b.text + '</div></div>';
+  }).join('');
+}
 
-var expHTML = '<div class="exp-card"><div class="exp-header"><div class="exp-title">IT Attachee</div><span class="exp-date">June 13th – Sep 5th 2025</span></div><div class="exp-company">Total Energies</div><ul class="exp-list"><li>Managed IT systems for 25+ staff</li><li>Diagnosed and resolved hardware issues</li><li>Maintained network infrastructure</li></ul></div><div class="exp-card"><div class="exp-header"><div class="exp-title">IT Support Volunteer</div><span class="exp-date">2024 – Ongoing</span></div><div class="exp-company">Community Youth Center</div><ul class="exp-list"><li>Trained 30+ young people in IT skills</li><li>Designed network infrastructure</li><li>Implemented cybersecurity practices</li></ul></div>';
+/* Skills grouped with icons and a "top skill" highlight per audience */
+var portfolioData = {
+  recruiter: {
+    hero: ['Reliable IT support', 'Keeping systems running', 'User-focused solutions'],
+    heroSub: 'IT support specialist with hands-on experience. I ensure systems work flawlessly.',
+    skills: [
+      { icon:'helpdesk', title:'IT Support &amp; Helpdesk', tags:['User Support','Troubleshooting','Hardware','Software'], top:0 },
+      { icon:'sysadmin', title:'System Administration', tags:['Windows Server','Linux','Active Directory'], top:-1 },
+      { icon:'network', title:'Network Administration', tags:['TCP/IP','DNS','Firewalls'], top:-1 }
+    ]
+  },
+  developer: {
+    hero: ['Building elegant solutions', 'Code that lasts', 'Performance focused'],
+    heroSub: 'Full stack developer focused on clean architecture, AI and ML pipelines, and network optimization.',
+    skills: [
+      { icon:'python', title:'Python Ecosystem', tags:['Flask','Django','NumPy'], top:0 },
+      { icon:'network', title:'Network &amp; Systems', tags:['TCP/IP','DNS','Linux'], top:-1 },
+      { icon:'database', title:'Database', tags:['SQL','Schema Design'], top:-1 },
+      { icon:'ai', title:'AI / ML Stack', tags:['scikit-learn','NLP'], top:-1 }
+    ]
+  },
+  client: {
+    hero: ['Vision into reality', 'Results that matter', 'Technology serves business'],
+    heroSub: 'I specialize in AI automation, custom software, and intelligent systems—built for ROI.',
+    skills: [
+      { icon:'automation', title:'AI Automation', tags:['Process Automation','Predictive ML'], top:0 },
+      { icon:'code', title:'Custom Software', tags:['Web Apps','Python'], top:-1 },
+      { icon:'database', title:'Database', tags:['SQL','Schema Design'], top:-1 }
+    ]
+  },
+  explorer: {
+    hero: ['Curiosity drives progress', 'Learning at the frontier', 'Questions become projects'],
+    heroSub: 'Driven by curiosity, I explore AI, security, and systems—turning questions into working prototypes.',
+    skills: [
+      { icon:'ai', title:'AI / ML', tags:['ML Algorithms','NLP'], top:0 },
+      { icon:'network', title:'Networks', tags:['TCP/IP','Protocols'], top:-1 },
+      { icon:'research', title:'Research', tags:['R','Python'], top:-1 }
+    ]
+  }
+};
+function renderSkills(mode) {
+  return portfolioData[mode].skills.map(function(s, idx) {
+    var tags = s.tags.map(function(t, ti) { return '<span class="skill-tag' + (idx===0 && ti===0 ? ' top' : '') + '">' + t + '</span>'; }).join('');
+    return '<div class="skill-card"><div class="skill-icon-wrap">' + skillIcon(s.icon) + '</div><h4>' + s.title + '</h4><div class="skill-tags">' + tags + '</div></div>';
+  }).join('');
+}
+
+var experiences = [
+  { title:'IT Attachee', date:'June 13 – Sep 5, 2025', company:'Total Energies', items:[
+      'Kept systems running for 25+ staff with a fast, reliable support turnaround',
+      'Cut recurring hardware downtime by diagnosing and resolving root-cause issues',
+      'Maintained network infrastructure supporting daily operations without disruption'
+    ]},
+  { title:'IT Support Volunteer', date:'2024 – Ongoing', company:'Community Youth Center', items:[
+      'Trained 30+ young people in practical IT skills, several now pursuing tech careers',
+      'Designed and deployed network infrastructure from the ground up',
+      'Introduced cybersecurity practices that reduced the center\'s exposure to common threats'
+    ]}
+];
+function renderExperience() {
+  return experiences.map(function(e) {
+    var items = e.items.map(function(i) { return '<li>' + i + '</li>'; }).join('');
+    return '<div class="exp-card"><div class="exp-header"><div class="exp-title">' + e.title + '</div><span class="exp-date">' + e.date + '</span></div><div class="exp-company">' + e.company + '</div><ul class="exp-list">' + items + '</ul></div>';
+  }).join('');
+}
 
 var twInstances = {};
 function typewriter(el, textArray, speed) {
@@ -550,10 +724,10 @@ function appShowPortfolio(type) {
   var roleMap = { recruiter:'Network Guardian', developer:'Code Architect', client:'Systems Innovator', explorer:'Tech Visionary' };
   document.getElementById('heroRole').textContent = roleMap[type];
   document.getElementById('heroSub').textContent = d.heroSub;
-  document.getElementById('aboutContent').innerHTML = d.about;
-  document.getElementById('skillsContent').innerHTML = d.skills;
+  document.getElementById('aboutContent').innerHTML = renderAbout(type);
+  document.getElementById('skillsContent').innerHTML = renderSkills(type);
   document.getElementById('projectsContent').innerHTML = renderProjects(type);
-  document.getElementById('experienceContent').innerHTML = expHTML;
+  document.getElementById('experienceContent').innerHTML = renderExperience();
   var tw = document.getElementById('heroTypewriter');
   if (tw) { tw.textContent=''; typewriter(tw, d.hero, 60); }
   window.scrollTo(0,0);
@@ -572,6 +746,18 @@ function appScrollToSection(id) {
   document.getElementById('navLinks').classList.remove('open');
 }
 
+function appScrollTop() {
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function showToast(msg) {
+  var t = document.getElementById('toast');
+  document.getElementById('toastText').textContent = msg;
+  t.classList.add('show');
+  clearTimeout(showToast._h);
+  showToast._h = setTimeout(function(){ t.classList.remove('show'); }, 2600);
+}
+
 function appDownloadCV() {
   var c = parseInt(localStorage.getItem('cvDL')||'0')+1;
   localStorage.setItem('cvDL',c);
@@ -581,6 +767,16 @@ function appDownloadCV() {
   a.href='https://github.com/WangilaWakhongola/MyPortfolio/raw/main/Resume.pdf';
   a.download='Emmanuel_Wakhongola_CV.pdf';
   document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  showToast('Resume downloaded — thanks for your interest!');
+}
+
+function appCopyEmail() {
+  var email = 'wangilawakhongola@gmail.com';
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(email).then(function(){ showToast('Email copied to clipboard'); });
+  } else {
+    showToast('Email: ' + email);
+  }
 }
 
 function appToggleTheme() {
@@ -599,12 +795,41 @@ function setupScrollObserver() {
   document.querySelectorAll('.fade-in').forEach(function(el){ obs.observe(el); });
 }
 
+function setupScrollProgressAndNav() {
+  var bar = document.getElementById('scrollProgress');
+  var backTop = document.getElementById('backToTop');
+  var sectionIds = ['home','about','experience','skills','projects','cv','contact'];
+  var navAnchors = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', function() {
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    if (bar) bar.style.width = pct + '%';
+    if (backTop) backTop.classList.toggle('show', scrollTop > 500);
+
+    if (!document.getElementById('portfolioContent').classList.contains('active')) return;
+    var current = sectionIds[0];
+    sectionIds.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top <= 140) current = id;
+    });
+    navAnchors.forEach(function(a) {
+      a.classList.toggle('active', a.getAttribute('data-section') === current);
+    });
+  }, { passive: true });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   startIntro();
   var c=localStorage.getItem('cvDL')||'0';
   if(parseInt(c)>0){ var el=document.getElementById('cvCounter'); if(el) el.textContent='Downloaded '+c+' time'+(parseInt(c)>1?'s':''); }
   var skipBtn = document.getElementById('skipBtn');
   if(skipBtn) skipBtn.addEventListener('click', function(){ skipIntro(); });
+  setupScrollProgressAndNav();
+  var yearEl = document.getElementById('footerYear');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+  var updEl = document.getElementById('footerUpdated');
+  if (updEl) updEl.textContent = new Date().toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
 });
 document.addEventListener('keydown', function(e){ if(e.key==='Escape') skipIntro(); });
 </script>
