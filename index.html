@@ -4,6 +4,41 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Emmanuel Wakhongola — Portfolio</title>
+
+<!-- ── SEO & SOCIAL METADATA (added) ── -->
+<meta name="description" content="Emmanuel W. Wakhongola — IT Support Specialist and developer based in Nairobi, Kenya, working across AI, networks, security, and systems. BSc Mathematics & Computer Science, JKUAT (2026).">
+<link rel="canonical" href="https://github.com/WangilaWakhongola">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Emmanuel Wakhongola — Portfolio">
+<meta property="og:description" content="AI · Networks · Security · Systems. IT Support Specialist and developer based in Nairobi, Kenya.">
+<meta property="og:url" content="https://github.com/WangilaWakhongola">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Emmanuel Wakhongola — Portfolio">
+<meta name="twitter:description" content="AI · Networks · Security · Systems. IT Support Specialist and developer based in Nairobi, Kenya.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Emmanuel W. Wakhongola",
+  "jobTitle": "IT Support Specialist",
+  "url": "https://github.com/WangilaWakhongola",
+  "email": "mailto:wangilawakhongola@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Nairobi",
+    "addressCountry": "KE"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "JKUAT"
+  },
+  "sameAs": [
+    "https://github.com/WangilaWakhongola"
+  ]
+}
+</script>
+<!-- ── END SEO & SOCIAL METADATA ── -->
+
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23000000'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia%2C serif' font-size='46' font-weight='900' fill='%23ffffff' font-style='italic'%3EE%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz@9..144&family=Crimson+Text:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -104,16 +139,32 @@ h2 { font-size: clamp(1.2em, 3.5vw, 2em); }
 .landing-prompt { font-size: 0.8em; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-primary); font-weight: 600; margin-bottom: 24px; opacity: 0; animation: fadeUp 0.5s ease forwards 0.6s; }
 .cards-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 1100px; width: 100%; opacity: 0; animation: fadeUp 0.8s ease forwards 0.7s; }
 .viewer-card {
+  --card-accent: var(--accent-warm);
   background: var(--bg-secondary); border: 2px solid var(--border-soft); border-radius: 2px;
-  padding: 28px 20px; text-align: center; cursor: pointer;
+  padding: 28px 20px 24px; text-align: center; cursor: pointer;
   transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative; overflow: hidden;
 }
-.viewer-card:hover { transform: translateY(-8px); border-color: var(--accent-warm); box-shadow: var(--shadow-md); }
+.viewer-card::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--card-accent);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.viewer-card:hover::after { transform: scaleX(1); }
+.viewer-card:hover { transform: translateY(-8px); border-color: var(--card-accent); box-shadow: var(--shadow-md); }
+.card-index {
+  position: absolute; top: 14px; right: 16px;
+  font-family: 'Fraunces', serif; font-size: 0.72em; font-weight: 600;
+  color: var(--border-soft); letter-spacing: 0.02em;
+  transition: color 0.35s;
+}
+.viewer-card:hover .card-index { color: var(--card-accent); }
 .card-icon-wrap {
   display: flex; align-items: center; justify-content: center;
   width: 64px; height: 64px; margin: 0 auto 16px;
-  background: linear-gradient(135deg, rgba(37,99,235,0.12) 0%, rgba(37,99,235,0.04) 100%);
-  border: 1.5px solid rgba(37,99,235,0.22);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--card-accent) 14%, transparent) 0%, color-mix(in srgb, var(--card-accent) 4%, transparent) 100%);
+  border: 1.5px solid color-mix(in srgb, var(--card-accent) 26%, transparent);
   border-radius: 18px;
   transition: background 0.35s, border-color 0.35s, transform 0.35s, box-shadow 0.35s;
   position: relative; overflow: hidden;
@@ -124,21 +175,22 @@ h2 { font-size: clamp(1.2em, 3.5vw, 2em); }
   pointer-events: none;
 }
 .viewer-card:hover .card-icon-wrap {
-  background: linear-gradient(135deg, rgba(37,99,235,0.22) 0%, rgba(37,99,235,0.08) 100%);
-  border-color: var(--accent-warm);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--card-accent) 26%, transparent) 0%, color-mix(in srgb, var(--card-accent) 10%, transparent) 100%);
+  border-color: var(--card-accent);
   transform: scale(1.1) rotate(-4deg);
-  box-shadow: 0 8px 28px rgba(37,99,235,0.22);
+  box-shadow: 0 8px 28px color-mix(in srgb, var(--card-accent) 26%, transparent);
 }
 .card-icon-wrap svg {
   width: 30px; height: 30px; fill: none;
-  stroke: var(--accent-warm); stroke-width: 1.6;
+  stroke: var(--card-accent); stroke-width: 1.6;
   stroke-linecap: round; stroke-linejoin: round;
-  transition: transform 0.35s; position: relative; z-index: 1;
+  transition: transform 0.35s, stroke 0.35s; position: relative; z-index: 1;
 }
 .viewer-card:hover .card-icon-wrap svg { transform: scale(1.1); }
-.viewer-card h2 { font-size: 1em; margin-bottom: 6px; color: var(--accent-warm); }
+.viewer-card h2 { font-size: 1em; margin-bottom: 6px; color: var(--card-accent); transition: color 0.35s; }
 .viewer-card p { font-size: 0.8em; color: var(--text-primary); line-height: 1.4; }
-.viewer-card .card-tag { display: inline-block; font-size: 0.7em; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border: 1px solid var(--border-soft); border-radius: 2px; margin-bottom: 14px; color: var(--accent-dark); font-weight: 600; }
+.viewer-card .card-tag { display: inline-block; font-size: 0.7em; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border: 1px solid var(--border-soft); border-radius: 2px; margin-bottom: 14px; color: var(--card-accent); font-weight: 600; transition: border-color 0.35s; }
+.viewer-card:hover .card-tag { border-color: color-mix(in srgb, var(--card-accent) 40%, transparent); }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 
 /* ── NAV ── */
@@ -313,7 +365,9 @@ footer.site-footer { padding: 36px 40px; border-top: 1px solid var(--border-soft
   <p class="landing-prompt">Choose your perspective</p>
   <div class="cards-container">
 
-    <div class="viewer-card" onclick="appShowPortfolio('recruiter')">
+    <!-- role/tabindex/keydown added for keyboard accessibility; onclick logic reused via appActivateCard -->
+    <div class="viewer-card" style="--card-accent:#2563eb" role="button" tabindex="0" aria-label="View portfolio as Recruiter" onclick="appShowPortfolio('recruiter')" onkeydown="appActivateCard(event,'recruiter')">
+      <span class="card-index">01</span>
       <span class="card-tag">Hiring</span>
       <div class="card-icon-wrap">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -327,7 +381,8 @@ footer.site-footer { padding: 36px 40px; border-top: 1px solid var(--border-soft
       <p>Impact & qualifications</p>
     </div>
 
-    <div class="viewer-card" onclick="appShowPortfolio('developer')">
+    <div class="viewer-card" style="--card-accent:#d97706" role="button" tabindex="0" aria-label="View portfolio as Developer" onclick="appShowPortfolio('developer')" onkeydown="appActivateCard(event,'developer')">
+      <span class="card-index">02</span>
       <span class="card-tag">Technical</span>
       <div class="card-icon-wrap">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -341,21 +396,23 @@ footer.site-footer { padding: 36px 40px; border-top: 1px solid var(--border-soft
       <p>Architecture & code</p>
     </div>
 
-    <div class="viewer-card" onclick="appShowPortfolio('client')">
+    <div class="viewer-card" style="--card-accent:#059669" role="button" tabindex="0" aria-label="View portfolio as Client" onclick="appShowPortfolio('client')" onkeydown="appActivateCard(event,'client')">
+      <span class="card-index">03</span>
       <span class="card-tag">Business</span>
       <div class="card-icon-wrap">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M3 3v18h18"/>
           <path d="M7 16l4-4 4 4 5-5"/>
-          <circle cx="20" cy="11" r="1.5" fill="currentColor" stroke="none" style="fill:var(--accent-warm)"/>
-          <circle cx="15" cy="16" r="1.5" fill="currentColor" stroke="none" style="fill:var(--accent-warm)"/>
+          <circle cx="20" cy="11" r="1.5" fill="currentColor" stroke="none" style="fill:var(--card-accent)"/>
+          <circle cx="15" cy="16" r="1.5" fill="currentColor" stroke="none" style="fill:var(--card-accent)"/>
         </svg>
       </div>
       <h2>Client</h2>
       <p>Solutions & results</p>
     </div>
 
-    <div class="viewer-card" onclick="appShowPortfolio('explorer')">
+    <div class="viewer-card" style="--card-accent:#7c3aed" role="button" tabindex="0" aria-label="View portfolio as Explorer" onclick="appShowPortfolio('explorer')" onkeydown="appActivateCard(event,'explorer')">
+      <span class="card-index">04</span>
       <span class="card-tag">Curious</span>
       <div class="card-icon-wrap">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -549,6 +606,16 @@ function showLandingPage() {
   var lp = document.getElementById('landingPage');
   lp.style.display = 'flex';
   setTimeout(function() { lp.classList.add('visible'); }, 30);
+}
+
+/* ── Keyboard activation helper (added) ──
+   Reuses appShowPortfolio, the same function bound to onclick, so
+   Enter/Space produce identical behavior to a mouse click. */
+function appActivateCard(evt, type) {
+  if (evt.key === 'Enter' || evt.key === ' ' || evt.key === 'Spacebar') {
+    evt.preventDefault();
+    appShowPortfolio(type);
+  }
 }
 
 /* ── Shared icon fragments ── */
@@ -758,16 +825,44 @@ function showToast(msg) {
   showToast._h = setTimeout(function(){ t.classList.remove('show'); }, 2600);
 }
 
+/* ── CV download with reachability check + fallback (modified) ──
+   Success path (counter, filename, success toast) is unchanged.
+   Only difference: before triggering the download, we verify the
+   file is reachable; on failure we show a toast and open the
+   GitHub repo instead of triggering a broken download link. */
 function appDownloadCV() {
-  var c = parseInt(localStorage.getItem('cvDL')||'0')+1;
-  localStorage.setItem('cvDL',c);
-  var el=document.getElementById('cvCounter');
-  if(el) el.textContent='Downloaded '+c+' time'+(c>1?'s':'');
-  var a=document.createElement('a');
-  a.href='https://github.com/WangilaWakhongola/MyPortfolio/raw/main/Resume.pdf';
-  a.download='Emmanuel_Wakhongola_CV.pdf';
-  document.body.appendChild(a); a.click(); document.body.removeChild(a);
-  showToast('Resume downloaded — thanks for your interest!');
+  var cvUrl = 'https://github.com/WangilaWakhongola/MyPortfolio/raw/main/Resume.pdf';
+  var fallbackUrl = 'https://github.com/WangilaWakhongola/MyPortfolio';
+
+  function triggerDownload() {
+    var c = parseInt(localStorage.getItem('cvDL')||'0')+1;
+    localStorage.setItem('cvDL',c);
+    var el=document.getElementById('cvCounter');
+    if(el) el.textContent='Downloaded '+c+' time'+(c>1?'s':'');
+    var a=document.createElement('a');
+    a.href=cvUrl;
+    a.download='Emmanuel_Wakhongola_CV.pdf';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    showToast('Resume downloaded — thanks for your interest!');
+  }
+
+  if (!window.fetch) {
+    // No fetch support: fall back to the original direct-download behavior
+    triggerDownload();
+    return;
+  }
+
+  fetch(cvUrl, { method: 'HEAD' }).then(function(res) {
+    if (res.ok) {
+      triggerDownload();
+    } else {
+      showToast('Resume link unavailable — opening GitHub instead');
+      window.open(fallbackUrl, '_blank', 'noopener');
+    }
+  }).catch(function() {
+    showToast('Resume link unavailable — opening GitHub instead');
+    window.open(fallbackUrl, '_blank', 'noopener');
+  });
 }
 
 function appCopyEmail() {
@@ -779,9 +874,24 @@ function appCopyEmail() {
   }
 }
 
+/* ── Theme persistence (modified) ──
+   Same toggle UI/behavior; now also saves to localStorage. */
 function appToggleTheme() {
   document.body.classList.toggle('light');
-  document.querySelector('.theme-toggle').textContent = document.body.classList.contains('light') ? '🌙 Dark' : '☀️ Light';
+  var isLight = document.body.classList.contains('light');
+  document.querySelector('.theme-toggle').textContent = isLight ? '🌙 Dark' : '☀️ Light';
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+}
+
+/* Restores saved theme on load (added). Runs before paint-relevant
+   DOMContentLoaded work so the toggle label matches the applied theme. */
+function appRestoreTheme() {
+  var saved = localStorage.getItem('theme');
+  if (saved === 'light') {
+    document.body.classList.add('light');
+    var btn = document.querySelector('.theme-toggle');
+    if (btn) btn.textContent = '🌙 Dark';
+  }
 }
 
 function appToggleNav() {
@@ -820,7 +930,21 @@ function setupScrollProgressAndNav() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  startIntro();
+  appRestoreTheme();
+
+  /* ── prefers-reduced-motion handling (added) ──
+     Skip the typewriter intro entirely for users who prefer reduced
+     motion; land them straight on the persona-selection page. The
+     intro sequence for everyone else is untouched. */
+  var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) {
+    introDone = true;
+    document.getElementById('introScreen').style.display = 'none';
+    showLandingPage();
+  } else {
+    startIntro();
+  }
+
   var c=localStorage.getItem('cvDL')||'0';
   if(parseInt(c)>0){ var el=document.getElementById('cvCounter'); if(el) el.textContent='Downloaded '+c+' time'+(parseInt(c)>1?'s':''); }
   var skipBtn = document.getElementById('skipBtn');
