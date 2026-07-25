@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Emmanuel Wakhongola — Portfolio</title>
 
-<meta name="description" content="Emmanuel W. Wakhongola — IT Support Specialist and developer based in Nairobi, Kenya, working across AI, networks, security, and systems. BSc Mathematics & Computer Science.">
+<!-- ── SEO & SOCIAL METADATA (added) ── -->
+<meta name="description" content="Emmanuel W. Wakhongola — IT Support Specialist and developer based in Nairobi, Kenya, working across AI, networks, security, and systems. BSc Mathematics & Computer Science, JKUAT (2026).">
 <link rel="canonical" href="https://github.com/WangilaWakhongola">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Emmanuel Wakhongola — Portfolio">
@@ -502,7 +503,6 @@ footer.site-footer { padding: 36px 40px; border-top: 1px solid var(--border-soft
         <h3>Download My Resume</h3>
         <p>Complete overview of qualifications, experience, and projects.</p>
         <button onclick="appDownloadCV()" class="btn-primary">📄 Download</button>
-        <div id="cvCounter" style="margin-top: 16px; font-size: 0.85em; color: var(--text-primary);"></div>
       </div>
     </section>
 
@@ -836,44 +836,17 @@ function showToast(msg) {
   showToast._h = setTimeout(function(){ t.classList.remove('show'); }, 2600);
 }
 
-/* ── CV download with reachability check + fallback (modified) ──
-   Success path (counter, filename, success toast) is unchanged.
-   Only difference: before triggering the download, we verify the
-   file is reachable; on failure we show a toast and open the
-   GitHub repo instead of triggering a broken download link. */
+/* ── CV download (simplified) ──
+   Direct download, no reachability pre-check (that was unreliably
+   triggering the GitHub fallback due to cross-origin HEAD requests
+   to GitHub raw URLs), and no download counter. */
 function appDownloadCV() {
-  var cvUrl = 'https://github.com/WangilaWakhongola/MyPortfolio/raw/main/Resume.pdf';
-  var fallbackUrl = 'https://github.com/WangilaWakhongola/MyPortfolio';
-
-  function triggerDownload() {
-    var c = parseInt(localStorage.getItem('cvDL')||'0')+1;
-    localStorage.setItem('cvDL',c);
-    var el=document.getElementById('cvCounter');
-    if(el) el.textContent='Downloaded '+c+' time'+(c>1?'s':'');
-    var a=document.createElement('a');
-    a.href=cvUrl;
-    a.download='Emmanuel_Wakhongola_CV.pdf';
-    document.body.appendChild(a); a.click(); document.body.removeChild(a);
-    showToast('Resume downloaded — thanks for your interest!');
-  }
-
-  if (!window.fetch) {
-    // No fetch support: fall back to the original direct-download behavior
-    triggerDownload();
-    return;
-  }
-
-  fetch(cvUrl, { method: 'HEAD' }).then(function(res) {
-    if (res.ok) {
-      triggerDownload();
-    } else {
-      showToast('Resume link unavailable — opening GitHub instead');
-      window.open(fallbackUrl, '_blank', 'noopener');
-    }
-  }).catch(function() {
-    showToast('Resume link unavailable — opening GitHub instead');
-    window.open(fallbackUrl, '_blank', 'noopener');
-  });
+  var cvUrl = 'https://raw.githubusercontent.com/WangilaWakhongola/MyPortfolio/main/Resume.pdf';
+  var a = document.createElement('a');
+  a.href = cvUrl;
+  a.download = 'Emmanuel_Wakhongola_CV.pdf';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  showToast('Resume downloaded — thanks for your interest!');
 }
 
 function appCopyEmail() {
@@ -952,8 +925,6 @@ document.addEventListener('DOMContentLoaded', function() {
     startIntro();
   }
 
-  var c=localStorage.getItem('cvDL')||'0';
-  if(parseInt(c)>0){ var el=document.getElementById('cvCounter'); if(el) el.textContent='Downloaded '+c+' time'+(parseInt(c)>1?'s':''); }
   var skipBtn = document.getElementById('skipBtn');
   if(skipBtn) skipBtn.addEventListener('click', function(){ skipIntro(); });
   setupScrollProgressAndNav();
