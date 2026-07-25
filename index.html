@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Emmanuel Wakhongola — Portfolio</title>
 
-<!-- ── SEO & SOCIAL METADATA (added) ── -->
-<meta name="description" content="Emmanuel W. Wakhongola — IT Support Specialist and developer based in Nairobi, Kenya, working across AI, networks, security, and systems. BSc Mathematics & Computer Science, JKUAT (2026).">
+<meta name="description" content="Emmanuel W. Wakhongola — IT Support Specialist and developer based in Nairobi, Kenya, working across AI, networks, security, and systems. BSc Mathematics & Computer Science.">
 <link rel="canonical" href="https://github.com/WangilaWakhongola">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Emmanuel Wakhongola — Portfolio">
@@ -76,7 +75,7 @@ h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 700; letter-spacin
 h1 { font-size: clamp(1.5em, 5vw, 2.8em); line-height: 1.1; }
 h2 { font-size: clamp(1.2em, 3.5vw, 2em); }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
-.section { padding: 80px 0; position: relative; }
+.section { padding: 56px 0; position: relative; }
 .fade-in { opacity: 0; transform: translateY(20px); }
 .fade-in.visible { opacity: 1; transform: translateY(0); transition: all 0.7s ease-out; }
 :focus-visible { outline: 2px solid var(--accent-warm); outline-offset: 3px; border-radius: 2px; }
@@ -134,7 +133,7 @@ h2 { font-size: clamp(1.2em, 3.5vw, 2em); }
 .landing-greeting { font-family: 'Crimson Text', serif; font-size: 1.4em; font-style: italic; color: var(--text-primary); margin-bottom: 10px; opacity: 0; animation: fadeUp 0.5s ease forwards 0.2s; }
 .landing-name { font-family: 'Fraunces', serif; font-size: clamp(2em, 6vw, 3.6em); font-weight: 700; color: var(--text-primary); line-height: 1.05; margin-bottom: 8px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.35s; }
 .landing-name span { color: var(--accent-warm); }
-.landing-tagline { font-size: 1em; color: var(--text-primary); margin-bottom: 48px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.5s; }
+.landing-tagline { font-size: 1em; color: var(--text-primary); margin-bottom: 36px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.5s; }
 .landing-divider { width: 48px; height: 2px; background: var(--accent-warm); margin: 0 auto 20px; opacity: 0; animation: fadeUp 0.5s ease forwards 0.45s; }
 .landing-prompt { font-size: 0.8em; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-primary); font-weight: 600; margin-bottom: 24px; opacity: 0; animation: fadeUp 0.5s ease forwards 0.6s; }
 .cards-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 1100px; width: 100%; opacity: 0; animation: fadeUp 0.8s ease forwards 0.7s; }
@@ -200,13 +199,12 @@ nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0
 .nav-links a { color: var(--text-primary); text-decoration: none; font-size: 0.85em; font-weight: 500; cursor: pointer; transition: color 0.2s; border-bottom: 2px solid transparent; padding-bottom: 4px; }
 .nav-links a:hover, .nav-links a.active { color: var(--accent-warm); border-bottom-color: var(--accent-warm); }
 .nav-burger { display: none; background: none; border: none; cursor: pointer; color: var(--text-primary); font-size: 1.4em; }
-.scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--accent-warm); width: 0%; z-index: 1001; transition: width 0.1s linear; }
 
 .portfolio-content { display: none; }
 .portfolio-content.active { display: block; }
 
 /* ── HERO ── */
-.hero-section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 160px 40px 100px; text-align: center; position: relative; }
+.hero-section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 130px 40px 70px; text-align: center; position: relative; }
 .hero-badge { display: inline-block; background: rgba(37,99,235,0.08); border: 1px solid var(--border-soft); border-radius: 4px; padding: 8px 18px; font-size: 0.8em; color: var(--accent-warm); margin-bottom: 28px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
 .hero-tagline { font-family: 'Crimson Text', serif; font-size: 1.2em; color: var(--text-primary); margin-bottom: 20px; min-height: 50px; }
 .hero-name { margin-bottom: 14px; color: var(--text-primary); }
@@ -215,26 +213,26 @@ nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0
 .hero-meta { display: flex; flex-wrap: wrap; gap: 10px 22px; justify-content: center; margin-bottom: 26px; font-size: 0.82em; color: var(--text-muted); }
 .hero-meta span { display: inline-flex; align-items: center; gap: 6px; }
 .hero-meta svg { width: 14px; height: 14px; stroke: var(--accent-warm); fill: none; stroke-width: 1.8; flex-shrink: 0; }
-.hero-subtitle { font-size: 0.95em; color: var(--text-primary); margin-bottom: 40px; max-width: 640px; line-height: 1.8; }
-.skill-pills { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 48px; }
+.hero-subtitle { font-size: 0.95em; color: var(--text-primary); margin-bottom: 30px; max-width: 640px; line-height: 1.8; }
+.skill-pills { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 36px; }
 .pill { background: var(--bg-secondary); border: 1px solid var(--border-soft); border-radius: 4px; padding: 8px 18px; font-size: 0.8em; color: var(--text-primary); transition: all 0.2s; }
 .pill:hover { color: var(--accent-warm); border-color: var(--accent-warm); }
-.contact-buttons { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-bottom: 64px; }
+.contact-buttons { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-bottom: 44px; }
 .btn-primary { background: var(--accent-warm); color: white; padding: 12px 32px; border-radius: 2px; text-decoration: none; font-weight: 600; font-size: 0.85em; transition: all 0.3s; border: none; cursor: pointer; letter-spacing: 0.02em; }
 .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); }
 .btn-outline { background: transparent; border: 2px solid var(--border-soft); color: var(--text-primary); padding: 10px 28px; border-radius: 2px; text-decoration: none; font-weight: 600; font-size: 0.9em; transition: all 0.3s; cursor: pointer; letter-spacing: 0.02em; display: inline-flex; align-items: center; gap: 8px; }
 .btn-outline:hover { border-color: var(--accent-warm); color: var(--accent-warm); transform: translateY(-2px); }
 .btn-outline svg { width: 16px; height: 16px; }
-.scroll-hint { margin-top: 60px; color: var(--text-primary); font-size: 0.85em; display: flex; flex-direction: column; align-items: center; gap: 10px; animation: bounce 2s ease-in-out infinite; }
+.scroll-hint { margin-top: 36px; color: var(--text-primary); font-size: 0.85em; display: flex; flex-direction: column; align-items: center; gap: 10px; animation: bounce 2s ease-in-out infinite; }
 @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
 
-.section-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 60px; width: 100%; }
+.section-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 40px; width: 100%; }
 .section-eyebrow { font-family: 'Inter', sans-serif; font-size: 0.68em; color: var(--accent-warm); letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; white-space: nowrap; flex-shrink: 0; }
 .section-title { font-size: 1.35em; white-space: nowrap; flex-shrink: 0; }
 .section-rule { height: 1px; background: var(--border-soft); flex: 1; }
 
 /* ── ABOUT ── */
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: start; }
 .about-blocks { display: flex; flex-direction: column; gap: 26px; }
 .about-block-label { font-size: 0.72em; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-warm); margin-bottom: 8px; }
 .about-block-text { color: var(--text-primary); line-height: 1.85; font-size: 0.96em; }
@@ -273,8 +271,10 @@ nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
 .project-card { background: var(--bg-secondary); border: 1px solid var(--border-soft); border-radius: 2px; overflow: hidden; transition: all 0.35s; display: flex; flex-direction: column; }
 .project-card:hover { border-color: var(--accent-warm); transform: translateY(-6px); box-shadow: var(--shadow-md); }
-.project-shot { height: 120px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(37,99,235,0.10), rgba(5,150,105,0.06)); border-bottom: 1px solid var(--border-soft); font-size: 2.4em; position: relative; }
-.project-status { position: absolute; top: 12px; right: 12px; font-size: 0.62em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 4px 10px; border-radius: 2px; background: var(--bg-primary); border: 1px solid var(--border-soft); color: var(--accent-sage); }
+.project-shot { height: 110px; display: flex; align-items: center; justify-content: center; background: var(--bg-secondary); border-bottom: 1px solid var(--border-soft); position: relative; }
+.project-icon-wrap { display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 14px; background: rgba(37,99,235,0.08); border: 1px solid rgba(37,99,235,0.16); transition: background 0.3s, border-color 0.3s; }
+.project-card:hover .project-icon-wrap { background: rgba(37,99,235,0.14); border-color: rgba(37,99,235,0.3); }
+.project-icon-wrap svg { width: 26px; height: 26px; stroke: var(--accent-warm); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .project-body { padding: 26px 28px 22px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
 .project-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
 .project-category { font-size: 0.65em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-warm); }
@@ -296,7 +296,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0
 .cv-section p { color: var(--text-primary); margin-bottom: 28px; font-size: 1em; }
 
 /* ── CONTACT ── */
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 38px; align-items: center; }
 .contact-info h3 { margin-bottom: 16px; color: var(--text-primary); }
 .contact-info p { color: var(--text-primary); line-height: 1.8; font-size: 0.95em; margin-bottom: 28px; }
 .contact-links { display: flex; gap: 16px; flex-wrap: wrap; }
@@ -331,11 +331,11 @@ footer.site-footer { padding: 36px 40px; border-top: 1px solid var(--border-soft
   .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg-secondary); padding: 20px; border-bottom: 1px solid var(--border-soft); gap: 16px; }
   .nav-links.open { display: flex; }
   .nav-burger { display: block; }
-  .hero-section { padding: 140px 20px 80px; }
+  .hero-section { padding: 120px 20px 60px; }
   .container { padding: 0 24px; }
   .about-grid, .contact-grid { grid-template-columns: 1fr; }
   .projects-grid, .skills-grid { grid-template-columns: 1fr; }
-  .section { padding: 60px 0; }
+  .section { padding: 48px 0; }
   .intro-line { font-size: clamp(1.2em, 6vw, 2em); padding: 0 20px; text-align: center; }
   .section-title { white-space: normal; }
   .back-to-top { bottom: 20px; right: 20px; }
@@ -344,7 +344,6 @@ footer.site-footer { padding: 36px 40px; border-top: 1px solid var(--border-soft
 </head>
 <body>
 
-<div class="scroll-progress" id="scrollProgress"></div>
 
 <div id="introScreen">
   <div style="display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 24px;">
@@ -637,13 +636,25 @@ var SKILL_ICONS = {
 };
 function skillIcon(key) { return '<svg viewBox="0 0 24 24">' + (SKILL_ICONS[key] || SKILL_ICONS.code) + '</svg>'; }
 
+/* Line-icon set for project cards — same visual language as SKILL_ICONS,
+   replacing emoji/illustrated icons for a consistent, professional look */
+var PROJECT_ICONS = {
+  medical: '<path d="M12 21s-6.5-4.35-9-8.5C1.2 8.9 2.7 5 6.5 5c2 0 3.3 1.1 4 2.2C11.2 6.1 12.5 5 14.5 5 18.3 5 19.8 8.9 18 12.5c-2.5 4.15-9 8.5-9 8.5z"/><path d="M9 9h3M12 9v3M9 12h6" stroke-width="1.4"/>',
+  attendance: '<circle cx="12" cy="9" r="3"/><path d="M12 2v3M12 22a9 9 0 0 0-9-9M12 22a9 9 0 0 1 9-9"/><path d="M8 22a4 4 0 0 1 8 0"/>',
+  finance: '<path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-6"/><path d="M15 7h4v4"/>',
+  education: '<path d="M2 9l10-5 10 5-10 5-10-5z"/><path d="M6 11v5c0 1.1 2.7 2 6 2s6-.9 6-2v-5"/><path d="M22 9v6"/>',
+  security: '<path d="M12 2l8 3v6c0 5-3.4 8.5-8 11-4.6-2.5-8-6-8-11V5l8-3z"/><path d="M9.5 12l1.8 1.8L15 10"/>',
+  nutrition: '<path d="M12 3c4 0 7 3 7 7 0 6-4 10-7 11-3-1-7-5-7-11 0-4 3-7 7-7z"/><path d="M12 3c0 4-2 5-2 9"/>'
+};
+function projectIcon(key) { return '<svg viewBox="0 0 24 24">' + (PROJECT_ICONS[key] || PROJECT_ICONS.finance) + '</svg>'; }
+
 var projects = [
-  { icon:'🏥', name:'MediCore — Hospital Management System', category:'Web Platform', status:'Active', repo:'MediCore-App', tech:['Next.js','TypeScript','Tailwind CSS','React'], impact:'HealthTech', desc:{ recruiter:'Full-stack hospital management system with modules for patient records, doctor scheduling, appointments, and billing — built to streamline clinical operations.', developer:'Next.js app with TypeScript and Tailwind CSS. Clean component architecture with role-based data views and a dashboard UI.', client:'A complete digital solution for hospitals to manage patients, staff, appointments, and invoices from a single modern dashboard — reducing admin overhead significantly.', explorer:'What if every hospital had a smart, real-time command center? MediCore explores how modern web tech can transform healthcare administration.' }},
-  { icon:'<svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="display:inline-block"><circle cx="32" cy="32" r="32" fill="#eef0fb"/><circle cx="32" cy="41" r="5.5" fill="#b0b3c8"/><path d="M19 54 Q32 46 45 54" fill="#b0b3c8"/><polygon points="32,14 55,23 32,32 9,23" fill="#2d3191"/><rect x="29" y="11" width="6" height="7" rx="1" fill="#2d3191"/><line x1="55" y1="23" x2="55" y2="34" stroke="#2d3191" stroke-width="2.5" stroke-linecap="round"/><polygon points="55,38 51,32 59,32" fill="#2d3191"/></svg>', name:'SmartRoll — GPS Smart Attendance App', category:'Mobile App', status:'Active', repo:'SmartRoll-App', tech:['React Native','Expo','TypeScript'], impact:'EdTech / Mobile', desc:{ recruiter:'GPS-based mobile attendance app built with React Native and Expo — students sign attendance only within a classroom geofence, with biometric auth and an anti-proxy system.', developer:'React Native + Expo app in TypeScript. GPS geofencing determines attendance eligibility, paired with biometric auth and real-time reporting.', client:'A mobile solution that ensures only physically-present students can sign attendance, with real-time reports for institutions.', explorer:'What if attendance could verify itself? SmartRoll combines GPS geofencing and biometrics to make proxy attendance technically difficult.' }},
-  { icon:'💰', name:'ML-Powered Personal Finance Assistant', category:'ML Tool', status:'Active', repo:'ML-Powered-Personal-Finance-Assistant', tech:['Python','Machine Learning'], impact:'FinTech', desc:{ recruiter:'A Python-based assistant that helps users understand their spending habits and predict future finances using machine learning.', developer:'Python application applying ML models to personal transaction data to surface spending patterns and financial forecasts.', client:'Gives users a clearer picture of where their money goes and where it\'s headed — automatically, without manual budgeting.', explorer:'Can a model learn your spending habits well enough to tell you what next month looks like? This project tests that.' }},
-  { icon:'🎓', name:'University GPA & CGPA Tracker', category:'Web App', status:'Active', repo:'university-GPA-tracker', tech:['JavaScript'], impact:'EdTech', desc:{ recruiter:'Full-stack GPA and CGPA tracking system with academic analytics, course management, and semester records.', developer:'Full-stack JavaScript app for tracking coursework, computing GPA/CGPA, and managing semester-by-semester academic records.', client:'Gives students a single place to log courses and grades and instantly see accurate GPA and CGPA analytics.', explorer:'A practical answer to a very personal question: built to track my own academic progress at JKUAT, semester by semester.' }},
-  { icon:'🔐', name:'PIN Validator', category:'Security Tool', status:'Active', repo:'PIN-Validator', tech:['Python'], impact:'Security', desc:{ recruiter:'A PIN authentication system in Python with brute-force lockout after 3 failed attempts.', developer:'Python implementation of PIN-based auth with attempt tracking and an automatic lockout mechanism to block brute-force guessing.', client:'A lightweight way to protect PIN-gated access with automatic lockout after repeated failed attempts.', explorer:'How many wrong guesses should a system tolerate before it locks you out? A small project built around that exact security tradeoff.' }},
-  { icon:'🥗', name:'AfyaLishe', category:'CLI Tool', status:'Active', repo:'AfyaLishe', tech:['Python'], impact:'Health & Wellness', desc:{ recruiter:'A command-line application for tracking daily nutrition and planning meals, built in Python.', developer:'Python CLI tool for logging meals and nutrition data, with a focus on simple, dependency-light design.', client:'A straightforward way to track daily nutrition and plan meals from the terminal — no bloated app required.', explorer:'"Afya" means health in Swahili — this project explores how far a simple CLI can go in helping someone eat better.' }}
+  { icon:'medical', name:'MediCore — Hospital Management System', category:'Web Platform', repo:'MediCore-App', tech:['Next.js','TypeScript','Tailwind CSS','React'], impact:'HealthTech', desc:{ recruiter:'Full-stack hospital management system with modules for patient records, doctor scheduling, appointments, and billing — built to streamline clinical operations.', developer:'Next.js app with TypeScript and Tailwind CSS. Clean component architecture with role-based data views and a dashboard UI.', client:'A complete digital solution for hospitals to manage patients, staff, appointments, and invoices from a single modern dashboard — reducing admin overhead significantly.', explorer:'What if every hospital had a smart, real-time command center? MediCore explores how modern web tech can transform healthcare administration.' }},
+  { icon:'attendance', name:'SmartRoll — GPS Smart Attendance App', category:'Mobile App', repo:'SmartRoll-App', tech:['React Native','Expo','TypeScript'], impact:'EdTech / Mobile', desc:{ recruiter:'GPS-based mobile attendance app built with React Native and Expo — students sign attendance only within a classroom geofence, with biometric auth and an anti-proxy system.', developer:'React Native + Expo app in TypeScript. GPS geofencing determines attendance eligibility, paired with biometric auth and real-time reporting.', client:'A mobile solution that ensures only physically-present students can sign attendance, with real-time reports for institutions.', explorer:'What if attendance could verify itself? SmartRoll combines GPS geofencing and biometrics to make proxy attendance technically difficult.' }},
+  { icon:'finance', name:'ML-Powered Personal Finance Assistant', category:'ML Tool', repo:'ML-Powered-Personal-Finance-Assistant', tech:['Python','Machine Learning'], impact:'FinTech', desc:{ recruiter:'A Python-based assistant that helps users understand their spending habits and predict future finances using machine learning.', developer:'Python application applying ML models to personal transaction data to surface spending patterns and financial forecasts.', client:'Gives users a clearer picture of where their money goes and where it\'s headed — automatically, without manual budgeting.', explorer:'Can a model learn your spending habits well enough to tell you what next month looks like? This project tests that.' }},
+  { icon:'education', name:'University GPA & CGPA Tracker', category:'Web App', repo:'university-GPA-tracker', tech:['JavaScript'], impact:'EdTech', desc:{ recruiter:'Full-stack GPA and CGPA tracking system with academic analytics, course management, and semester records.', developer:'Full-stack JavaScript app for tracking coursework, computing GPA/CGPA, and managing semester-by-semester academic records.', client:'Gives students a single place to log courses and grades and instantly see accurate GPA and CGPA analytics.', explorer:'A practical answer to a very personal question: built to track my own academic progress at JKUAT, semester by semester.' }},
+  { icon:'security', name:'PIN Validator', category:'Security Tool', repo:'PIN-Validator', tech:['Python'], impact:'Security', desc:{ recruiter:'A PIN authentication system in Python with brute-force lockout after 3 failed attempts.', developer:'Python implementation of PIN-based auth with attempt tracking and an automatic lockout mechanism to block brute-force guessing.', client:'A lightweight way to protect PIN-gated access with automatic lockout after repeated failed attempts.', explorer:'How many wrong guesses should a system tolerate before it locks you out? A small project built around that exact security tradeoff.' }},
+  { icon:'nutrition', name:'AfyaLishe', category:'CLI Tool', repo:'AfyaLishe', tech:['Python'], impact:'Health & Wellness', desc:{ recruiter:'A command-line application for tracking daily nutrition and planning meals, built in Python.', developer:'Python CLI tool for logging meals and nutrition data, with a focus on simple, dependency-light design.', client:'A straightforward way to track daily nutrition and plan meals from the terminal — no bloated app required.', explorer:'"Afya" means health in Swahili — this project explores how far a simple CLI can go in helping someone eat better.' }}
 ];
 
 function renderProjects(mode) {
@@ -652,7 +663,7 @@ function renderProjects(mode) {
     var shortUrl = 'github.com/WangilaWakhongola/' + p.repo;
     var techTags = p.tech.map(function(t) { return '<span class="tech-tag">' + t + '</span>'; }).join('');
     return '<div class="project-card">' +
-      '<div class="project-shot">' + p.icon + '<span class="project-status">' + p.status + '</span></div>' +
+      '<div class="project-shot"><div class="project-icon-wrap">' + projectIcon(p.icon) + '</div></div>' +
       '<div class="project-body">' +
       '<div class="project-header"><span class="project-category">' + p.category + '</span>' +
       '<a href="' + ghUrl + '" target="_blank" rel="noopener" class="github-btn">' + GH_ICON + ' GitHub</a></div>' +
@@ -906,15 +917,11 @@ function setupScrollObserver() {
 }
 
 function setupScrollProgressAndNav() {
-  var bar = document.getElementById('scrollProgress');
   var backTop = document.getElementById('backToTop');
   var sectionIds = ['home','about','experience','skills','projects','cv','contact'];
   var navAnchors = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll', function() {
     var scrollTop = window.scrollY || document.documentElement.scrollTop;
-    var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    if (bar) bar.style.width = pct + '%';
     if (backTop) backTop.classList.toggle('show', scrollTop > 500);
 
     if (!document.getElementById('portfolioContent').classList.contains('active')) return;
